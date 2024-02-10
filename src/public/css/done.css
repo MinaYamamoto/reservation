@@ -1,0 +1,39 @@
+@media screen and (min-width: 768px) {
+    .done__content {
+        width: 400px;
+        height: 250px;
+        margin: auto;
+        padding: 40px;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .done__msg {
+        display: inline;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .done__msg p {
+        font-size: 20px;
+    }
+
+    .form__button {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .form__button-submit {
+        color: #fff;
+        background-color: rgb(0, 105, 255);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 70px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 767px) {}

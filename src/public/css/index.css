@@ -1,0 +1,116 @@
+@media screen and (min-width: 768px) {
+    .header__search {
+        height: 32px;
+        width: 85%;
+        padding-left: 40%;
+        background-color: #F8F8FF;
+        display: flex;
+    }
+
+    .header__search-inner {
+        height: 28px;
+        display: flex;
+    }
+
+    .area {
+        border: none;
+        outline: none;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        border-right: 1px solid #d5d2d2fa;
+        border-radius: 5px 0 0 5px;
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .genre {
+        border: none;
+        outline: none;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        border-right: 1px solid #d5d2d2fa;
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .search__text {
+        width: 300px;
+    }
+
+    .text {
+        border: none;
+        outline: none;
+        height: 30px;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        width: 100%;
+        border-radius: 0 5px 5px 0;
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .card__list {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px 5% 5% 5%;
+    }
+
+    .card {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        border-radius: 5px;
+        width: 2%;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        margin-bottom: 10px;
+    }
+
+    .card__img {
+        width: 100%;
+    }
+
+    .card__content {
+        padding: 0 10px;
+    }
+
+    .card__store {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0 auto;
+    }
+
+    .card__tag {
+        font-size: 12px;
+        text-align: left;
+        padding: 0 10px;
+    }
+
+    .region__tag {
+        display: inline-block;
+    }
+
+    .genres__tag {
+        display: inline-block;
+    }
+
+    .card__button {
+        padding: 10px;
+    }
+
+    .card__button-submit {
+        color: #fff;
+        background-color: rgb(0, 105, 255);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 767px) {}
