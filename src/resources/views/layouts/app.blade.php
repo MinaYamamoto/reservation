@@ -21,24 +21,42 @@
                 </div>
             </div>
             <h1 class="header__logo">
-                <a href="#">Rese</a>
+                <a href="/">Rese</a>
             </h1>
         @yield('header')
         </div>
         @guest
         <ul class="slide-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Registration</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/register">Registration</a></li>
+            <li><a href="/login">Login</a></li>
         </ul>
         @endguest
         @auth
         <ul class="slide-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Logout</a></li>
-            <li><a href="#">Mypage</a></li>
+            <li><a href="/">Home</a></li>
+            <form class="logout" action="/logout" method="POST">
+                @csrf
+                <li><button class="logout__button">Logout</button></li>
+            </form>
+            <li><a href="/mypage">Mypage</a></li>
         </ul>
         @endauth
+        @can('admin-authority')
+        <ul class="slide-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/representative">Representative</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        @endcan
+        @can('representative-authority')
+        <ul class="slide-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/store">Store information</a></li>
+            <li><a href="/reservation">Reservation list</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        @endcan
         <script src="{{ asset('js/hamburger.js')}}"></script>
     </header>
 

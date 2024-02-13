@@ -22,8 +22,6 @@
         width: 40px;
         height: 25px;
         position: relative;
-        position: fixed;
-        top: 35px;
     }
 
     .hamburger__inner span {
@@ -74,6 +72,17 @@
         font-weight: bolder;
     }
 
+    .logout__button {
+        background-color: #F8F8FF;
+        border: none;
+        text-decoration: none;
+        color: rgb(0, 105, 255);
+        font-size: 25px;
+        font-family: Meiryo;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
     .hamburger__inner.active span:first-of-type {
         top: 50%;
         width: 60%;
@@ -93,6 +102,7 @@
     .slide-menu.active {
         transform: translateX(0);
         z-index: 1;
+        height: 100%;
     }
 
     .header__logo {

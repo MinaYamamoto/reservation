@@ -1,0 +1,53 @@
+@media screen and (min-width: 768px) {
+    .reservation h2 {
+        padding-left: 30%;
+        font-size: 20px;
+    }
+
+    .reservation__date {
+        padding: 0 0 25px 40%;
+    }
+
+    .reservation__date label {
+        font-size: 17px;
+    }
+
+    .search__day {
+        font-size: 17px;
+        border: none;
+        background-color: #F8F8FF;
+    }
+
+    .reservation__table table {
+        width: 40%;
+        margin: 5px auto;
+    }
+
+    .reservation__table th {
+        padding: 13px 5px 5px 15px;
+        width: 25%;
+        text-align: center;
+        border-top: 1px solid rgb(200, 197, 197);
+        font-size: 13px;
+    }
+
+    .reservation__table td {
+        padding: 10px 15px;
+        width: 25%;
+        text-align: center;
+        border-top: 1px solid rgb(200, 197, 197);
+        font-size: 13px;
+    }
+
+    .reservation__detail {
+        padding: 8px 15px 8px 15px;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        background-color: rgb(255, 119, 0);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+}

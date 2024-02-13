@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\MypageController;
+use App\Http\Controllers\VerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +15,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('/email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
 
-Route::get('/', function() {
-    return view('mypage');
+Route::get('/', [ShopController::class, 'index']);
+
+Route::middleware('verified')->group(function() {
+    Route::get('/mypage',[MypageController::class, 'index']);
+});
+
+Route::group(['middleware' => ['auth, can:admin-authority']], function(){
+});
+
+Route::group(['middleware' => ['auth, can:representative-authority']], function(){
 });
