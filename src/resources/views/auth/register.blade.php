@@ -55,6 +55,7 @@
             </div>
             <div class="form__button">
                 <button class="form__button-submit" type="submit">登録</button>
+                <input type="hidden" name="role" value="user">
             </div>
         </div>
     </form>

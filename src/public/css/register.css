@@ -43,7 +43,9 @@
     .form__error {
         color: #ff0000;
         height: 3px;
+        width: 90%;
         padding-left: 10%;
+        font-size: 10px;
     }
 
     .form__button {
