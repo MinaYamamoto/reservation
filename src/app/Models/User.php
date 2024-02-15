@@ -43,7 +43,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function stores() {
+    public function store() {
         return $this->hasOne(Store::class);
+    }
+
+    public function bookmark() {
+        return $this->hasOne(Bookmark::class);
     }
 }

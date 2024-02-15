@@ -32,4 +32,36 @@ class Store extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function bookmark()
+    {
+        return $this->hasOne(Bookmark::class);
+    }
+
+    public function scopeSearch($query, $params)
+    {
+        if (!empty($params['genre_id'])) {
+            $query->where('genre_id', $params['genre_id']);
+        }
+        if (!empty($params['region_id'])) {
+            $query->where('region_id', $params['region_id']);
+        }
+        if(!empty($params['keyword'])) {
+            $query->where('name' , 'like', '%' . $params['keyword'] . '%');
+        }
+    }
+
+    public function scopeRegionSearch($query, $params)
+    {
+        if (!empty($region_id)) {
+            $query->where('region_id', $region_id);
+        }
+    }
+
+    public function scopeKeywordSearch($query, $keyword)
+    {
+        if(!empty($keyword)) {
+            $query->where('name' , 'like', '%' . $keyword . '%');
+        }
+    }
 }

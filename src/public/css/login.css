@@ -27,8 +27,8 @@
         padding: 18px 20px 5px 30px;
     }
 
-    .material-symbols-outlined {
-        vertical-align: middle;
+    .form__input--text i {
+        padding-right: 10px;
     }
 
     .form__input--text input {

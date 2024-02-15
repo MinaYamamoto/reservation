@@ -2,26 +2,27 @@
 
 @section('stylesheet')
 <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
+<script src="https://kit.fontawesome.com/8b04c7b9b9.js" crossorigin="anonymous"></script>
 @endsection
 
 @section('content')
 <div class="store">
     <div class="store__detail">
         <div class="back__button">
-            <button class="back__button-submit">＜</button>
+            <button class="back__button-submit" onClick="history.back()"><i class="fa-solid fa-chevron-left"></i></button>
         </div>
         <div class="store__name">
-            <h2>仙人</h2>
+            <h2>{{$store->name}}</h2>
         </div>
         <div class="store__img">
             <img></img>
         </div>
         <div class="store__tag">
-            <p class="region__tag">#東京都</p>
-            <p class="genres__tag">#寿司</p>
+            <p class="region__tag">#{{ $store['region'] ['name']}}</p>
+            <p class="genres__tag">#{{ $store['genre'] ['name']}}</p>
         </div>
         <div class="store__overview">
-            <p>料理長厳選の食材から作る寿司を用いたコースをぜひお楽しみください。食材・味・価格、お客様の満足度を徹底的に追及したお店です。特別な日のお食事、ビジネス接待まで気軽に使用することができます。</p>
+            <p>{{ $store['overview'] }}</p>
         </div>
     </div>
     <div class="store__reserve">
@@ -43,7 +44,7 @@
             <table class="reserve__table">
                 <tr>
                     <th>Shop</th>
-                    <td>仙人</td>
+                    <td>{{$store->name}}</td>
                 </tr>
                 <tr>
                     <th>Date</th>

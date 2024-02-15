@@ -2,108 +2,78 @@
 
 @section('stylesheet')
 <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<script src="https://kit.fontawesome.com/8b04c7b9b9.js" crossorigin="anonymous"></script>
 @endsection
 
 @section('header')
 <div class="header__search">
-    <div class="search__area">
-        <select class="area">
-            <option>All area</option>
-        </select>
-    </div>
-    <div class="search__genre">
-        <select class="genre">
-            <option>All genre</option>
-        </select>
-    </div>
-    <div class="search__text">
-        <input class="text" placeholder="&#xF002;   search...">
-    </div>
+    <form class="search-form" action="/shop/search" method="get">
+        @csrf
+        <div class="header__search-inner">
+            <select class="search-form__region" name='region_id'>
+                <option value="">All area</option>
+                @foreach($regions as $region)
+                <option value="{{ $region['id'] }}" {{request()->region_id ==$region['id']? "selected" : "";}}>{{ $region['name'] }}</option>
+                @endforeach
+            </select>
+            <select class="search-form__genre" name="genre_id">
+                <option value="">All genre</option>
+                @foreach($genres as $genre)
+                <option value="{{ $genre['id']}}" {{request()->genre_id ==$genre['id']? "selected" : "";}}>{{ $genre['name'] }}</option>
+                @endforeach
+            </select>
+            <div class="search__text">
+                <input class="search-form__input" type="text" name="keyword" value="{{ request()->keyword }}" placeholder="&#xF002;   search...">
+            </div>
+        </div>
+    </form>
 </div>
 @endsection
 
 @section('content')
 <div class="card__list">
+    @if ($stores->isEmpty())
+    <div class="flash_message">
+        {{ $msg }}
+    </div>
+    @endif
+    @foreach($stores as $store)
     <div class="card">
         <div class="card__img">
             <img></img>
         </div>
         <div class="card__content">
-            <h2 class="card__store">仙人</h2>
+            <h2 class="card__store">{{ $store['name'] }}</h2>
         </div>
         <div class="card__tag">
-            <p class="region__tag">#東京都</p>
-            <p class="genres__tag">#寿司</p>
+            <p class="region__tag">#{{ $store['region'] ['name']}}</p>
+            <p class="genres__tag">#{{ $store['genre'] ['name']}}</p>
         </div>
         <div class="card__button">
-            <button class="card__button-submit">詳しくみる</button>
-            <button class="card__button-bookmark">お気に入り</button>
+            <form class="detail" action="/detail/{{ $store['id']}}" method="GET">
+                <button class="card__button-submit">詳しくみる</button>
+            </form>
+            @if($store->bookmark()->where('store_id', $store['id'])->where('user_id', optional(Auth::user())->id)->count() == 1)
+            <form class="bookmark" action="/bookmark/{{ $store['id']}}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button class="card__button-unbookmark">
+                    <i class="fa-solid fa-heart"></i>
+                </button>
+            </form>
+            @else
+            <form class="bookmark" action="/bookmark" method="POST">
+                @csrf
+                <input type="hidden" name="store_id" value="{{ $store['id'] }}">
+                <button class="card__button-bookmark">
+                    <span class="material-symbols-outlined">
+                        <i class="fa-solid fa-heart"></i>
+                    </span>
+                </button>
+            </form>
+            @endif
         </div>
     </div>
-    <div class="card">
-        <div class="card__img">
-            <img></img>
-        </div>
-        <div class="card__content">
-            <h2 class="card__store">仙人</h2>
-        </div>
-        <div class="card__tag">
-            <p class="region__tag">#東京都</p>
-            <p class="genres__tag">#寿司</p>
-        </div>
-        <div class="card__button">
-            <button class="card__button-submit">詳しくみる</button>
-            <button class="card__button-bookmark">お気に入り</button>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card__img">
-            <img></img>
-        </div>
-        <div class="card__content">
-            <h2 class="card__store">仙人</h2>
-        </div>
-        <div class="card__tag">
-            <p class="region__tag">#東京都</p>
-            <p class="genres__tag">#寿司</p>
-        </div>
-        <div class="card__button">
-            <button class="card__button-submit">詳しくみる</button>
-            <button class="card__button-bookmark">お気に入り</button>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card__img">
-            <img></img>
-        </div>
-        <div class="card__content">
-            <h2 class="card__store">仙人</h2>
-        </div>
-        <div class="card__tag">
-            <p class="region__tag">#東京都</p>
-            <p class="genres__tag">#寿司</p>
-        </div>
-        <div class="card__button">
-            <button class="card__button-submit">詳しくみる</button>
-            <button class="card__button-bookmark">お気に入り</button>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card__img">
-            <img></img>
-        </div>
-        <div class="card__content">
-            <h2 class="card__store">仙人</h2>
-        </div>
-        <div class="card__tag">
-            <p class="region__tag">#東京都</p>
-            <p class="genres__tag">#寿司</p>
-        </div>
-        <div class="card__button">
-            <button class="card__button-submit">詳しくみる</button>
-            <button class="card__button-bookmark">お気に入り</button>
-        </div>
-    </div>
+    @endforeach
 </div>
 @endsection
