@@ -11,7 +11,7 @@ class Genre extends Model
 
     protected $fillable = ['name'];
 
-    public function stores() {
+    public function store() {
         return $this->hasMany(Store::class);
     }
 }

@@ -2,7 +2,7 @@
     .header__search {
         height: 32px;
         width: 85%;
-        padding-left: 40%;
+        padding-left: 45%;
         background-color: #F8F8FF;
         display: flex;
     }
@@ -12,7 +12,7 @@
         display: flex;
     }
 
-    .area {
+    .search-form__region {
         border: none;
         outline: none;
         width: 100px;
@@ -23,7 +23,7 @@
         box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
     }
 
-    .genre {
+    .search-form__genre {
         border: none;
         outline: none;
         width: 100px;
@@ -37,13 +37,11 @@
         width: 300px;
     }
 
-    .text {
+    .search-form__input {
         border: none;
         outline: none;
         height: 30px;
         font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
         text-decoration: inherit;
         width: 100%;
         border-radius: 0 5px 5px 0;
@@ -55,7 +53,6 @@
         height: auto;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         padding: 10px 5% 5% 5%;
     }
 
@@ -98,7 +95,9 @@
     }
 
     .card__button {
-        padding: 10px;
+        padding: 10px 20px 10px 20px;
+        display: flex;
+        justify-content: space-between;
     }
 
     .card__button-submit {
@@ -109,6 +108,26 @@
         font-size: 13px;
         height: 30px;
         width: 80px;
+        cursor: pointer;
+    }
+
+    .card__button-unbookmark {
+        color: #f13756fa;
+        background-color: #F8F8FF;
+        border: none;
+        font-size: 25px;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .card__button-bookmark {
+        color: #aeaeb3;
+        background-color: #F8F8FF;
+        border: none;
+        font-size: 25px;
+        height: 30px;
+        width: 30px;
         cursor: pointer;
     }
 }
