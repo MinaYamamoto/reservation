@@ -50,4 +50,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function bookmark() {
         return $this->hasOne(Bookmark::class);
     }
+
+    public function reservation() {
+        return $this->hasOne(Store::class);
+    }
 }

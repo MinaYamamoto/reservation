@@ -13,12 +13,10 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <div class="hamburger">
-                <div class="hamburger__inner">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <div class="hamburger" id="hamburger">
+                <span class="row"></span>
+                <span class="row"></span>
+                <span class="row"></span>
             </div>
             <h1 class="header__logo">
                 <a href="/">Rese</a>
@@ -26,36 +24,56 @@
         @yield('header')
         </div>
         @guest
-        <ul class="slide-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/register">Registration</a></li>
-            <li><a href="/login">Login</a></li>
-        </ul>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="close" id="close">
+                <span class="square__button"></span>
+            </div>
+            <ul>
+                <li class="hamburger-item"><a href="/">Home</a></li>
+                <li class="hamburger-item"><a href="/register">Registration</a></li>
+                <li class="hamburger-item"><a href="/login">Login</a></li>
+            </ul>
+        </div>
         @endguest
         @auth
-        <ul class="slide-menu">
-            <li><a href="/">Home</a></li>
-            <form class="logout" action="/logout" method="POST">
-                @csrf
-                <li><button class="logout__button">Logout</button></li>
-            </form>
-            <li><a href="/mypage">Mypage</a></li>
-        </ul>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="close" id="close">
+                <span class="square__button"></span>
+            </div>
+            <ul>
+                <li class="hamburger-item"><a href="/">Home</a></li>
+                <form class="logout" action="/logout" method="POST">
+                    @csrf
+                    <li class="hamburger-item"><button class="logout__button">Logout</button></li>
+                </form>
+                <li class="hamburger-item"><a href="/mypage">Mypage</a></li>
+            </ul>
+        </div>
         @endauth
         @can('admin-authority')
-        <ul class="slide-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/representative">Representative</a></li>
-            <li><a href="/logout">Logout</a></li>
-        </ul>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="close" id="close">
+                <span class="square__button"></span>
+            </div>
+            <ul>
+            <li class="hamburger-item"><a href="/">Home</a></li>
+            <li class="hamburger-item"><a href="/representative">Representative</a></li>
+            <li class="hamburger-item"><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
         @endcan
         @can('representative-authority')
-        <ul class="slide-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/store">Store information</a></li>
-            <li><a href="/reservation">Reservation list</a></li>
-            <li><a href="/logout">Logout</a></li>
-        </ul>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="close" id="close">
+                <span class="square__button"></span>
+            </div>
+            <ul>
+                <li class="hamburger-item"><a href="/">Home</a></li>
+                <li class="hamburger-item"><a href="/store">Store information</a></li>
+                <li class="hamburger-item"><a href="/reservation">Reservation list</a></li>
+                <li class="hamburger-item"><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
         @endcan
         <script src="{{ asset('js/hamburger.js')}}"></script>
     </header>

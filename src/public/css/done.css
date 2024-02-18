@@ -33,6 +33,8 @@
         height: 30px;
         width: 70px;
         cursor: pointer;
+        text-decoration: none;
+        padding-top: 5px;
     }
 }
 

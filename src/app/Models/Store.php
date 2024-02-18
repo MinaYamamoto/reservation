@@ -38,6 +38,11 @@ class Store extends Model
         return $this->hasOne(Bookmark::class);
     }
 
+    public function reservation()
+    {
+        return $this->hasOne(Reservation::class);
+    }
+
     public function scopeSearch($query, $params)
     {
         if (!empty($params['genre_id'])) {

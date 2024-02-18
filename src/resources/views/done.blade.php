@@ -10,7 +10,7 @@
         <p>ご予約ありがとうございます</p>
     </div>
     <div class="form__button">
-        <button class="form__button-submit" type="submit">戻る</button>
+        <a href="/" class="form__button-submit" type="submit">戻る</a>
     </div>
 </div>
 @endsection

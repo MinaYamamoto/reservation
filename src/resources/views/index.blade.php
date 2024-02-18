@@ -9,7 +9,7 @@
 <div class="header__search">
     <form class="search-form" action="/shop/search" method="get">
         @csrf
-        <div class="header__search-inner">
+        <div class="search-form__inner">
             <select class="search-form__region" name='region_id'>
                 <option value="">All area</option>
                 @foreach($regions as $region)
@@ -22,7 +22,7 @@
                 <option value="{{ $genre['id']}}" {{request()->genre_id ==$genre['id']? "selected" : "";}}>{{ $genre['name'] }}</option>
                 @endforeach
             </select>
-            <div class="search__text">
+            <div class="search-form__text">
                 <input class="search-form__input" type="text" name="keyword" value="{{ request()->keyword }}" placeholder="&#xF002;   search...">
             </div>
         </div>
@@ -40,7 +40,7 @@
     @foreach($stores as $store)
     <div class="card">
         <div class="card__img">
-            <img></img>
+            <img src="{{ $store['thumbnail'] }}"></img>
         </div>
         <div class="card__content">
             <h2 class="card__store">{{ $store['name'] }}</h2>
