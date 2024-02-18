@@ -8,18 +8,22 @@
 @section('content')
 <div class="store">
     <div class="store__detail">
-        <div class="back__button">
-            <button class="back__button-submit" onClick="history.back()"><i class="fa-solid fa-chevron-left"></i></button>
-        </div>
-        <div class="store__name">
-            <h2>{{$store->name}}</h2>
+        <div class="store__detail-header">
+            <div class="back__button">
+                <button class="back__button-submit" onClick="history.back()">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+            </div>
+            <div class="store__name">
+                <h2>{{$store->name}}</h2>
+            </div>
         </div>
         <div class="store__img">
-            <img></img>
+            <img src="{{ $store['thumbnail'] }}"></img>
         </div>
         <div class="store__tag">
-            <p class="region__tag">#{{ $store['region'] ['name']}}</p>
-            <p class="genres__tag">#{{ $store['genre'] ['name']}}</p>
+            <p class="store__tag-region">#{{ $store['region'] ['name']}}</p>
+            <p class="store__tag-genres">#{{ $store['genre'] ['name']}}</p>
         </div>
         <div class="store__overview">
             <p>{{ $store['overview'] }}</p>
@@ -27,42 +31,69 @@
     </div>
     <div class="store__reserve">
         <h2 class="reserve__ttl">予約</h2>
-        <div class="reserve__day">
-            <input type="date">
-        </div>
-        <div class="reserve__time">
-            <select>
-                <option>17:00</option>
-            </select>
-        </div>
-        <div class="reserve__num">
-            <select>
-                <option>1人</option>
-            </select>
-        </div>
-        <div class="reserve__detail">
-            <table class="reserve__table">
-                <tr>
-                    <th>Shop</th>
-                    <td>{{$store->name}}</td>
-                </tr>
-                <tr>
-                    <th>Date</th>
-                    <td>2021-04-01</td>
-                </tr>
-                <tr>
-                    <th>Time</th>
-                    <td>17:00</td>
-                </tr>
-                <tr>
-                    <th>Number</th>
-                    <td>1人</td>
-                </tr>
-            </table>
-        </div>
-    <div class="reserve__button">
-        <button class="reserve__button-submit">予約する</button>
-    </div>
+        <form class="reserve-form" action="/reservation" method="post">
+            @csrf
+            <input type="hidden" name="store_id" value="{{ $store->id}}">
+            <input type="hidden" name="user_id" value="{{ optional(auth()->user())->id }}">
+            <div class="reserve__day">
+                <input type="date" name="date" id="reserve__date" value="{{ old('date') }}">
+                <div class="form__error">
+                    @error('date')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+            <div class="reserve__time">
+                <select class="reserve__time-id" name='time_id' id='time__id'>
+                    <option value="">時間を選択してください</option>
+                    @foreach($times as $time)
+                    <option value="{{ $time->id }}" data-related-value="{{ $time['time']->format('H:i') }}"  @if(old('time_id') == $time->id) selected @endif>{{ $time['time']->format('H:i') }}</option>
+                    @endforeach
+                </select>
+                <div class="form__error">
+                    @error('time_id')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+            <div class="reserve__num">
+                <select class="reserve__num-id" name='num_id' id='num__id'>
+                    <option value="">人数を選択してください</option>
+                    @foreach($nums as $num)
+                    <option value="{{ $num->id }}" data-related-value="{{ $num['num'] }} 名"  @if(old('num_id') == $num->id) selected @endif>{{ $num['num'] }} 名</option>
+                    @endforeach
+                </select>
+                <div class="form__error">
+                    @error('num_id')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+            <div class="reserve__detail">
+                <table class="reserve__table">
+                    <tr>
+                        <th>Shop</th>
+                        <td>{{$store->name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td id="input__date"></td>
+                    </tr>
+                    <tr>
+                        <th>Time</th>
+                        <td id="selected__time"></td>
+                    </tr>
+                    <tr>
+                        <th>Number</th>
+                        <td id="selected__num"></td>
+                    </tr>
+                </table>
+                <script src="{{ asset('js/detail.js')}}"></script>
+            </div>
+            <div class="reserve__button">
+                <button class="reserve__button-submit">予約する</button>
+            </div>
+        </form>
     </div>
 </div>
 @endsection

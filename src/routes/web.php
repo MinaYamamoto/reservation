@@ -5,6 +5,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\BookmarkController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::middleware('verified')->group(function() {
     Route::get('/mypage',[MypageController::class, 'index']);
     Route::post('/bookmark', [BookmarkController::class, 'store']);
     Route::delete('/bookmark/{store_id}', [BookmarkController::class, 'destroy']);
+    Route::post('/reservation', [ReservationController::class, 'store']);
 });
 
 Route::group(['middleware' => ['auth, can:admin-authority']], function(){

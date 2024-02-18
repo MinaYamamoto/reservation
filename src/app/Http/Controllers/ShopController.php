@@ -6,6 +6,8 @@ use App\Models\Store;
 use App\Models\Genre;
 use App\Models\Region;
 use App\Models\Bookmark;
+use App\Models\Time;
+use App\Models\Num;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,6 +39,8 @@ class ShopController extends Controller
         $regions = Region::all();
         $genres = Genre::all();
         $bookmark = Bookmark::where('store_id', $request->shop_id)->where('user_id', auth()->id())->get();
-        return view('detail', compact('store', 'regions','genres', 'bookmark'));
+        $times = Time::all();
+        $nums = Num::all();
+        return view('detail', compact('store', 'regions','genres', 'bookmark', 'times', 'nums'));
     }
 }

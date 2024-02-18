@@ -7,7 +7,7 @@
         display: flex;
     }
 
-    .header__search-inner {
+    .search-form__inner {
         height: 28px;
         display: flex;
     }
@@ -33,7 +33,7 @@
         box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
     }
 
-    .search__text {
+    .search-form__text {
         width: 300px;
     }
 
@@ -58,20 +58,26 @@
 
     .card {
         display: flex;
-        height: auto;
+        height: 280px;
         flex-direction: column;
         border-radius: 5px;
-        width: 25%;
+        width: 23%;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-        margin-bottom: 10px;
+        margin: 0 10px 15px 10px;
     }
 
     .card__img {
+        height: 50%;
+    }
+
+    .card__img img {
         width: 100%;
+        height: 100%;
+        border-radius: 5px 5px 0 0;
     }
 
     .card__content {
-        padding: 0 10px;
+        padding: 12px 10px 0 10px;
     }
 
     .card__store {
@@ -83,6 +89,7 @@
     .card__tag {
         font-size: 12px;
         text-align: left;
+        height: 40px;
         padding: 0 10px;
     }
 
@@ -95,7 +102,7 @@
     }
 
     .card__button {
-        padding: 10px 20px 10px 20px;
+        padding: 10px 30px 10px 20px;
         display: flex;
         justify-content: space-between;
     }
@@ -107,7 +114,7 @@
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 80px;
+        width: 90px;
         cursor: pointer;
     }
 

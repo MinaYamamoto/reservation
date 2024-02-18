@@ -5,11 +5,16 @@
 
     .store__detail {
         width: 50%;
-        padding: 20px;
+        padding: 20px 20px 20px 60px;
+    }
+
+    .store__detail-header {
+        display: flex;
+        padding-bottom: 10px;
     }
 
     .back__button {
-        display: inline-block;
+        padding-top: 5px;
     }
 
     .back__button-submit {
@@ -17,39 +22,63 @@
         border: none;
         border-radius: 3px;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
     }
 
     .store__name {
-        display: inline-block;
         padding-left: 10px;
     }
 
     .store__name h2 {
         font-weight: 500;
         font-size: 20px;
+        margin: 5px 0 5px 0;
     }
 
-    .region__tag {
-        display: inline-block;
-        font-size: 14px;
+    .store__img {
+        height: 60%;
+        width: 80%;
     }
 
-    .genres__tag {
+    .store__img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .store__tag {
+        width: 80%;
+    }
+
+    .store__tag p {
+        margin: 10px 0 5px 0;
+    }
+
+    .store__tag-region {
         display: inline-block;
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    .store__tag-genres {
+        display: inline-block;
+        font-size: 12px;
     }
 
     .store__overview {
-        font-size: 15px;
+        font-size: 12px;
+        width: 80%;
+    }
+
+    .store__overview p {
+        margin: 5px 0 5px 0;
     }
 
     .store__reserve {
         width: 35%;
         height: 100%;
-        margin: -70px 20px 20px 100px;
-        padding: 0 20px 20px 20px;
+        margin: -30px 20px 0 80px;
+        padding: 0 20px 50px 20px;
         background-color: rgb(0, 105, 255);
         box-shadow: 3px 0 3px rgba(0, 0, 0, 0.4);
         border-radius: 5px;
@@ -60,6 +89,11 @@
     .reserve__ttl {
         font-size: 20px;
         margin: 20px 10px 10px 10px;
+    }
+
+    .form__error {
+        font-size: 13px;
+        color: #fff;
     }
 
     .reserve__day input {
@@ -90,7 +124,7 @@
     .reserve__detail {
         border-radius: 5px;
         background-color: rgb(75, 122, 241);
-        margin: 20px 10px 200px 10px;
+        margin: 20px 10px 130px 10px;
         padding: 10px 0 10px 0;
     }
 
