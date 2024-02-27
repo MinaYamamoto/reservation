@@ -1,29 +1,68 @@
 @media screen and (min-width: 768px) {
-    .reservation h2 {
-        padding-left: 30%;
+    .reservation__ttl {
+        padding-left: 25%;
         font-size: 20px;
     }
 
     .reservation__date {
-        padding: 0 0 25px 40%;
+        padding: 10px 20px 10px 25%;
     }
 
-    .reservation__date label {
+    .search__today {
+        padding-bottom: 30px;
+    }
+
+    .today__reservation {
+        border: none;
+        background-color: rgb(255, 119, 0);
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+    }
+
+    .fa-arrows-rotate {
+        font-size: 18px;
+    }
+
+    .reservation__today-label {
         font-size: 17px;
+    }
+
+    .search__reservation-day {
+        padding-left: 13%;
+    }
+
+    .reservation__date-label {
+        font-size: 17px;
+    }
+
+    .search__last-day,
+    .search__next-day {
+        border: none;
+        background-color: rgb(255, 119, 0);
+        color: #fff;
+        border-radius: 5px;
+        height: 28px;
+        width: 28px;
+        padding-top: 3px;
     }
 
     .search__day {
         font-size: 17px;
         border: none;
-        background-color: #F8F8FF;
+        background-color: #e4e4ec;
+        width: 95px;
+        ;
     }
 
-    .reservation__table table {
-        width: 40%;
+    .reservation__table-table {
+        width: 55%;
         margin: 5px auto;
     }
 
-    .reservation__table th {
+    .reservation__table-th {
         padding: 13px 5px 5px 15px;
         width: 25%;
         text-align: center;
@@ -31,8 +70,8 @@
         font-size: 13px;
     }
 
-    .reservation__table td {
-        padding: 10px 15px;
+    .reservation__table-td {
+        padding: 10px 0 5px 15px;
         width: 25%;
         text-align: center;
         border-top: 1px solid rgb(200, 197, 197);
@@ -45,6 +84,101 @@
         text-align: center;
         color: #fff;
         background-color: rgb(255, 119, 0);
+        ;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .reservation__ttl {
+        padding-left: 20%;
+        font-size: 20px;
+    }
+
+    .reservation__date {
+        padding: 10px 20px 10px 20%;
+    }
+
+    .search__today {
+        padding-bottom: 30px;
+    }
+
+    .today__reservation {
+        border: none;
+        background-color: rgb(255, 119, 0);
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+    }
+
+    .fa-arrows-rotate {
+        font-size: 18px;
+    }
+
+    .reservation__today-label {
+        font-size: 17px;
+    }
+
+    .search__reservation-day {
+        padding-left: 5%;
+    }
+
+    .reservation__date-label {
+        font-size: 17px;
+    }
+
+    .search__last-day,
+    .search__next-day {
+        border: none;
+        background-color: rgb(255, 119, 0);
+        color: #fff;
+        border-radius: 5px;
+        height: 28px;
+        width: 28px;
+        padding-top: 3px;
+    }
+
+    .search__day {
+        font-size: 17px;
+        border: none;
+        background-color: #e4e4ec;
+        width: 95px;
+        ;
+    }
+
+    .reservation__table-table {
+        width: 90%;
+        margin: 5px auto;
+    }
+
+    .reservation__table-th {
+        padding: 13px 5px 5px 15px;
+        width: 25%;
+        text-align: center;
+        border-top: 1px solid rgb(200, 197, 197);
+        font-size: 13px;
+    }
+
+    .reservation__table-td {
+        padding: 10px 0 5px 15px;
+        width: 25%;
+        text-align: center;
+        border-top: 1px solid rgb(200, 197, 197);
+        font-size: 13px;
+    }
+
+    .reservation__detail {
+        padding: 8px 15px 8px 15px;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        background-color: rgb(255, 119, 0);
+        ;
         border: none;
         border-radius: 3px;
         cursor: pointer;

@@ -43,6 +43,11 @@ class Store extends Model
         return $this->hasOne(Reservation::class);
     }
 
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
+
     public function scopeSearch($query, $params)
     {
         if (!empty($params['genre_id'])) {

@@ -19,7 +19,7 @@
                 <span class="row"></span>
             </div>
             <h1 class="header__logo">
-                <a href="/">Rese</a>
+                Rese
             </h1>
         @yield('header')
         </div>
@@ -29,53 +29,55 @@
                 <span class="square__button"></span>
             </div>
             <ul>
-                <li class="hamburger-item"><a href="/">Home</a></li>
-                <li class="hamburger-item"><a href="/register">Registration</a></li>
-                <li class="hamburger-item"><a href="/login">Login</a></li>
+                <li class="hamburger-item"><a class="hamburger-link" href="/">Home</a></li>
+                <li class="hamburger-item"><a class="hamburger-link" href="/register">Registration</a></li>
+                <li class="hamburger-item"><a class="hamburger-link" href="/login">Login</a></li>
             </ul>
         </div>
         @endguest
-        @auth
+        @can('user-authority')
         <div class="hamburger-menu" id="hamburger-menu">
             <div class="close" id="close">
                 <span class="square__button"></span>
             </div>
             <ul>
-                <li class="hamburger-item"><a href="/">Home</a></li>
+                <li class="hamburger-item"><a class="hamburger-link" href="/">Home</a></li>
                 <form class="logout" action="/logout" method="POST">
                     @csrf
                     <li class="hamburger-item"><button class="logout__button">Logout</button></li>
                 </form>
-                <li class="hamburger-item"><a href="/mypage">Mypage</a></li>
+                <li class="hamburger-item"><a class="hamburger-link" href="/mypage">Mypage</a></li>
             </ul>
         </div>
-        @endauth
-        @can('admin-authority')
+        @elsecan('admin-authority')
         <div class="hamburger-menu" id="hamburger-menu">
             <div class="close" id="close">
                 <span class="square__button"></span>
             </div>
             <ul>
-            <li class="hamburger-item"><a href="/">Home</a></li>
-            <li class="hamburger-item"><a href="/representative">Representative</a></li>
-            <li class="hamburger-item"><a href="/logout">Logout</a></li>
+            <li class="hamburger-item"><a class="hamburger-link" href="/admin/representative">Representative</a></li>
+                <form class="logout" action="/logout" method="POST">
+                    @csrf
+                    <li class="hamburger-item"><button class="logout__button">Logout</button></li>
+                </form>
             </ul>
         </div>
-        @endcan
-        @can('representative-authority')
+        @elsecan('representative-authority')
         <div class="hamburger-menu" id="hamburger-menu">
             <div class="close" id="close">
                 <span class="square__button"></span>
             </div>
             <ul>
-                <li class="hamburger-item"><a href="/">Home</a></li>
-                <li class="hamburger-item"><a href="/store">Store information</a></li>
-                <li class="hamburger-item"><a href="/reservation">Reservation list</a></li>
-                <li class="hamburger-item"><a href="/logout">Logout</a></li>
+                <li class="hamburger-item"><a class="hamburger-link" href="/admin/store">Store information</a></li>
+                <li class="hamburger-item"><a class="hamburger-link" href="/admin/reservation/search">Reservation list</a></li>
+                <form class="logout" action="/logout" method="POST">
+                    @csrf
+                    <li class="hamburger-item"><button class="logout__button">Logout</button></li>
+                </form>
             </ul>
         </div>
         @endcan
-        <script src="{{ asset('js/hamburger.js')}}"></script>
+        <script src="{{ mix('js/hamburger.js')}}"></script>
     </header>
 
     <main>

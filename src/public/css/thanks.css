@@ -15,7 +15,7 @@
         text-align: center;
     }
 
-    .thanks__msg p {
+    .thanks__msg-txt {
         font-size: 19px;
     }
 
@@ -31,4 +31,35 @@
     }
 }
 
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 768px) {
+    .thanks__content {
+        width: 350px;
+        height: 380px;
+        margin: auto;
+        padding: 25px;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .thanks__msg {
+        display: inline;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .thanks__msg-txt {
+        font-size: 16px;
+    }
+
+    .retransmission__button {
+        color: #fff;
+        background-color: rgb(0, 105, 255);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 200px;
+        cursor: pointer;
+    }
+}

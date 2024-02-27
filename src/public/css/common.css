@@ -1,8 +1,10 @@
 @media screen and (min-width: 768px) {
     body {
-        background-color: #F8F8FF;
+        background-color: #e4e4ec;
         overflow-x: hidden;
         position: relative;
+        height: 550px;
+        font-family: "メイリオ";
     }
 
     .header__inner {
@@ -49,7 +51,7 @@
         position: absolute;
         top: 0;
         left: -100%;
-        background-color: #F8F8FF;
+        background-color: #e4e4ec;
         width: 100%;
         height: 100%;
         transition: all 0.5s 0s ease;
@@ -64,12 +66,12 @@
 
     .hamburger-item {
         list-style: none;
-        margin-top: 30px;
+        margin-top: 40px;
         padding: 0 20px;
         text-align: center;
     }
 
-    .hamburger-item a {
+    .hamburger-link {
         text-decoration: none;
         color: rgb(0, 105, 255);
         font-size: 25px;
@@ -113,7 +115,7 @@
     }
 
     .logout__button {
-        background-color: #F8F8FF;
+        background-color: #e4e4ec;
         border: none;
         text-decoration: none;
         color: rgb(0, 105, 255);
@@ -128,13 +130,236 @@
         font-size: 28px;
         font-weight: bold;
         padding-left: 30px;
+        color: rgb(0, 105, 255);
     }
 
-    .header__logo a {
+    .pagination {
+        margin: 1px;
+        display: flex;
+        padding-left: 0;
+        list-style: none;
+        border-radius: 0.25rem;
+    }
+
+    .page-link {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #007bff;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+    }
+
+    .page-link:hover {
+        z-index: 2;
+        color: #0056b3;
         text-decoration: none;
-        color: rgb(0, 105, 255);
+        background-color: #e9ecef;
+        border-color: #dee2e6;
+    }
+
+    .page-link:focus {
+        z-index: 2;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .page-item:first-child .page-link {
+        margin-left: 0;
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+    }
+
+    .page-item:last-child .page-link {
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+    }
+
+    .page-item.active .page-link {
+        z-index: 1;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .page-item.disabled .page-link {
+        color: #6c757d;
+        pointer-events: none;
+        cursor: auto;
+        background-color: #fff;
+        border-color: #dee2e6;
+    }
+
+    .pagination-lg .page-link {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+
+    .pagination-lg .page-item:first-child .page-link {
+        border-top-left-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+    }
+
+    .pagination-lg .page-item:last-child .page-link {
+        border-top-right-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+    }
+
+    .pagination-sm .page-link {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+
+    .pagination-sm .page-item:first-child .page-link {
+        border-top-left-radius: 0.2rem;
+        border-bottom-left-radius: 0.2rem;
+    }
+
+    .pagination-sm .page-item:last-child .page-link {
+        border-top-right-radius: 0.2rem;
+        border-bottom-right-radius: 0.2rem;
     }
 
 }
 
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 768px) {
+    body {
+        background-color: #e4e4ec;
+        overflow-x: hidden;
+        position: relative;
+        height: 100%;
+        font-family: "メイリオ";
+    }
+
+    .header__inner {
+        display: flex;
+        align-items: center;
+        padding: 10px 5px 0 20px;
+        height: 60px;
+    }
+
+    .hamburger {
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        width: 29px;
+        height: 29px;
+        background: rgb(0, 105, 255);
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    .row {
+        position: absolute;
+        height: 1px;
+        background-color: #fff;
+    }
+
+    .row:first-of-type {
+        top: 25%;
+        width: 30%;
+    }
+
+    .row:nth-of-type(2) {
+        top: 50%;
+        width: 55%;
+    }
+
+    .row:last-of-type {
+        top: 75%;
+        width: 15%;
+    }
+
+    .hamburger-menu {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        background-color: #e4e4ec;
+        ;
+        width: 100%;
+        height: 105%;
+        transition: all 0.5s 0s ease;
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+    }
+
+    .show {
+        left: 0;
+    }
+
+    .hamburger-item {
+        list-style: none;
+        margin-top: 40px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .hamburger-link {
+        text-decoration: none;
+        color: rgb(0, 105, 255);
+        font-size: 25px;
+        font-weight: bolder;
+    }
+
+    .close {
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .square__button {
+        display: block;
+        position: relative;
+        top: 15px;
+        left: 10px;
+        width: 32px;
+        height: 32px;
+        background: rgb(0, 105, 255);
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    .square__button::before,
+    .square__button::after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 1px;
+        height: 20px;
+        background: #fff;
+    }
+
+    .square__button::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .square__button::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .logout__button {
+        background-color: #e4e4ec;
+        border: none;
+        text-decoration: none;
+        color: rgb(0, 105, 255);
+        font-size: 25px;
+        font-family: Meiryo;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+    .header__logo {
+        text-decoration: none;
+        font-size: 20px;
+        width: 90px;
+        font-weight: bold;
+        padding-left: 30px;
+        color: rgb(0, 105, 255);
+    }
+}
