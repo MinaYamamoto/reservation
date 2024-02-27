@@ -7,15 +7,15 @@
 @section('content')
 <div class="thanks__content">
     <div class="thanks__msg">
-        <p>会員登録ありがとうございます</p>
-        <p class="thanks__msg">
+        <p class="thanks__msg-txt">会員登録ありがとうございます</p>
+        <p class="thanks__msg-txt">
             {{ __('ご登録いただいたメールアドレスに確認用のリンクをお送りしました。') }}
         </p>
-        <p class="thanks__msg">
+        <p class="thanks__msg-txt">
             {{ __('届いたメールをご確認の上、記載のリンクから登録を完了させてください。') }}
 
         </p>
-        <p class="retransmission__msg">
+        <p class="thanks__msg-txt">
             {{ __('もし確認用メールが送信されていない場合は、下記をクリックしてください。') }}
         </p>
         <form class="retransmission" method="POST" action="{{ route('verification.resend') }}">

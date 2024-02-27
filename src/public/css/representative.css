@@ -8,13 +8,13 @@
         background-color: #fff;
     }
 
-    .representative-form__heading {
+    .representative__head {
         background-color: rgb(255, 119, 0);
         border-radius: 5px 5px 0 0;
         height: 20%;
     }
 
-    .representative-form__heading h2 {
+    .representative__ttl {
         color: #fff;
         font-size: 18px;
         font-weight: lighter;
@@ -23,15 +23,15 @@
         display: inline-block;
     }
 
+    .fa-solid {
+        padding-right: 10px;
+    }
+
     .form__group-content {
         padding: 18px 20px 5px 30px;
     }
 
-    .material-symbols-outlined {
-        vertical-align: middle;
-    }
-
-    .form__input--text input {
+    .form__input-txt {
         border: none;
         outline: none;
         border-bottom: 1px solid #050505;
@@ -64,4 +64,4 @@
     }
 }
 
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 768px) {}

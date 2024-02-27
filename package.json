@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "vue": "^3.4.19",
+    "vue-star-rating": "^1.7.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
+}

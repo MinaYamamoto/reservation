@@ -15,18 +15,18 @@
                 </button>
             </div>
             <div class="store__name">
-                <h2>{{$store->name}}</h2>
+                <h2 class="store__name-header">{{$store->name}}</h2>
             </div>
         </div>
         <div class="store__img">
-            <img src="{{ $store['thumbnail'] }}"></img>
+            <img class="store__thumbnail" src="{{ Storage::url($store->thumbnail) }}"></img>
         </div>
         <div class="store__tag">
             <p class="store__tag-region">#{{ $store['region'] ['name']}}</p>
             <p class="store__tag-genres">#{{ $store['genre'] ['name']}}</p>
         </div>
         <div class="store__overview">
-            <p>{{ $store['overview'] }}</p>
+            <p class="store__overview-txt">{{ $store['overview'] }}</p>
         </div>
     </div>
     <div class="store__reserve">
@@ -36,7 +36,7 @@
             <input type="hidden" name="store_id" value="{{ $store->id}}">
             <input type="hidden" name="user_id" value="{{ optional(auth()->user())->id }}">
             <div class="reserve__day">
-                <input type="date" name="date" id="reserve__date" value="{{ old('date') }}">
+                <input type="date" name="date" class="reserve__date" id="reserve__date" value="{{ old('date') }}">
                 <div class="form__error">
                     @error('date')
                     {{ $message }}
@@ -72,23 +72,23 @@
             <div class="reserve__detail">
                 <table class="reserve__table">
                     <tr>
-                        <th>Shop</th>
-                        <td>{{$store->name}}</td>
+                        <th class="reserve__table-th">Shop</th>
+                        <td class="reserve__table-td">{{$store->name}}</td>
                     </tr>
                     <tr>
-                        <th>Date</th>
-                        <td id="input__date"></td>
+                        <th class="reserve__table-th">Date</th>
+                        <td class="reserve__table-td" id="input__date"></td>
                     </tr>
                     <tr>
-                        <th>Time</th>
-                        <td id="selected__time"></td>
+                        <th class="reserve__table-th">Time</th>
+                        <td class="reserve__table-td" id="selected__time"></td>
                     </tr>
                     <tr>
-                        <th>Number</th>
-                        <td id="selected__num"></td>
+                        <th class="reserve__table-th">Number</th>
+                        <td class="reserve__table-td" id="selected__num"></td>
                     </tr>
                 </table>
-                <script src="{{ asset('js/detail.js')}}"></script>
+                <script src="{{ mix('js/detail.js')}}"></script>
             </div>
             <div class="reserve__button">
                 <button class="reserve__button-submit">予約する</button>

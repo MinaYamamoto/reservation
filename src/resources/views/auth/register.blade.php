@@ -8,14 +8,14 @@
 @section('content')
 <div class="register__content">
     <div class="register-form__heading">
-        <h2>Registration</h2>
+        <h2 class="register-form__heading-ttl">Registration</h2>
     </div>
     <form class="register__form" action="/register" method="post">
         @csrf
             <div class="form__group-content">
-                <div class="form__input--text">
+                <div class="form__input">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Username">
+                    <input class="form__input-text" type="text" name="name" value="{{ old('name') }}" placeholder="Username">
                 </div>
                 <div class="form__error">
                     @error('name')
@@ -24,9 +24,9 @@
                 </div>
             </div>
             <div class="form__group-content">
-                <div class="form__input--text">
+                <div class="form__input">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="text" name="email" value="{{ old('email') }}" placeholder="Email">
+                    <input class="form__input-text" type="text" name="email" value="{{ old('email') }}" placeholder="Email">
                 </div>
                 <div class="form__error">
                     @error('email')
@@ -35,9 +35,9 @@
                 </div>
             </div>
             <div class="form__group-content">
-                <div class="form__input--text">
+                <div class="form__input">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="password" placeholder="Password">
+                    <input class="form__input-text" type="password" name="password" placeholder="Password">
                 </div>
                 <div class="form__error">
                     @error('password')

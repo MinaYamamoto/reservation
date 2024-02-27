@@ -1,11 +1,11 @@
 @media screen and (min-width: 768px) {
-    .user__name {
+    .user {
         text-align: center;
-        margin: -2% 0 0 0;
     }
 
     .user__mypage {
         display: flex;
+        padding: 0 70px 0 70px;
     }
 
     .user__reserve {
@@ -13,47 +13,296 @@
     }
 
     .reserve__ttl {
-        margin: 0 auto 0 60px;
+        margin: 0 auto 0 0;
+        font-size: 23px;
+    }
+
+    .reserve__alert {
+        background-color: rgb(236, 78, 100);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 65%;
+        height: 40px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .reserve__alert-msg {
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .not-reserve__card {
+        background-color: rgb(0, 105, 255);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 65%;
+        height: 40px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .not-reserve__card-msg {
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
     }
 
     .reserve__card {
         background-color: rgb(0, 105, 255);
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-        width: 60%;
+        width: 85%;
         border-radius: 5px;
-        margin: 0 0 0 60px;
+        margin-bottom: 15px;
     }
 
-    .material-symbols-outlined {
-        display: inline-block;
+    .reserve__header {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .fa-clock {
         color: #fff;
-        padding: 5px 20px 0 15px;
+        font-size: 20px;
+        padding-top: 23px;
+        padding-right: 5px;
     }
 
     .reserve__ttl-num {
         display: inline-block;
         color: #fff;
-        font-size: 17px;
+        font-size: 15px;
         font-weight: normal;
+        padding: 10px 100px 0 0;
     }
 
-    .reserve__table th,
-    .reserve__table td {
+    .cancel {
+        padding-left: 10px;
+    }
+
+    .cancel__button {
+        border: none;
+        background-color: rgb(0, 105, 255);
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .fa-circle-xmark {
+        color: #fff;
+        font-size: 20px;
+        padding-top: 21px;
+        padding-left: 15px;
+    }
+
+    .reserve__table-th,
+    .reserve__table-td {
         font-size: 12px;
         font-weight: lighter;
-        padding-left: 20px;
+        padding: 5px 25px 5px 20px;
         text-align: left;
         color: #fff;
     }
 
-    .change {
-        display: inline-block;
+    .change-reserve {
         padding: 15px 30px 10px 15px;
     }
 
-    .change__button {
+    .change-reserve__submit {
         color: #fff;
         background-color: rgb(38, 31, 243);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .new-reserve__table-th {
+        font-size: 12px;
+        font-weight: lighter;
+        padding: 5px 25px 5px 20px;
+        text-align: left;
+        color: #fff;
+    }
+
+    .new-reserve__time-id {
+        height: 20px;
+        width: 80px;
+    }
+
+    .new-reserve__num-id {
+        height: 20px;
+        width: 80px;
+    }
+
+    .new-reserve__button {
+        padding: 15px 30px 10px 15px;
+        display: inline-block;
+    }
+
+    .new-reserve__submit {
+        color: #fff;
+        background-color: rgb(249, 73, 57);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .cancel-change {
+        padding: 15px 0 10px 15px;
+        display: inline-block;
+    }
+
+    .cancel-change__submit {
+        color: #fff;
+        background-color: rgb(128, 127, 129);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .history__card {
+        background-color: rgb(2, 179, 179);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 85%;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .not-oldreserve__card {
+        background-color: rgb(0, 105, 255);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 65%;
+        height: 40px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .not-oldreserve__card-msg {
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .history__table-th,
+    .history__table-td {
+        font-size: 12px;
+        font-weight: lighter;
+        padding: 10px 25px 0px 20px;
+        text-align: left;
+        color: #fff;
+    }
+
+    .review__star-ttl {
+        font-size: 15px;
+        padding: 0 25px 0px 20px;
+        color: #fff;
+        margin: 0;
+        font-weight: lighter;
+    }
+
+    .history__ttl {
+        margin: 15px auto 0 0;
+        font-size: 23px;
+
+    }
+
+    .not-review__card {
+        background-color: rgb(0, 105, 255);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 65%;
+        height: 40px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .not-review__card-msg {
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .review__body {
+        padding: 5px 25px 0px 20px;
+    }
+
+    .star__form {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    .star__form-input[type=radio] {
+        display: none;
+    }
+
+    .star__form-label {
+        position: relative;
+        padding: 0 3px;
+        color: #ccc;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+    .star__form-label:hover {
+        color: #ffcc00;
+    }
+
+    .star__form-label:hover~label {
+        color: #ffcc00;
+    }
+
+    .star__form-input[type=radio]:checked~label {
+        color: #ffcc00;
+    }
+
+    .review__hidden {
+        display: none;
+    }
+
+    .review__button {
+        display: flex;
+        padding: 15px 30px 10px 15px;
+    }
+
+    .review__submit {
+        color: #fff;
+        background-color: rgb(38, 31, 243);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .review__comment-ttl {
+        font-size: 15px;
+        color: #fff;
+        font-weight: lighter;
+    }
+
+    .review__button {
+        display: inline-block;
+    }
+
+    .review__submit-button {
+        color: #fff;
+        background-color: rgb(249, 73, 57);
         border: none;
         border-radius: 3px;
         font-size: 13px;
@@ -62,27 +311,156 @@
         cursor: pointer;
     }
 
-    .cancel {
-        display: inline-block;
-    }
-
-    .cancel__button {
+    .review__cancel-button {
         color: #fff;
-        background-color: rgb(244, 70, 70);
+        background-color: rgb(128, 127, 129);
         border: none;
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 130px;
+        width: 80px;
+        cursor: pointer;
+    }
+
+    .review-correction__ttl {
+        font-size: 15px;
+        padding: 0 25px 0px 20px;
+        color: #fff;
+    }
+
+    .review-correction__body {
+        padding: 5px 25px 0px 20px;
+    }
+
+    .history__star {
+        padding-left: 10px;
+    }
+
+    .star-rating {
+        position: relative;
+        padding: 0 3px;
+        color: #ffcc00;
+        font-size: 25px;
+    }
+
+    .star-no-rating {
+        position: relative;
+        padding: 0 3px;
+        color: #ccc;
+        font-size: 25px;
+    }
+
+    .history__comment {
+        padding-left: 10px;
+    }
+
+    .history__comment-txt {
+        font-size: 13px;
+        color: #fff;
+    }
+
+    .review-detail__button {
+        display: flex;
+        padding: 15px 30px 10px 15px;
+    }
+
+    .review-detail__submit {
+        color: #fff;
+        background-color: rgb(38, 31, 243);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .review-correction__hidden {
+        display: none;
+    }
+
+    .review-correction__comment-ttl {
+        font-size: 15px;
+        color: #fff;
+    }
+
+    .review-correction__button {
+        display: inline-block;
+    }
+
+    .review-correction__submit {
+        position: absolute;
+        padding: 15px 0 10px 5px;
+    }
+
+    .review-correction__submit-button {
+        color: #fff;
+        background-color: rgb(249, 73, 57);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
+        cursor: pointer;
+    }
+
+    .review-correction__cancel {
+        position: relative;
+        top: 15px;
+        left: 90px;
+    }
+
+    .review-correction__cancel-button {
+        color: #fff;
+        background-color: rgb(128, 127, 129);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
+        cursor: pointer;
+    }
+
+    .review-correction__delete {
+        position: relative;
+        top: -15px;
+        left: 175px;
+    }
+
+    .review-correction__delete-button {
+        color: #fff;
+        background-color: rgb(131, 99, 245);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
         cursor: pointer;
     }
 
     .user__bookmark {
-        width: 48%;
+        width: 65%;
     }
 
     .bookmark__ttl {
         margin: 0 auto 0 0;
+        font-size: 23px;
+    }
+
+    .not-bookmark__card {
+        background-color: rgb(0, 105, 255);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 50%;
+        height: 40px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .not-bookmark__card-msg {
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
     }
 
     .bookmark__list {
@@ -94,27 +472,41 @@
     }
 
     .bookmark__card {
+        background-color: #fff;
         display: flex;
-        height: auto;
+        height: 250px;
         flex-direction: column;
         border-radius: 5px;
-        width: 45%;
+        width: 43%;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-        margin-bottom: 20px;
+        margin: 0 10px 15px 10px;
+    }
+
+    .card__img {
+        height: 50%;
+    }
+
+    .card__thumbnail {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px 5px 0 0;
     }
 
     .card__content {
-        padding: 0 0 0 20px;
+        padding: 12px 10px 0 10px;
     }
 
-    .card__img img {
-        width: 100%;
+    .card__store {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0 0 0 5px;
     }
 
     .card__tag {
         font-size: 12px;
         text-align: left;
-        padding: 0 20px;
+        height: 40px;
+        padding: 0 10px;
     }
 
     .region__tag {
@@ -126,7 +518,9 @@
     }
 
     .card__button {
-        margin: 0 10px 20px 20px;
+        padding: 0 30px 10px 20px;
+        display: flex;
+        justify-content: space-between;
     }
 
     .card__button-submit {
@@ -136,9 +530,554 @@
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
+        width: 90px;
+        cursor: pointer;
+    }
+
+    .card__button-unbookmark {
+        color: #f13756fa;
+        background-color: #fff;
+        border: none;
+        font-size: 25px;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .user {
+        text-align: center;
+    }
+
+    .user__mypage {
+        padding: 0 70px 0 70px;
+    }
+
+    .user__reserve {
+        width: 100%;
+    }
+
+    .reserve__ttl {
+        margin: 0 auto 0 0;
+        font-size: 23px;
+    }
+
+    .reserve__alert {
+        background-color: rgb(236, 78, 100);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 65%;
+        height: 40px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .reserve__alert-msg {
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .not-reserve__card {
+        background-color: rgb(0, 105, 255);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 65%;
+        height: 40px;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    .not-reserve__card-msg {
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .reserve__card {
+        background-color: rgb(0, 105, 255);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 60%;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    .reserve__header {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .fa-clock {
+        color: #fff;
+        font-size: 20px;
+        padding-top: 23px;
+        padding-right: 5px;
+    }
+
+    .reserve__ttl-num {
+        display: inline-block;
+        color: #fff;
+        font-size: 15px;
+        font-weight: normal;
+        padding: 10px 100px 0 0;
+    }
+
+    .cancel {
+        padding-left: 10px;
+    }
+
+    .cancel__button {
+        border: none;
+        background-color: rgb(0, 105, 255);
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .fa-circle-xmark {
+        color: #fff;
+        font-size: 20px;
+        padding-top: 21px;
+        padding-left: 15px;
+    }
+
+    .reserve__table-th,
+    .reserve__table-td {
+        font-size: 12px;
+        font-weight: lighter;
+        padding: 5px 25px 5px 20px;
+        text-align: left;
+        color: #fff;
+    }
+
+    .change-reserve {
+        padding: 15px 30px 10px 15px;
+    }
+
+    .change-reserve__submit {
+        color: #fff;
+        background-color: rgb(38, 31, 243);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .new-reserve__table-th {
+        font-size: 12px;
+        font-weight: lighter;
+        padding: 5px 25px 5px 20px;
+        text-align: left;
+        color: #fff;
+    }
+
+    .new-reserve__time-id {
+        height: 20px;
+        width: 80px;
+    }
+
+    .new-reserve__num-id {
+        height: 20px;
+        width: 80px;
+    }
+
+    .new-reserve__button {
+        padding: 15px 30px 10px 15px;
+        display: inline-block;
+    }
+
+    .new-reserve__submit {
+        color: #fff;
+        background-color: rgb(249, 73, 57);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .cancel-change {
+        padding: 15px 0 10px 15px;
+        display: inline-block;
+    }
+
+    .cancel-change__submit {
+        color: #fff;
+        background-color: rgb(128, 127, 129);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .history__card {
+        background-color: rgb(2, 179, 179);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 60%;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+
+    .not-oldreserve__card {
+        background-color: rgb(0, 105, 255);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 65%;
+        height: 40px;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    .not-oldreserve__card-msg {
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .history__table-th,
+    .history__table-td {
+        font-size: 12px;
+        font-weight: lighter;
+        padding: 10px 25px 0px 20px;
+        text-align: left;
+        color: #fff;
+    }
+
+    .review__star-ttl {
+        font-size: 15px;
+        padding: 0 25px 0px 20px;
+        color: #fff;
+        margin: 0;
+        font-weight: lighter;
+    }
+
+    .not-review__card {
+        background-color: rgb(0, 105, 255);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 65%;
+        height: 40px;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    .not-review__card-msg {
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .review__body {
+        padding: 5px 25px 0px 20px;
+    }
+
+    .star__form {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    .star__form-input[type=radio] {
+        display: none;
+    }
+
+    .star__form-label {
+        position: relative;
+        padding: 0 3px;
+        color: #ccc;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+    .star__form-label:hover {
+        color: #ffcc00;
+    }
+
+    .star__form-label:hover~label {
+        color: #ffcc00;
+    }
+
+    .star__form-input[type=radio]:checked~label {
+        color: #ffcc00;
+    }
+
+    .review__hidden {
+        display: none;
+    }
+
+    .review__button {
+        display: flex;
+        padding: 15px 30px 10px 15px;
+    }
+
+    .review__submit {
+        color: #fff;
+        background-color: rgb(38, 31, 243);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .review__comment-ttl {
+        font-size: 15px;
+        color: #fff;
+        font-weight: lighter;
+    }
+
+    .review__button {
+        display: inline-block;
+    }
+
+    .review__submit-button {
+        color: #fff;
+        background-color: rgb(249, 73, 57);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
         width: 80px;
         cursor: pointer;
     }
-}
 
-@media screen and (max-width: 767px) {}
+    .review__cancel-button {
+        color: #fff;
+        background-color: rgb(128, 127, 129);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
+        cursor: pointer;
+    }
+
+    .review-correction__ttl {
+        font-size: 15px;
+        padding: 0 25px 0px 20px;
+        color: #fff;
+    }
+
+    .review-correction__body {
+        padding: 5px 25px 0px 20px;
+    }
+
+    .history__star {
+        padding-left: 10px;
+    }
+
+    .star-rating {
+        position: relative;
+        padding: 0 3px;
+        color: #ffcc00;
+        font-size: 25px;
+    }
+
+    .star-no-rating {
+        position: relative;
+        padding: 0 3px;
+        color: #ccc;
+        font-size: 25px;
+    }
+
+    .history__comment {
+        padding-left: 10px;
+    }
+
+    .history__comment-txt {
+        font-size: 13px;
+        color: #fff;
+    }
+
+    .review-detail__button {
+        display: flex;
+        padding: 15px 30px 10px 15px;
+    }
+
+    .review-detail__submit {
+        color: #fff;
+        background-color: rgb(38, 31, 243);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .review-correction__hidden {
+        display: none;
+    }
+
+    .review-correction__comment-ttl {
+        font-size: 15px;
+        color: #fff;
+    }
+
+    .review-correction__button {
+        display: inline-block;
+    }
+
+    .review-correction__submit {
+        position: absolute;
+        padding: 15px 0 10px 5px;
+    }
+
+    .review-correction__submit-button {
+        color: #fff;
+        background-color: rgb(249, 73, 57);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
+        cursor: pointer;
+    }
+
+    .review-correction__cancel {
+        position: relative;
+        top: 15px;
+        left: 90px;
+    }
+
+    .review-correction__cancel-button {
+        color: #fff;
+        background-color: rgb(128, 127, 129);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
+        cursor: pointer;
+    }
+
+    .review-correction__delete {
+        position: relative;
+        top: -15px;
+        left: 175px;
+    }
+
+    .review-correction__delete-button {
+        color: #fff;
+        background-color: rgb(131, 99, 245);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
+        cursor: pointer;
+    }
+
+    .user__bookmark {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .not-bookmark__card {
+        background-color: rgb(0, 105, 255);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        width: 65%;
+        height: 40px;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    .not-bookmark__card-msg {
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .bookmark__card {
+        background-color: #fff;
+        display: flex;
+        height: 250px;
+        flex-direction: column;
+        border-radius: 5px;
+        width: 50%;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        margin: 0 auto;
+    }
+
+    .card__img {
+        height: 50%;
+    }
+
+    .card__thumbnail {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .card__content {
+        padding: 12px 10px 0 10px;
+    }
+
+    .card__store {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0 0 0 5px;
+    }
+
+    .card__tag {
+        font-size: 12px;
+        text-align: left;
+        height: 40px;
+        padding: 0 10px;
+    }
+
+    .region__tag {
+        display: inline-block;
+    }
+
+    .genres__tag {
+        display: inline-block;
+    }
+
+    .card__button {
+        padding: 0 30px 10px 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card__button-submit {
+        color: #fff;
+        background-color: rgb(0, 105, 255);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 90px;
+        cursor: pointer;
+    }
+
+    .card__button-unbookmark {
+        color: #f13756fa;
+        background-color: #fff;
+        border: none;
+        font-size: 25px;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+}

@@ -7,7 +7,7 @@
 
 @section('header')
 <div class="header__search">
-    <form class="search-form" action="/shop/search" method="get">
+    <form class="search-form" action="/store/search" method="get">
         @csrf
         <div class="search-form__inner">
             <select class="search-form__region" name='region_id'>
@@ -33,14 +33,14 @@
 @section('content')
 <div class="card__list">
     @if ($stores->isEmpty())
-    <div class="flash_message">
-        {{ $msg }}
+    <div class="not-applicable__card">
+        <p class="not-applicable__card-msg">{{ $msg }}</p>
     </div>
     @endif
     @foreach($stores as $store)
     <div class="card">
         <div class="card__img">
-            <img src="{{ $store['thumbnail'] }}"></img>
+            <img class="store__img" src="{{ Storage::url($store->thumbnail) }}"></img>
         </div>
         <div class="card__content">
             <h2 class="card__store">{{ $store['name'] }}</h2>
@@ -51,6 +51,7 @@
         </div>
         <div class="card__button">
             <form class="detail" action="/detail/{{ $store['id']}}" method="GET">
+                @csrf
                 <button class="card__button-submit">詳しくみる</button>
             </form>
             @if($store->bookmark()->where('store_id', $store['id'])->where('user_id', optional(Auth::user())->id)->count() == 1)
