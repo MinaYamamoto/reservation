@@ -25,7 +25,7 @@ class LoginResponse implements LoginResponseContract
             case 'admin':
                 return redirect('/admin/representative');
             case 'representative':
-                return redirect('/admin/store');
+                return redirect('/admin/reservation');
             case 'user':
                 return redirect('/mypage');
             default:

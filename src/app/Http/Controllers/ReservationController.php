@@ -52,4 +52,12 @@ class ReservationController extends Controller
         $reservation = Reservation::find($request->reservation_id);
         return view('admin/reservation_detail', compact('reservation'));
     }
+
+    public function index() {
+        $user_id = auth()->id();
+        $store = Store::where('user_id', $user_id)->get();
+        $search_day = Carbon::today();
+        $reservations = Reservation::where('date', $search_day)->orderby('store_id', 'asc')->orderby('time_id', 'asc')->get();
+        return view('admin/reservation', compact('search_day', 'reservations', 'user_id'));
+    }
 }

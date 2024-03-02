@@ -1,5 +1,5 @@
 @media screen and (min-width: 768px) {
-    .store__content {
+    .mail__content {
         width: 60%;
         height: 65%;
         margin: -25px auto 0;
@@ -9,11 +9,11 @@
         background-color: #fff;
     }
 
-    .store__heading {
+    .mail__heading {
         text-align: center;
     }
 
-    .store__heading-ttl {
+    .mail__heading-ttl {
         color: rgb(255, 119, 0);
         padding-top: 20px;
         font-size: 26px;
@@ -31,33 +31,23 @@
         margin-bottom: 5px;
     }
 
-    .form-group__title {
-        display: flex;
-        justify-content: flex-end;
-        width: 120px;
-    }
-
-    .form-group__title-label {
+    .form-group__label {
+        width: 130px;
         padding: 10px auto;
         color: rgb(255, 119, 0);
     }
 
-    .form-group__content {
+    .form__group-content {
         width: 420px;
-        margin: 5px 0 0 30px
+        margin: 5px 0 0 3px
     }
 
-    .form-group__content-input {
+    .form-group__txt {
         height: 28px;
         width: 100%;
     }
 
-    .form-group__content-select {
-        height: 28px;
-        width: 60%;
-    }
-
-    .form-group__content-textarea {
+    .form-group__txtarea {
         width: 100%;
     }
 
@@ -69,26 +59,12 @@
         text-align: left;
     }
 
-    .form-button {
+    .form__button {
+        margin: 0 0 0 85%;
         padding: 0 0 10px 0;
-        display: flex;
-        justify-content: space-between;
     }
 
-    .form-button__button {
-        padding: 5px;
-        width: 70px;
-        height: 40px;
-        border: none;
-        border-radius: 3px;
-        text-align: center;
-        cursor: pointer;
-        color: #fff;
-        background-color: rgb(128, 127, 126);
-        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
-    }
-
-    .form-button__submit {
+    .form-group__button {
         padding: 5px;
         width: 70px;
         height: 40px;
@@ -103,9 +79,9 @@
 }
 
 @media screen and (max-width: 768px) {
-    .store__content {
-        width: 80%;
-        height: 85%;
+    .mail__content {
+        width: 60%;
+        height: 65%;
         margin: -25px auto 0;
         padding: 0 15px;
         box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
@@ -113,14 +89,14 @@
         background-color: #fff;
     }
 
-    .store__heading {
+    .mail__heading {
         text-align: center;
     }
 
-    .store__heading-ttl {
+    .mail__heading-ttl {
         color: rgb(255, 119, 0);
         padding-top: 20px;
-        font-size: 20px;
+        font-size: 26px;
         font-weight: lighter;
     }
 
@@ -135,39 +111,24 @@
         margin-bottom: 5px;
     }
 
-    .form-group__title {
-        display: flex;
-        justify-content: flex-end;
-        width: 120px;
-    }
-
-    .form-group__title-label {
-        padding: 10px 0 0 0;
-        font-size: 13px;
+    .form-group__label {
+        width: 250px;
+        padding: 10px auto;
         color: rgb(255, 119, 0);
     }
 
-    .form-group__content {
+    .form__group-content {
         width: 420px;
-        margin: 5px 0 0 30px
+        margin: 5px 0 0 3px
     }
 
-    .form-group__content-input {
+    .form-group__txt {
         height: 28px;
         width: 100%;
     }
 
-    .form-group__content-select {
-        height: 28px;
-        width: 60%;
-    }
-
-    .form-group__content-textarea {
+    .form-group__txtarea {
         width: 100%;
-    }
-
-    .form-group__thumbnail {
-        font-size: 11px;
     }
 
     .form__error {
@@ -178,28 +139,14 @@
         text-align: left;
     }
 
-    .form-button {
+    .form__button {
+        margin: 0 0 0 45%;
         padding: 0 0 10px 0;
-        display: flex;
-        justify-content: space-between;
     }
 
-    .form-button__button {
+    .form-group__button {
         padding: 5px;
         width: 70px;
-        height: 40px;
-        border: none;
-        border-radius: 3px;
-        text-align: center;
-        cursor: pointer;
-        color: #fff;
-        background-color: rgb(128, 127, 126);
-        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
-    }
-
-    .form-button__submit {
-        padding: 5px;
-        width: 60px;
         height: 40px;
         border: none;
         border-radius: 3px;

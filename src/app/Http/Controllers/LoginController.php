@@ -13,7 +13,7 @@ class LoginController extends Controller
         if(in_array('admin', $checkRole)) {
             return redirect('/admin/representative');
         } elseif(in_array('representative', $checkRole)) {
-            return redirect('/admin/store');
+            return redirect('/admin/reservation');
         } elseif(in_array('user', $checkRole)) {
             return redirect('/mypage');
         }
