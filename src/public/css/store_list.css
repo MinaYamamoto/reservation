@@ -1,0 +1,132 @@
+@media screen and (min-width: 768px) {
+    .store-list__signup {
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    .store-list__button {
+        margin: 15px 0 0 5%;
+    }
+
+    .store-list__registration {
+        padding: 8px 15px 8px 15px;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        background-color: rgb(255, 119, 0);
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .store-list__ttl {
+        padding-left: 25%;
+        font-size: 20px;
+    }
+
+    .store-list__date {
+        padding: 10px 20px 10px 25%;
+    }
+
+
+    .store-list__table-table {
+        width: 55%;
+        margin: 5px auto;
+    }
+
+    .store-list__table-th {
+        padding: 13px 5px 5px 15px;
+        width: 25%;
+        text-align: center;
+        border-top: 1px solid rgb(200, 197, 197);
+        font-size: 13px;
+    }
+
+    .store-list__table-td {
+        padding: 10px 0 5px 15px;
+        width: 25%;
+        text-align: center;
+        border-top: 1px solid rgb(200, 197, 197);
+        font-size: 13px;
+    }
+
+    .store-list__update {
+        padding: 8px 15px 8px 15px;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        background-color: rgb(255, 119, 0);
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .store-list__signup {
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    .store-list__button {
+        margin: 15px 0 0 5%;
+    }
+
+    .store-list__registration {
+        padding: 8px 15px 8px 15px;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        background-color: rgb(255, 119, 0);
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .store-list__ttl {
+        padding-left: 20%;
+        font-size: 20px;
+    }
+
+    .store-list__date {
+        padding: 10px 20px 10px 20%;
+    }
+
+    .store-list__table-table {
+        width: 90%;
+        margin: 5px auto;
+    }
+
+    .store-list__table-th {
+        padding: 13px 5px 5px 15px;
+        width: 25%;
+        text-align: center;
+        border-top: 1px solid rgb(200, 197, 197);
+        font-size: 13px;
+    }
+
+    .store-list__table-td {
+        padding: 10px 0 5px 15px;
+        width: 25%;
+        text-align: center;
+        border-top: 1px solid rgb(200, 197, 197);
+        font-size: 13px;
+    }
+
+    .store-list__update {
+        padding: 8px 15px 8px 15px;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        background-color: rgb(255, 119, 0);
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+}

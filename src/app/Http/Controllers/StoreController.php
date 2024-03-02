@@ -8,7 +8,8 @@ use App\Models\Region;
 use App\Models\Bookmark;
 use App\Models\Time;
 use App\Models\Num;
-use App\Http\Requests\StoreRequest;
+use App\Http\Requests\CreateStoreRequest;
+use App\Http\Requests\UpdateStoreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,19 +47,43 @@ class StoreController extends Controller
     }
 
     public function adminIndex() {
+        $stores = Store::all();
+        $regions = Region::all();
+        $genres = Genre::all();
+        return view('/admin/store_list', compact('stores', 'regions', 'genres'));
+    }
+
+    public function updateIndex(Request $request) {
+        $store = Store::find($request->store_id);
+        $regions = Region::all();
+        $genres = Genre::all();
+        return view('/admin/store_update', compact('store', 'regions', 'genres'));
+
+    }
+
+        public function update(UpdateStoreRequest $request) {
+        $upStore = $request->only(['name', 'genre_id', 'region_id', 'user_id', 'overview']);
+        if(request('thumbnail')) {
+            $file_name = $request->file('thumbnail')->getClientOriginalName();
+            $upStore['thumbnail'] = request('thumbnail')->storeAs('public/post_img', $file_name);
+        }
+        Store::find($request->store_id)->update($upStore);
+        return redirect('/admin/storelist');
+
+    }
+
+    public function storeIndex() {
         $regions = Region::all();
         $genres = Genre::all();
         return view('/admin/store', compact('regions', 'genres'));
     }
 
-    public function store(StoreRequest $request)
+    public function store(CreateStoreRequest $request)
     {
-        $store = $request->only(['name', 'genre_id', 'region_id', 'user_id', 'overview']);
-        if(request('thumbnail')) {
-            $file_name = $request->file('thumbnail')->getClientOriginalName();
-            $store['thumbnail'] = request('thumbnail')->storeAs('public/post_img', $file_name);
-        }
-        Store::create($store);
-        return redirect('/admin/store');
+        $newStore = $request->only(['name', 'genre_id', 'region_id', 'user_id', 'overview']);
+        $file_name = $request->file('thumbnail')->getClientOriginalName();
+        $newStore['thumbnail'] = request('thumbnail')->storeAs('public/post_img', $file_name);
+        Store::create($newStore);
+        return redirect('/admin/storelist');
     }
 }

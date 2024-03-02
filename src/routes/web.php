@@ -9,6 +9,7 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,8 +46,15 @@ Route::group(['middleware' => ['auth', 'can:admin-authority']], function() {
 });
 
 Route::group(['middleware' => ['auth', 'can:representative-authority']], function() {
+    Route::get('/admin/reservation',  [ReservationController::class, 'index']);
     Route::get('/admin/reservation/search',  [ReservationController::class, 'search']);
     Route::get('/admin/reservation/{reservation_id}',  [ReservationController::class, 'detail']);
-    Route::get('/admin/store', [StoreController::class, 'adminIndex']);
-    Route::post('/admin/store', [StoreController::class, 'store']);
+    Route::get('/admin/storelist', [StoreController::class, 'adminIndex']);
+    Route::get('/admin/storelist/{store_id}', [StoreController::class, 'updateIndex']);
+    Route::post('/admin/storelist/{store_id}', [StoreController::class, 'update']);
+    Route::get('/admin/store/registration', [StoreController::class, 'storeIndex']);
+    Route::post('/admin/store/registration', [StoreController::class, 'store']);
+    Route::get('/admin/mail', [MailController::class, 'index']);
+    Route::post('/admin/mail/confirm', [MailController::class, 'confirm']);
+    Route::post('/admin/mail/execute', [MailController::class, 'execute']);
 });

@@ -68,8 +68,9 @@
                 <span class="square__button"></span>
             </div>
             <ul>
-                <li class="hamburger-item"><a class="hamburger-link" href="/admin/store">Store information</a></li>
-                <li class="hamburger-item"><a class="hamburger-link" href="/admin/reservation/search">Reservation list</a></li>
+                <li class="hamburger-item"><a class="hamburger-link" href="/admin/storelist">Store information</a></li>
+                <li class="hamburger-item"><a class="hamburger-link" href="/admin/reservation">Reservation list</a></li>
+                <li class="hamburger-item"><a class="hamburger-link" href="/admin/mail">Mail</a></li>
                 <form class="logout" action="/logout" method="POST">
                     @csrf
                     <li class="hamburger-item"><button class="logout__button">Logout</button></li>

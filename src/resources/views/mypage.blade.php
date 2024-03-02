@@ -39,32 +39,38 @@
                     </button>
                 </form>
             </div>
-            <table class="reserve__table">
-                <tr>
-                    <th class="reserve__table-th">Shop</th>
-                    <td class="reserve__table-td">
-                        {{ $reservation->store->name }}
-                    </td>
-                </tr>
-                <tr>
-                    <th class="reserve__table-th">Date</th>
-                    <td class="reserve__table-td">
-                        {{ $reservation->date }}
-                    </td>
-                </tr>
-                <tr>
-                    <th class="reserve__table-th">Time</th>
-                    <td class="reserve__table-td">
-                        {{ $reservation->time->time->format('H:i') }}
-                    </td>
-                </tr>
-                <tr>
-                    <th class="reserve__table-th">Number</th>
-                    <td class="reserve__table-td">
-                        {{ $reservation->num->num }}人
-                    </td>
-                </tr>
-            </table>
+            <div class="reserve__content">
+                <table class="reserve__table">
+                    <tr>
+                        <th class="reserve__table-th">Shop</th>
+                        <td class="reserve__table-td">
+                            {{ $reservation->store->name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="reserve__table-th">Date</th>
+                        <td class="reserve__table-td">
+                            {{ $reservation->date }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="reserve__table-th">Time</th>
+                        <td class="reserve__table-td">
+                            {{ $reservation->time->time->format('H:i') }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="reserve__table-th">Number</th>
+                        <td class="reserve__table-td">
+                            {{ $reservation->num->num }}人
+                        </td>
+                    </tr>
+                </table>
+                <div class="reserve__qr">
+                    <h3 class="reserve__qr-ttl">予約確認</br>QRコード</h3>
+                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(50)->generate(url('/admin/reservation',['reservation_id' => $reservation->id]))) !!} ">
+                </div>
+            </div>
             <div class="change-reserve">
                 <button class="change-reserve__submit" id="change-reserve__submit">予約内容を変更</button>
             </div>

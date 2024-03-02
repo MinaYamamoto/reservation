@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRequest extends FormRequest
+class UpdateStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,7 +28,7 @@ class StoreRequest extends FormRequest
             'genre_id' => 'required',
             'region_id' => 'required',
             'overview' => 'required|max:255',
-            'thumbnail' => 'required'
+            'thumbnail' => 'mimes:jpg,jpeg,png|max:10240'
         ];
     }
 
@@ -41,7 +41,8 @@ class StoreRequest extends FormRequest
             'region_id.required' => '地域を選択してください',
             'overview.required' => '店舗概要を入力してください',
             'overview.max' => '店舗概要は255文字以内で入力してください',
-            'thumbnail.required' => 'ファイルを選択してください',
+            'thumbnail.mimes' => '画像ファイルを選択してください',
+            'thumbnail.max' => '10M以下の画像ファイルを選択してください',
         ];
     }
 }
