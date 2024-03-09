@@ -95,10 +95,6 @@
         padding-left: 15px;
     }
 
-    .reserve__content {
-        display: flex;
-    }
-
     .reserve__table {
         width: 75%
     }
@@ -314,10 +310,6 @@
         font-weight: lighter;
     }
 
-    .review__button {
-        display: inline-block;
-    }
-
     .review__submit-button {
         color: #fff;
         background-color: rgb(249, 73, 57);
@@ -448,6 +440,26 @@
     .review-correction__delete-button {
         color: #fff;
         background-color: rgb(131, 99, 245);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
+        cursor: pointer;
+    }
+
+    .checkout__ttl {
+        margin: 15px auto 0 0;
+    }
+
+    .checkout__button {
+        padding-bottom: 20px;
+    }
+
+    .checkout__button-submit {
+        color: #fff;
+        background-color: rgb(38, 31, 243);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
         border: none;
         border-radius: 3px;
         font-size: 13px;
@@ -570,7 +582,7 @@
     }
 
     .user__mypage {
-        padding: 0 70px 0 70px;
+        padding: 0 10px 0 10px;
     }
 
     .user__reserve {
@@ -578,7 +590,7 @@
     }
 
     .reserve__ttl {
-        margin: 0 auto 0 0;
+        margin-left: 20%;
         font-size: 23px;
     }
 
@@ -641,7 +653,7 @@
         color: #fff;
         font-size: 15px;
         font-weight: normal;
-        padding: 10px 100px 0 0;
+        padding: 10px 20% 0 0;
     }
 
     .cancel {
@@ -662,10 +674,6 @@
         padding-left: 15px;
     }
 
-    .reserve__content {
-        display: flex;
-    }
-
     .reserve__table {
         width: 75%
     }
@@ -680,12 +688,13 @@
     }
 
     .reserve__qr {
-        padding: 20px 0 0 5%;
+        padding: 0 0 0 15px;
     }
 
     .reserve__qr-ttl {
-        font-size: 13px;
+        font-size: 12px;
         font-weight: lighter;
+        margin: 5px 0 5px 0;
         color: #fff;
     }
 
@@ -711,7 +720,7 @@
     .new-reserve__table-th {
         font-size: 12px;
         font-weight: lighter;
-        padding: 5px 25px 5px 20px;
+        padding: 5px 20px 5px 10px;
         text-align: left;
         color: #fff;
     }
@@ -758,6 +767,10 @@
         cursor: pointer;
     }
 
+    .history__ttl {
+        margin-left: 20%;
+    }
+
     .history__card {
         background-color: rgb(2, 179, 179);
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
@@ -766,7 +779,6 @@
         margin: 0 auto;
         margin-bottom: 15px;
     }
-
 
     .not-oldreserve__card {
         background-color: rgb(0, 105, 255);
@@ -858,7 +870,7 @@
     }
 
     .review__button {
-        display: flex;
+        display: inline-block;
         padding: 15px 30px 10px 15px;
     }
 
@@ -879,8 +891,8 @@
         font-weight: lighter;
     }
 
-    .review__button {
-        display: inline-block;
+    .review__comment {
+        width: 100%;
     }
 
     .review__submit-button {
@@ -969,11 +981,7 @@
 
     .review-correction__button {
         display: inline-block;
-    }
-
-    .review-correction__submit {
-        position: absolute;
-        padding: 15px 0 10px 5px;
+        padding: 5px 0 3px 20px;
     }
 
     .review-correction__submit-button {
@@ -985,12 +993,6 @@
         height: 30px;
         width: 80px;
         cursor: pointer;
-    }
-
-    .review-correction__cancel {
-        position: relative;
-        top: 15px;
-        left: 90px;
     }
 
     .review-correction__cancel-button {
@@ -1021,6 +1023,32 @@
         cursor: pointer;
     }
 
+    .mypage__pagination {
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    .checkout__ttl {
+        margin-left: 20%;
+    }
+
+    .checkout__button {
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    .checkout__button-submit {
+        color: #fff;
+        background-color: rgb(38, 31, 243);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 80px;
+        cursor: pointer;
+    }
+
     .user__bookmark {
         width: 100%;
         margin: 0 auto;
@@ -1043,15 +1071,21 @@
         padding: 10px 0;
     }
 
+    .bookmark__ttl {
+        margin-left: 20%;
+
+    }
+
     .bookmark__card {
         background-color: #fff;
         display: flex;
         height: 250px;
         flex-direction: column;
         border-radius: 5px;
-        width: 50%;
+        width: 200px;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
         margin: 0 auto;
+        margin-bottom: 15px;
     }
 
     .card__img {

@@ -10,7 +10,8 @@
         <p class="msg__txt">ご予約ありがとうございます</p>
     </div>
     <div class="form__button">
-        <a class="form__button-submit" href="/" type="submit">戻る</a>
+        <a class="form__button-submit" href="/" type="submit" id="return-button">戻る</a>
     </div>
+    <script src="{{ mix('js/done.js')}}"></script>
 </div>
 @endsection

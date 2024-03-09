@@ -3,6 +3,7 @@
 @section('stylesheet')
 <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
 <script src="https://kit.fontawesome.com/8b04c7b9b9.js" crossorigin="anonymous"></script>
+<script src="https://js.stripe.com/v3/"></script>
 @endsection
 
 @section('content')
@@ -39,38 +40,38 @@
                     </button>
                 </form>
             </div>
-            <div class="reserve__content">
-                <table class="reserve__table">
-                    <tr>
-                        <th class="reserve__table-th">Shop</th>
-                        <td class="reserve__table-td">
-                            {{ $reservation->store->name }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="reserve__table-th">Date</th>
-                        <td class="reserve__table-td">
-                            {{ $reservation->date }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="reserve__table-th">Time</th>
-                        <td class="reserve__table-td">
-                            {{ $reservation->time->time->format('H:i') }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="reserve__table-th">Number</th>
-                        <td class="reserve__table-td">
-                            {{ $reservation->num->num }}人
-                        </td>
-                    </tr>
-                </table>
-                <div class="reserve__qr">
-                    <h3 class="reserve__qr-ttl">予約確認</br>QRコード</h3>
-                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(50)->generate(url('/admin/reservation',['reservation_id' => $reservation->id]))) !!} ">
-                </div>
-            </div>
+            <table class="reserve__table">
+                <tr>
+                    <th class="reserve__table-th">Shop</th>
+                    <td class="reserve__table-td">
+                        {{ $reservation->store->name }}
+                    </td>
+                </tr>
+                <tr>
+                    <th class="reserve__table-th">Date</th>
+                    <td class="reserve__table-td">
+                        {{ $reservation->date }}
+                    </td>
+                </tr>
+                <tr>
+                    <th class="reserve__table-th">Time</th>
+                    <td class="reserve__table-td">
+                        {{ $reservation->time->time->format('H:i') }}
+                    </td>
+                </tr>
+                <tr>
+                    <th class="reserve__table-th">Number</th>
+                    <td class="reserve__table-td">
+                        {{ $reservation->num->num }}人
+                    </td>
+                </tr>
+                <tr>
+                    <th class="reserve__table-th">QRCode</th>
+                    <td class="reserve__table-td">
+                        <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(50)->generate(url('/admin/reservation',['reservation_id' => $reservation->id]))) !!} ">
+                    </td>
+                </tr>
+            </table>
             <div class="change-reserve">
                 <button class="change-reserve__submit" id="change-reserve__submit">予約内容を変更</button>
             </div>
@@ -205,7 +206,9 @@
             </div>
         </div>
         @endforeach
-        {{ $oldReservations->links() }}
+        <div class="mypage__pagination">
+            {{ $oldReservations->links() }}
+        </div>
         <h2 class="history__ttl">レビュー履歴</h2>
         @if (count($reviews) == 0)
         <div class="not-review__card">
@@ -226,7 +229,7 @@
                 <tr>
                     <th class="history__table-th">PostDate</th>
                     <td class="history__table-td">
-                        {{ $review->created_at->format('y-m-d') }}
+                        {{ $review->created_at->format('Y-m-d') }}
                     </td>
                 </tr>
             </table>
@@ -266,26 +269,49 @@
                         <h3 class="review__comment-ttl">コメント</h3>
                         <textarea class="review__comment" name="comment" rows="5" cols="30">{{ $review->comment }}</textarea>
                     </div>
-                    <div class="review-correction__submit">
+                    <div class="review-correction__button">
                         <button type="button" class="review-correction__submit-button">修正する</button>
                         <input type="hidden" name="id" value="{{ $review->id }}">
                     </div>
-                    <div class="review-correction__cancel">
+                    <div class="review-correction__button">
                         <button type="button" class="review-correction__cancel-button">キャンセル</button>
                     </div>
                 </form>
-                <form class="review-delete__form" action="review/{{ $review->id }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <div class="review-correction__delete">
-                        <button type="button" class="review-correction__delete-button">削除</button>
-                        <input type="hidden" name="id" value="{{ $review->id }}">
-                    </div>
-                </form>
+                <div class="review-correction__button">
+                    <form class="review-delete__form" action="review/{{ $review->id }}"     method="post">
+                        @csrf
+                        @method('DELETE')
+                            <button type="button" class="review-correction__delete-button">削除</button>
+                            <input type="hidden" name="id" value="{{ $review->id }}">
+                    </form>
+                </div>
             </div>
         </div>
         @endforeach
-        {{ $reviews->links() }}
+        <div class="mypage__pagination">
+            {{ $reviews->links() }}
+        </div>
+        <div class="checkout">
+            <h2 class="checkout__ttl">決済</h2>
+            <div class="checkout__button">
+                <button type="button" id="checkout-button" class="checkout__button-submit">支払い</button>
+            </div>
+                <script>
+                    var stripe = Stripe("{{ env('STRIPE_KEY') }}");
+                    var checkoutButton = document.querySelector('#checkout-button');
+                    checkoutButton.addEventListener('click', function () {
+                    stripe.redirectToCheckout({
+                        lineItems: [{
+                        price: "{{ env('STRIPE_BASIC_ID') }}",
+                        quantity: 1
+                        }],
+                        mode: 'payment',
+                        successUrl: '{{ route("success") }}',
+                        cancelUrl: '{{ route("mypage") }}'
+                        });
+                    });
+                </script>
+        </div>
     </div>
     <div class="user__bookmark">
         <h2 class="bookmark__ttl">お気に入り店舗</h2>
@@ -301,7 +327,7 @@
             @if($store->bookmark()->where('store_id', $store['id'])->where('user_id', optional(Auth::user())->id)->count() == 1)
             <div class="bookmark__card">
                 <div class="card__img">
-                    <img class="card__thumbnail" src="{{ $store['thumbnail'] }}"></img>
+                    <img class="card__thumbnail" src="{{ Storage::url($store->thumbnail) }}"></img>
                 </div>
                 <div class="card__content">
                     <h2 class="card__store">{{ $store->name }}</h2>

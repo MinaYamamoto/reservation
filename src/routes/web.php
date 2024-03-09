@@ -10,6 +10,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\StripeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,7 @@ Route::get('/store/search', [StoreController::class, 'search']);
 Route::get('/detail/{store_id}', [StoreController::class, 'detail']);
 
 Route::middleware('verified')->group(function() {
-    Route::get('/mypage',[MypageController::class, 'index']);
+    Route::get('/mypage',[MypageController::class, 'index'])->name('mypage');
     Route::post('/bookmark', [BookmarkController::class, 'store']);
     Route::delete('/bookmark/{store_id}', [BookmarkController::class, 'destroy']);
     Route::post('/reservation', [ReservationController::class, 'store']);
@@ -38,6 +39,9 @@ Route::middleware('verified')->group(function() {
     Route::post('/review', [ReviewController::class, 'store']);
     Route::patch('/review/{review_id}', [ReviewController::class, 'update']);
     Route::delete('/review/{review_id}', [ReviewController::class, 'destroy']);
+    Route::get('/success',function(){
+        return view('success');
+    })->name('success');
 });
 
 Route::group(['middleware' => ['auth', 'can:admin-authority']], function() {
