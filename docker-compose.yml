@@ -10,11 +10,27 @@ services:
       - ./src:/var/www/
     depends_on:
       - php
+    environment:
+      TZ: Asia/Tokyo
 
   php:
     build: ./docker/php
     volumes:
       - ./src:/var/www/
+    depends_on:
+      - mysql
+    environment:
+      TZ: Asia/Tokyo
+
+  cron:
+    build: ./docker/cron
+    volumes:
+      - ./src:/var/www/
+    tty: true
+    depends_on:
+      - php
+    environment:
+      TZ: Asia/Tokyo
 
   mysql:
     image: mysql:8.0.26
@@ -23,6 +39,7 @@ services:
       MYSQL_DATABASE: laravel_db
       MYSQL_USER: laravel_user
       MYSQL_PASSWORD: laravel_pass
+      TZ: Asia/Tokyo
     command: mysqld --default-authentication-plugin=mysql_native_password
     volumes:
       - ./docker/mysql/data:/var/lib/mysql
@@ -35,6 +52,7 @@ services:
       - PMA_HOST=mysql
       - PMA_USER=laravel_user
       - PMA_PASSWORD=laravel_pass
+      - TZ
     depends_on:
       - mysql
     ports:

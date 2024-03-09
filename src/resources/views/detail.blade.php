@@ -10,9 +10,9 @@
     <div class="store__detail">
         <div class="store__detail-header">
             <div class="back__button">
-                <button class="back__button-submit" onClick="history.back()">
+                <a href="/" class="back__button-submit" id="back-button">
                     <i class="fa-solid fa-chevron-left"></i>
-                </button>
+                </a>
             </div>
             <div class="store__name">
                 <h2 class="store__name-header">{{$store->name}}</h2>
@@ -36,7 +36,7 @@
             <input type="hidden" name="store_id" value="{{ $store->id}}">
             <input type="hidden" name="user_id" value="{{ optional(auth()->user())->id }}">
             <div class="reserve__day">
-                <input type="date" name="date" class="reserve__date" id="reserve__date" value="{{ old('date') }}">
+                <input type="date" name="date" class="reserve__date" id="reserve__date" value="{{ old('date') }}" data-old-date="{{ old('date') }}">
                 <div class="form__error">
                     @error('date')
                     {{ $message }}
@@ -91,7 +91,7 @@
                 <script src="{{ mix('js/detail.js')}}"></script>
             </div>
             <div class="reserve__button">
-                <button class="reserve__button-submit">予約する</button>
+                <button class="reserve__button-submit" id="reserve-button">予約する</button>
             </div>
         </form>
     </div>

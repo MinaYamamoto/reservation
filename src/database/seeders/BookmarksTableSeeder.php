@@ -19,6 +19,25 @@ class BookmarksTableSeeder extends Seeder
             'store_id' => 1,
         ];
         DB::table('bookmarks')->insert($param);
-
+        $param = [
+            'user_id' => 3,
+            'store_id' => 3,
+        ];
+        DB::table('bookmarks')->insert($param);
+        $param = [
+            'user_id' => 3,
+            'store_id' => 6,
+        ];
+        DB::table('bookmarks')->insert($param);
+        $param = [
+            'user_id' => 3,
+            'store_id' => 8,
+        ];
+        DB::table('bookmarks')->insert($param);
+        $param = [
+            'user_id' => 3,
+            'store_id' => 12,
+        ];
+        DB::table('bookmarks')->insert($param);
     }
 }
