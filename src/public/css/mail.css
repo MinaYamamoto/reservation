@@ -20,12 +20,6 @@
         font-weight: lighter;
     }
 
-    .form {
-        margin: 0 auto;
-        text-align: center;
-    }
-
-
     .form-group {
         display: flex;
         margin-bottom: 5px;
@@ -80,7 +74,7 @@
 
 @media screen and (max-width: 768px) {
     .mail__content {
-        width: 60%;
+        width: 90%;
         height: 65%;
         margin: -25px auto 0;
         padding: 0 15px;
@@ -95,40 +89,31 @@
 
     .mail__heading-ttl {
         color: rgb(255, 119, 0);
-        padding-top: 20px;
+        padding-top: 10px;
         font-size: 26px;
         font-weight: lighter;
     }
 
-    .form {
-        margin: 0 auto;
-        text-align: center;
-    }
-
-
     .form-group {
-        display: flex;
-        margin-bottom: 5px;
+        margin: 10px 0 10px 0;
     }
 
     .form-group__label {
         width: 250px;
-        padding: 10px auto;
         color: rgb(255, 119, 0);
     }
 
     .form__group-content {
-        width: 420px;
         margin: 5px 0 0 3px
     }
 
     .form-group__txt {
         height: 28px;
-        width: 100%;
+        width: 80%;
     }
 
     .form-group__txtarea {
-        width: 100%;
+        width: 80%;
     }
 
     .form__error {
@@ -140,7 +125,7 @@
     }
 
     .form__button {
-        margin: 0 0 0 45%;
+        margin: 0 0 0 70%;
         padding: 0 0 10px 0;
     }
 

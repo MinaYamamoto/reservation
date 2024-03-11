@@ -73,7 +73,7 @@
                 </tr>
             </table>
             <div class="change-reserve">
-                <button class="change-reserve__submit" id="change-reserve__submit">予約内容を変更</button>
+                <button class="change-reserve__submit" id="change-reserve__submit">予約変更フォーム</button>
             </div>
             <div class="hidden" id="hidden">
                 <form class="new-reserve__form" action="/reservation/{{$reservation->id}}" method="post">
@@ -172,7 +172,7 @@
                 </tr>
             </table>
             <div class="review__button">
-                <button class="review__submit" data-reservation-id="{{ $oldReservation->id }}">レビューを投稿</button>
+                <button class="review__submit" data-reservation-id="{{ $oldReservation->id }}">レビュー投稿フォーム</button>
             </div>
             <div class="review__hidden" id="review__hidden">
                 <form class="review__form" action="/review" method="post">
@@ -246,7 +246,7 @@
                 <p class="history__comment-txt">{{ $review->comment }}</p>
             </div>
             <div class="review-detail__button">
-                <button id="review-detail__submit" class="review-detail__submit" data-reservation-id="{{ $review->id }}">レビューを修正</button>
+                <button id="review-detail__submit" class="review-detail__submit" data-reservation-id="{{ $review->id }}">レビュー修正フォーム</button>
             </div>
             <div class="review-correction__hidden" id="review-correction__hidden">
                 <form class="review-correction__form" action="review/{{ $review->id }}" method="post">
@@ -277,14 +277,14 @@
                         <button type="button" class="review-correction__cancel-button">キャンセル</button>
                     </div>
                 </form>
-                <div class="review-correction__button">
-                    <form class="review-delete__form" action="review/{{ $review->id }}"     method="post">
-                        @csrf
-                        @method('DELETE')
-                            <button type="button" class="review-correction__delete-button">削除</button>
-                            <input type="hidden" name="id" value="{{ $review->id }}">
-                    </form>
-                </div>
+                <form class="review-delete__form" action="review/{{ $review->id }}"     method="post">
+                    @csrf
+                    @method('DELETE')
+                    <div class="review-delete__button">
+                        <button type="button" class="review-correction__delete-button">レビュー削除</button>
+                        <input type="hidden" name="id" value="{{ $review->id }}">
+                    </div>
+                </form>
             </div>
         </div>
         @endforeach

@@ -40,7 +40,7 @@
 
 @media screen and (max-width: 768px) {
     .result__content {
-        width: 350px;
+        width: 250px;
         height: 180px;
         margin: auto;
         margin-top: 20px;

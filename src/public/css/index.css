@@ -2,7 +2,7 @@
     .header__search {
         height: 32px;
         width: 85%;
-        padding-left: 45%;
+        padding-left: 50%;
         background-color: #e4e4ec;
         display: flex;
     }
@@ -33,10 +33,6 @@
         box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
     }
 
-    .search-form__text {
-        width: 300px;
-    }
-
     .search-form__input {
         border: none;
         outline: none;
@@ -53,7 +49,7 @@
         height: auto;
         display: flex;
         flex-wrap: wrap;
-        padding: 10px 5% 5% 5%;
+        padding: 10px 3% 5% 3%;
     }
 
     .not-applicable__card {
@@ -76,7 +72,7 @@
         height: 270px;
         flex-direction: column;
         border-radius: 5px;
-        width: 23%;
+        width: 22%;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
         margin: 0 10px 15px 10px;
         background-color: #fff;

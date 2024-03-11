@@ -20,20 +20,12 @@
         font-weight: lighter;
     }
 
-    .form {
-        margin: 0 auto;
-        text-align: center;
-    }
-
-
     .form-group {
         display: flex;
         margin-bottom: 5px;
     }
 
     .form-group__title {
-        display: flex;
-        justify-content: flex-end;
         width: 120px;
     }
 
@@ -44,7 +36,7 @@
 
     .form-group__content {
         width: 420px;
-        margin: 5px 0 0 30px
+        margin: 5px 0 0 10px
     }
 
     .form-group__content-input {
@@ -124,14 +116,9 @@
 
     .store__heading-ttl {
         color: rgb(255, 119, 0);
-        padding-top: 20px;
+        padding-top: 10px;
         font-size: 20px;
         font-weight: lighter;
-    }
-
-    .form {
-        margin: 0 auto;
-        text-align: center;
     }
 
     .form-group {
@@ -140,9 +127,8 @@
     }
 
     .form-group__title {
-        display: flex;
-        justify-content: flex-end;
-        width: 120px;
+        width: 180px;
+        font-size: 11px;
     }
 
     .form-group__title-label {
@@ -153,7 +139,7 @@
 
     .form-group__content {
         width: 420px;
-        margin: 5px 0 0 30px
+        margin: 5px 0 0 0;
     }
 
     .form-group__content-input {

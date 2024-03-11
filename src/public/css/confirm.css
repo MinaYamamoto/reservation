@@ -19,12 +19,6 @@
         font-weight: lighter;
     }
 
-    .form {
-        margin: 0 auto;
-        text-align: center;
-    }
-
-
     .form-group {
         display: flex;
         margin-bottom: 5px;
@@ -81,12 +75,6 @@
         font-size: 26px;
         font-weight: lighter;
     }
-
-    .form {
-        margin: 0 auto;
-        text-align: center;
-    }
-
 
     .form-group {
         display: flex;

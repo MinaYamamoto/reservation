@@ -36,7 +36,7 @@
     .not-reserve__card {
         background-color: rgb(0, 105, 255);
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-        width: 65%;
+        width: 70%;
         height: 40px;
         border-radius: 5px;
         margin-bottom: 15px;
@@ -77,10 +77,6 @@
         padding: 10px 100px 0 0;
     }
 
-    .cancel {
-        padding-left: 10px;
-    }
-
     .cancel__button {
         border: none;
         background-color: rgb(0, 105, 255);
@@ -105,16 +101,6 @@
         font-weight: lighter;
         padding: 5px 5px 5px 15px;
         text-align: left;
-        color: #fff;
-    }
-
-    .reserve__qr {
-        padding-top: 20px;
-    }
-
-    .reserve__qr-ttl {
-        font-size: 13px;
-        font-weight: lighter;
         color: #fff;
     }
 
@@ -162,7 +148,7 @@
 
     .new-reserve__submit {
         color: #fff;
-        background-color: rgb(249, 73, 57);
+        background-color: rgb(38, 31, 243);
         border: none;
         border-radius: 3px;
         font-size: 13px;
@@ -178,7 +164,7 @@
 
     .cancel-change__submit {
         color: #fff;
-        background-color: rgb(128, 127, 129);
+        background-color: rgb(168, 166, 166);
         border: none;
         border-radius: 3px;
         font-size: 13px;
@@ -198,7 +184,7 @@
     .not-oldreserve__card {
         background-color: rgb(0, 105, 255);
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-        width: 65%;
+        width: 70%;
         height: 40px;
         border-radius: 5px;
         margin-bottom: 15px;
@@ -237,7 +223,7 @@
     .not-review__card {
         background-color: rgb(0, 105, 255);
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-        width: 65%;
+        width: 70%;
         height: 40px;
         border-radius: 5px;
         margin-bottom: 15px;
@@ -251,7 +237,7 @@
     }
 
     .review__body {
-        padding: 5px 25px 0px 20px;
+        padding: 5px 25px 0px 10px;
     }
 
     .star__form {
@@ -289,7 +275,7 @@
     }
 
     .review__button {
-        display: flex;
+        display: inline-block;
         padding: 15px 30px 10px 15px;
     }
 
@@ -312,23 +298,23 @@
 
     .review__submit-button {
         color: #fff;
-        background-color: rgb(249, 73, 57);
+        background-color: rgb(38, 31, 243);
         border: none;
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 80px;
+        width: 150px;
         cursor: pointer;
     }
 
     .review__cancel-button {
         color: #fff;
-        background-color: rgb(128, 127, 129);
+        background-color: rgb(168, 166, 166);
         border: none;
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 80px;
+        width: 150px;
         cursor: pointer;
     }
 
@@ -395,22 +381,18 @@
     }
 
     .review-correction__button {
+        padding: 5px 5px 5px 20px;
         display: inline-block;
-    }
-
-    .review-correction__submit {
-        position: absolute;
-        padding: 15px 0 10px 5px;
     }
 
     .review-correction__submit-button {
         color: #fff;
-        background-color: rgb(249, 73, 57);
+        background-color: rgb(38, 31, 243);
         border: none;
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 80px;
+        width: 150px;
         cursor: pointer;
     }
 
@@ -422,12 +404,12 @@
 
     .review-correction__cancel-button {
         color: #fff;
-        background-color: rgb(128, 127, 129);
+        background-color: rgb(168, 166, 166);
         border: none;
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 80px;
+        width: 150px;
         cursor: pointer;
     }
 
@@ -437,14 +419,18 @@
         left: 175px;
     }
 
+    .review-delete__button {
+        padding: 10px 0 10px 20px;
+    }
+
     .review-correction__delete-button {
         color: #fff;
-        background-color: rgb(131, 99, 245);
+        background-color: rgb(249, 73, 57);
         border: none;
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 80px;
+        width: 150px;
         cursor: pointer;
     }
 
@@ -656,10 +642,6 @@
         padding: 10px 20% 0 0;
     }
 
-    .cancel {
-        padding-left: 10px;
-    }
-
     .cancel__button {
         border: none;
         background-color: rgb(0, 105, 255);
@@ -684,17 +666,6 @@
         font-weight: lighter;
         padding: 5px 5px 5px 15px;
         text-align: left;
-        color: #fff;
-    }
-
-    .reserve__qr {
-        padding: 0 0 0 15px;
-    }
-
-    .reserve__qr-ttl {
-        font-size: 12px;
-        font-weight: lighter;
-        margin: 5px 0 5px 0;
         color: #fff;
     }
 
@@ -742,7 +713,7 @@
 
     .new-reserve__submit {
         color: #fff;
-        background-color: rgb(249, 73, 57);
+        background-color: rgb(38, 31, 243);
         border: none;
         border-radius: 3px;
         font-size: 13px;
@@ -758,7 +729,7 @@
 
     .cancel-change__submit {
         color: #fff;
-        background-color: rgb(128, 127, 129);
+        background-color: rgb(168, 166, 166);
         border: none;
         border-radius: 3px;
         font-size: 13px;
@@ -832,7 +803,7 @@
     }
 
     .review__body {
-        padding: 5px 25px 0px 20px;
+        padding: 5px 25px 0px 10px;
     }
 
     .star__form {
@@ -897,23 +868,23 @@
 
     .review__submit-button {
         color: #fff;
-        background-color: rgb(249, 73, 57);
+        background-color: rgb(38, 31, 243);
         border: none;
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 80px;
+        width: 150px;
         cursor: pointer;
     }
 
     .review__cancel-button {
         color: #fff;
-        background-color: rgb(128, 127, 129);
+        background-color: rgb(168, 166, 166);
         border: none;
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 80px;
+        width: 150px;
         cursor: pointer;
     }
 
@@ -986,23 +957,23 @@
 
     .review-correction__submit-button {
         color: #fff;
-        background-color: rgb(249, 73, 57);
+        background-color: rgb(38, 31, 243);
         border: none;
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 80px;
+        width: 150px;
         cursor: pointer;
     }
 
     .review-correction__cancel-button {
         color: #fff;
-        background-color: rgb(128, 127, 129);
+        background-color: rgb(168, 166, 166);
         border: none;
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 80px;
+        width: 150px;
         cursor: pointer;
     }
 
@@ -1012,14 +983,18 @@
         left: 175px;
     }
 
+    .review-delete__button {
+        padding: 10px 0 10px 20px;
+    }
+
     .review-correction__delete-button {
         color: #fff;
-        background-color: rgb(131, 99, 245);
+        background-color: rgb(249, 73, 57);
         border: none;
         border-radius: 3px;
         font-size: 13px;
         height: 30px;
-        width: 80px;
+        width: 150px;
         cursor: pointer;
     }
 

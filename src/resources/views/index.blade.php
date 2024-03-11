@@ -23,7 +23,7 @@
                 @endforeach
             </select>
             <div class="search-form__text">
-                <input class="search-form__input" type="text" name="keyword" value="{{ request()->keyword }}" placeholder="&#xF002;   search...">
+                <input class="search-form__input" type="text" name="keyword" value="{{ request()->keyword }}" placeholder="&#xF002; search...">
             </div>
         </div>
     </form>
