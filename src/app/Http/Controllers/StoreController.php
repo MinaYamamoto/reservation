@@ -78,7 +78,6 @@ class StoreController extends Controller
                 $bucket = env('AWS_BUCKET');
                 $path = $file_name;
                 $url = "https://{$bucket}.s3.amazonaws.com/{$path}";
-                dd($url);
                 $upStore['thumbnail'] = $url;
             }
         }
