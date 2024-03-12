@@ -74,9 +74,11 @@ class StoreController extends Controller
             } else {
                 // $path = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name, 'public');
                 // $upStore['thumbnail'] = Storage::disk('s3')->url($path);
-                $path = Storage::disk('s3')->putFileAs('/', $file, $file_name, 'publick');
+                // $path = Storage::disk('s3')->putFileAs('/', $file, $file_name, 'publick');
                 $bucket = env('AWS_BUCKET');
-                $url = "https://{$bucket}.s3.amazonaws.com/{$file_name}";
+                $path = $file_name;
+                $url = "https://{$bucket}.s3.amazonaws.com/{$path}";
+                dd($url);
                 $upStore['thumbnail'] = $url;
             }
         }
