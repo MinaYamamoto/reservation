@@ -66,14 +66,16 @@ class StoreController extends Controller
         public function update(UpdateStoreRequest $request) {
         $upStore = $request->only(['name', 'genre_id', 'region_id', 'user_id', 'overview']);
         if(request('thumbnail')) {
-            $file_name = $request->file('thumbnail')->getClientOriginalName();
+            $file = $request->file('thumbnail');
+            $file_name = $file->getClientOriginalName();
+            // $file_name = $request->file('thumbnail')->getClientOriginalName();
             if(app()->isLocal()) {
                 $upStore['thumbnail'] = Storage::disk('local')->putFileAs('public/post_img', $request->file('thumbnail'), $file_name);
             } else {
                 // $path = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name, 'public');
                 // $upStore['thumbnail'] = Storage::disk('s3')->url($path);
-                $path = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name, 'publick');
-                $upStore['thumbnail'] = Storage::disk('s3')->url($path);
+                $path = Storage::disk('s3')->putFileAs('/', $file, $file_name, 'publick');
+                $upStore['thumbnail'] = Storage::disk('s3')->url($file_name);
             }
         }
         Store::find($request->store_id)->update($upStore);
