@@ -72,13 +72,13 @@ class StoreController extends Controller
             if(app()->isLocal()) {
                 $upStore['thumbnail'] = Storage::disk('local')->putFileAs('public/post_img', $request->file('thumbnail'), $file_name);
             } else {
-                // $path = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name, 'public');
-                // $upStore['thumbnail'] = Storage::disk('s3')->url($path);
+                $path = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name, 'public');
+                $upStore['thumbnail'] = Storage::disk('s3')->url($path);
                 // $path = Storage::disk('s3')->putFileAs('/', $file, $file_name, 'publick');
-                $bucket = env('AWS_BUCKET');
-                $path = $file_name;
-                $url = "https://{$bucket}.s3.amazonaws.com/{$path}";
-                $upStore['thumbnail'] = $url;
+                // $bucket = env('AWS_BUCKET');
+                // $path = $file_name;
+                // $url = "https://{$bucket}.s3.amazonaws.com/{$path}";
+                // $upStore['thumbnail'] = $url;
             }
         }
         Store::find($request->store_id)->update($upStore);

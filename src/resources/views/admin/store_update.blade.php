@@ -80,7 +80,7 @@
                 </div>
                 <div class="form-group__content">
                     <div class="form-group__img">
-                        <img class="store__img" src="{{ Storage::url($store->thumbnail) }}"></img>
+                        <img class="store__img" src="{{ ($store->thumbnail) }}"></img>
                     </div>
                     <input id="thumbnail" type="file" name="thumbnail" class="form-group__thumbnail">
                 </div>
