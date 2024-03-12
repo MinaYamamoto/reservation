@@ -68,17 +68,12 @@ class StoreController extends Controller
         if(request('thumbnail')) {
             $file = $request->file('thumbnail');
             $file_name = $file->getClientOriginalName();
-            // $file_name = $request->file('thumbnail')->getClientOriginalName();
             if(app()->isLocal()) {
-                $upStore['thumbnail'] = Storage::disk('local')->putFileAs('public/post_img', $request->file('thumbnail'), $file_name);
+                $path = Storage::putFileAs('public/post_img', $file, $file_name);
+                $upStore['thumbnail'] = Storage::url($path);
             } else {
-                $path = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name, 'public');
+                $path = Storage::disk('s3')->putFileAs('/', $file, $file_name, 'public');
                 $upStore['thumbnail'] = Storage::disk('s3')->url($path);
-                // $path = Storage::disk('s3')->putFileAs('/', $file, $file_name, 'publick');
-                // $bucket = env('AWS_BUCKET');
-                // $path = $file_name;
-                // $url = "https://{$bucket}.s3.amazonaws.com/{$path}";
-                // $upStore['thumbnail'] = $url;
             }
         }
         Store::find($request->store_id)->update($upStore);
@@ -95,11 +90,14 @@ class StoreController extends Controller
     public function store(CreateStoreRequest $request)
     {
         $newStore = $request->only(['name', 'genre_id', 'region_id', 'user_id', 'overview']);
-        $file_name = $request->file('thumbnail')->getClientOriginalName();
+            $file = $request->file('thumbnail');
+            $file_name = $file->getClientOriginalName();
         if (app()->isLocal()) {
-            $newStore['thumbnail'] = Storage::disk('local')->putFileAs('public/post_img', $request->file('thumbnail'), $file_name);
+            $path = Storage::putFileAs('public/post_img', $file, $file_name);
+            $newStore['thumbnail'] = Storage::url($path);
         } else {
-            $newStore['thumbnail'] = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name);
+            $path = Storage::disk('s3')->putFileAs('/', $file, $file_name, 'public');
+            $newStore['thumbnail'] = Storage::disk('s3')->url($path);
         }
 
         Store::create($newStore);

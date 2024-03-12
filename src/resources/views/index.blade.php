@@ -40,7 +40,7 @@
     @foreach($stores as $store)
     <div class="card">
         <div class="card__img">
-            <img class="store__img" src="{{ Storage::url($store->thumbnail) }}"></img>
+            <img class="store__img" src="{{ ($store->thumbnail) }}"></img>
         </div>
         <div class="card__content">
             <h2 class="card__store">{{ $store['name'] }}</h2>

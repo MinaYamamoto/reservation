@@ -327,7 +327,7 @@
             @if($store->bookmark()->where('store_id', $store['id'])->where('user_id', optional(Auth::user())->id)->count() == 1)
             <div class="bookmark__card">
                 <div class="card__img">
-                    <img class="card__thumbnail" src="{{ Storage::url($store->thumbnail) }}"></img>
+                    <img class="card__thumbnail" src="{{ ($store->thumbnail) }}"></img>
                 </div>
                 <div class="card__content">
                     <h2 class="card__store">{{ $store->name }}</h2>

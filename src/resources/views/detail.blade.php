@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="store__img">
-            <img class="store__thumbnail" src="{{ Storage::url($store->thumbnail) }}"></img>
+            <img class="store__thumbnail" src="{{ ($store->thumbnail) }}"></img>
         </div>
         <div class="store__tag">
             <p class="store__tag-region">#{{ $store['region'] ['name']}}</p>

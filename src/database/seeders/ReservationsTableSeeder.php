@@ -33,7 +33,7 @@ class ReservationsTableSeeder extends Seeder
         $param = [
             'user_id' => 3,
             'store_id' => 3,
-            'date' => '2024-3-9',
+            'date' => '2024-3-13',
             'time_id' => 6,
             'num_id' => 7,
         ];
