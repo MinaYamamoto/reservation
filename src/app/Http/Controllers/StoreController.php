@@ -72,7 +72,8 @@ class StoreController extends Controller
             } else {
                 // $path = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name, 'public');
                 // $upStore['thumbnail'] = Storage::disk('s3')->url($path);
-                $newStore['thumbnail'] = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name, 'publick');
+                $path = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name, 'publick');
+                $upStore['thumbnail'] = Storage::disk('s3')->url($path);
             }
         }
         Store::find($request->store_id)->update($upStore);
