@@ -71,6 +71,7 @@ class StoreController extends Controller
                 $upStore['thumbnail'] = Storage::disk('local')->putFileAs('public/post_img', $request->file('thumbnail'), $file_name);
             } else {
                 $path = Storage::disk('s3')->put('/', $request->file('thumbnail'), 'public');
+                dd($path);
                 $upStore['thumbnail'] = Storage::disk('s3')->url($path);
             }
         }
