@@ -72,7 +72,7 @@ class StoreController extends Controller
                 $path = Storage::putFileAs('public/post_img', $file, $file_name);
                 $upStore['thumbnail'] = Storage::url($path);
             } else {
-                $path = Storage::disk('s3')->putFileAs('/', $file, $file_name, 'public');
+                $path = Storage::disk('s3')->putFileAs('/', $file, $file_name, 'publick');
                 $upStore['thumbnail'] = Storage::disk('s3')->url($path);
             }
         }
@@ -90,13 +90,13 @@ class StoreController extends Controller
     public function store(CreateStoreRequest $request)
     {
         $newStore = $request->only(['name', 'genre_id', 'region_id', 'user_id', 'overview']);
-            $file = $request->file('thumbnail');
-            $file_name = $file->getClientOriginalName();
+        $file = $request->file('thumbnail');
+        $file_name = $file->getClientOriginalName();
         if (app()->isLocal()) {
             $path = Storage::putFileAs('public/post_img', $file, $file_name);
             $newStore['thumbnail'] = Storage::url($path);
         } else {
-            $path = Storage::disk('s3')->putFileAs('/', $file, $file_name, 'public');
+            $path = Storage::disk('s3')->putFileAs('/', $file, $file_name, 'publick');
             $newStore['thumbnail'] = Storage::disk('s3')->url($path);
         }
 
