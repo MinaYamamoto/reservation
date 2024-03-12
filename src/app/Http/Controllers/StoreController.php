@@ -70,7 +70,7 @@ class StoreController extends Controller
             if(app()->isLocal()) {
                 $upStore['thumbnail'] = Storage::disk('local')->putFileAs('public/post_img', $request->file('thumbnail'), $file_name);
             } else {
-                $path = Storage::disk('s3')->put('/', $request->file('thumbnail'), $file_name);
+                $path = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name, 'public');
                 $upStore['thumbnail'] = Storage::disk('s3')->url($path);
                 dd($path);
             }
