@@ -12,6 +12,8 @@ use App\Http\Requests\CreateStoreRequest;
 use App\Http\Requests\UpdateStoreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
 class StoreController extends Controller
 {
@@ -65,7 +67,11 @@ class StoreController extends Controller
         $upStore = $request->only(['name', 'genre_id', 'region_id', 'user_id', 'overview']);
         if(request('thumbnail')) {
             $file_name = $request->file('thumbnail')->getClientOriginalName();
-            $upStore['thumbnail'] = request('thumbnail')->storeAs('public/post_img', $file_name);
+            if(app()->isLocal()) {
+                $upStore['thumbnail'] = Storage::disk('local')->putFileAs('public/post_img', $request->file('thumbnail'), $file_name);
+            }else{
+                $upStore['thumbnail'] = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name);
+            }
         }
         Store::find($request->store_id)->update($upStore);
         return redirect('/admin/storelist');
@@ -82,7 +88,12 @@ class StoreController extends Controller
     {
         $newStore = $request->only(['name', 'genre_id', 'region_id', 'user_id', 'overview']);
         $file_name = $request->file('thumbnail')->getClientOriginalName();
-        $newStore['thumbnail'] = request('thumbnail')->storeAs('public/post_img', $file_name);
+        if (app()->isLocal()) {
+            $newStore['thumbnail'] = Storage::disk('local')->putFileAs('public/post_img', $request->file('thumbnail'), $file_name);
+        } else {
+            $newStore['thumbnail'] = Storage::disk('s3')->putFileAs('/', $request->file('thumbnail'), $file_name);
+        }
+
         Store::create($newStore);
         return redirect('/admin/storelist');
     }

@@ -52,7 +52,7 @@ services:
       - PMA_HOST=mysql
       - PMA_USER=laravel_user
       - PMA_PASSWORD=laravel_pass
-      - TZ
+      - "TZ=Asia/Tokyo"
     depends_on:
       - mysql
     ports:
