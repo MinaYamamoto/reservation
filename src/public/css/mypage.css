@@ -583,8 +583,9 @@
     .reserve__alert {
         background-color: rgb(236, 78, 100);
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-        width: 65%;
+        width: 60%;
         height: 40px;
+        margin: 0 auto;
         border-radius: 5px;
         margin-bottom: 15px;
     }

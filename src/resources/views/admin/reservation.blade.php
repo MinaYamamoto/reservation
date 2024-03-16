@@ -39,7 +39,6 @@
                 <th class="reservation__table-th"></th>
             </tr>
             @foreach($reservations as $reservation)
-            @if ($reservation->store->user_id == $user_id)
             <tr>
                 <td class="reservation__table-td">{{ $reservation->store->name }}</td>
                 <td class="reservation__table-td">{{ $reservation->time->time->format('H:i') }}</td>
@@ -47,11 +46,10 @@
                 <form class="detail" action="/admin/reservation/{{ $reservation['id']}}" method="GET">
                     @csrf
                     <td class="reservation__table-td">
-                        <button class="reservation__detail">予約詳細</button>
+                        <button class="reservation__detail">詳細</button>
                     </td>
                 </form>
             </tr>
-            @endif
             @endforeach
         </table>
     </div>

@@ -24,7 +24,7 @@ class MailController extends Controller
         $email = $request->email;
         $subject = $request->subject;
         $txt = $request->txt;
-        Mail::to($email)->send(new MailSend($name, $subject, $txt));
+        Mail::to($email)->send(new MailSend($name, $subject, $txt ?? ''));
         return view('admin/result');
     }
 }

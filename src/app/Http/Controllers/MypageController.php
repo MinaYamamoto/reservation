@@ -29,7 +29,7 @@ class MypageController extends Controller
         $nums = Num::all();
         $reviews = Review::where('user_id', auth()->id())->orderby('created_at', 'desc')->paginate(1, ['*'], 'review')->appends(['oldreservation' => \Request::get('oldreservation')]);
         $reserve_msg = '予約情報はありません';
-        $bookmark_msg = 'お気に入り店舗登録はありません';
+        $bookmark_msg = 'お気に入り店舗はありません';
         $oldreserve_msg = '来店履歴はありません';
         $review_msg = 'レビュー履歴はありません';
         return view('mypage', compact('username', 'reservations', 'oldReservations', 'bookmarks', 'stores', 'times','nums', 'reviews', 'reserve_msg', 'bookmark_msg', 'oldreserve_msg', 'review_msg'));

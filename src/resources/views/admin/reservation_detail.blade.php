@@ -34,7 +34,7 @@
         </table>
     </div>
     <div class="back__button">
-        <button class="back__button-submit" onClick="history.back()">一覧に戻る</button>
+        <a href="/admin/reservation" class="back__button-submit" >一覧に戻る</a>
     </div>
 </div>
 @endsection

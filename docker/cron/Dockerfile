@@ -6,9 +6,9 @@ RUN apt update \
 
 RUN apt-get update && \apt-get install -y cron
 
-COPY cron.root /etc/cron.d/cron
+COPY cron.root /etc/cron.daily/cron
 
-RUN chmod 0644 /etc/cron.d/cron && ln -sf /proc/1/fd/1 /var/log/cron.log
+RUN chmod 0644 /etc/cron.daily/cron && ln -sf /proc/1/fd/1 /var/log/cron.log
 
 WORKDIR /var/www
 

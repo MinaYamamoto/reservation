@@ -28,7 +28,7 @@
             <div class="close" id="close">
                 <span class="square__button"></span>
             </div>
-            <ul>
+            <ul class="hamburger-items">
                 <li class="hamburger-item"><a class="hamburger-link" href="/">Home</a></li>
                 <li class="hamburger-item"><a class="hamburger-link" href="/register">Registration</a></li>
                 <li class="hamburger-item"><a class="hamburger-link" href="/login">Login</a></li>
@@ -40,7 +40,7 @@
             <div class="close" id="close">
                 <span class="square__button"></span>
             </div>
-            <ul>
+            <ul class="hamburger-items">
                 <li class="hamburger-item"><a class="hamburger-link" href="/">Home</a></li>
                 <form class="logout" action="/logout" method="POST">
                     @csrf
@@ -54,7 +54,7 @@
             <div class="close" id="close">
                 <span class="square__button"></span>
             </div>
-            <ul>
+            <ul class="hamburger-items">
             <li class="hamburger-item"><a class="hamburger-link" href="/admin/representative">Representative</a></li>
                 <form class="logout" action="/logout" method="POST">
                     @csrf
@@ -67,7 +67,7 @@
             <div class="close" id="close">
                 <span class="square__button"></span>
             </div>
-            <ul>
+            <ul class="hamburger-items">
                 <li class="hamburger-item"><a class="hamburger-link" href="/admin/storelist">Store information</a></li>
                 <li class="hamburger-item"><a class="hamburger-link" href="/admin/reservation">Reservation list</a></li>
                 <li class="hamburger-item"><a class="hamburger-link" href="/admin/mail">Mail</a></li>
