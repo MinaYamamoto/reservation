@@ -6,11 +6,11 @@
 
 ![alt text](image.png)
 
-##作成した目的
+## 作成した目的
 
 概要：外部の飲食店予約サービスは手数料がかかるため、自社で予約サービスを持ちたい。
 
-##アプリケーション URL
+## アプリケーション URL
 
 WEB アプリ URL：http://18.182.152.167/
 
@@ -34,7 +34,7 @@ AWS 　（IAM ユーザとしてコンソールにサインインする場合は
 
 GitHub（https）：https://github.com/MinaYamamoto/reservation.git
 
-##機能一覧
+## 機能一覧
 
 ・会員登録機能（メールによる認証機能あり）
 
@@ -94,7 +94,7 @@ GitHub（https）：https://github.com/MinaYamamoto/reservation.git
 
 ・店舗代表者によるメール送信機能
 
-##使用技術（実行環境）
+## 使用技術（実行環境）
 
 ・PHP:8.0
 
@@ -104,15 +104,15 @@ GitHub（https）：https://github.com/MinaYamamoto/reservation.git
 
 ・docker-compose:2.24.6
 
-##テーブル設計
+## テーブル設計
 
 ![alt text](image-2.png)
 
-##ER 図
+## ER 図
 
 ![alt text](image-1.png)
 
-##環境構築
+## 環境構築
 
 ・Docker ビルド
 
@@ -164,7 +164,7 @@ CASHIER_CURRENCY=jpy
 7.データベースへテスト用の初期データを投入
 　 php artisan db:seed
 
-##その他記述
+## その他記述
 
 ・ログインユーザ
 
