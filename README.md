@@ -112,6 +112,8 @@ git clone git@github.com:MinaYamamoto/reservation.git
 3.「reservation」フォルダに移動し、docker をビルドする  
 docker-compose up -d --build
 
+---
+
 **Laravel 環境構築**
 
 1.PHP コンテナ内にログイン  
