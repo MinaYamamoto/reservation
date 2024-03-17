@@ -12,19 +12,16 @@
 
 WEB アプリ URL：http://18.182.152.167/
 
-AWS 　（IAM ユーザとしてコンソールにサインインする場合は以下を使用してください）
-
+AWS 　（IAM ユーザとしてコンソールにサインインする場合は以下を使用してください）  
 ・コンソールサインイン：https://058264478200.signin.aws.amazon.com/console  
 ・ユーザー名：testuser  
 ・コンソールパスワード：testuser1&  
 ・パブリック IP アドレス：18.182.152.167
 
-AWS 　 CodePipeline
-
+AWS 　 CodePipeline  
 ・名前：reservation
 
-AWS 　 CodeDeploy
-
+AWS 　 CodeDeploy  
 ・アプリケーション名：reservation  
 ・デプロイグループ：reservation
 
@@ -175,18 +172,15 @@ izakaya.jpg
 
 ・ログインユーザ
 
-管理者
-
+管理者  
 Email：admin@email.com  
 Password：12345678
 
-店舗代表者
-
+店舗代表者  
 Email：representative@email.com  
 Password：12345678
 
-一般
-
+一般  
 Email：user@email.com  
 Password：12345678
 
@@ -194,20 +188,13 @@ Password：12345678
 
 ・AWS は SSL 認証の設定を行っていません。「http」にてアクセスしてください。
 
-・メールの確認には mailtrap を使用しています。
-
-mailtrap ログイン情報
-
-Email: coachtechmytest@gmail.com
-
+・メールの確認には mailtrap を使用しています。  
+mailtrap ログイン情報  
+Email: coachtechmytest@gmail.com  
 Password coachtechmytest1!
 
-・決済には stripe を使用しています。
-
-stripe ログイン情報
-
-URL：https://dashboard.stripe.com/login
-
-Email：motitama1106@gmail.com
-
+・決済には stripe を使用しています。  
+stripe ログイン情報  
+URL：https://dashboard.stripe.com/login  
+Email：motitama1106@gmail.com  
 Password：coachtechmytest1!
