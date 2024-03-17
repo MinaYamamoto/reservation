@@ -199,20 +199,17 @@ izakaya.jpg
 
 管理者
 
-Email：admin@email.com
-
+Email：admin@email.com  
 Password：12345678
 
 店舗代表者
 
-Email：representative@email.com
-
+Email：representative@email.com  
 Password：12345678
 
 一般
 
-Email：user@email.com
-
+Email：user@email.com  
 Password：12345678
 
 ・開発環境はローカル、本番環境は AWS を使用しています。
