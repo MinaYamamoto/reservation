@@ -18,7 +18,7 @@ AWS 　（IAM ユーザとしてコンソールにサインインする場合は
 ・コンソールパスワード：testuser1&  
 ・パブリック IP アドレス：18.182.152.167
 
-##　他のリポジトリ
+## 他のリポジトリ
 
 GitHub（https）：https://github.com/MinaYamamoto/reservation.git
 
@@ -102,7 +102,7 @@ GitHub（https）：https://github.com/MinaYamamoto/reservation.git
 
 ## 環境構築
 
-・Docker ビルド
+_Docker ビルド_
 
 1.任意のフォルダを作成
 
@@ -112,7 +112,7 @@ git clone git@github.com:MinaYamamoto/reservation.git
 3.「reservation」フォルダに移動し、docker をビルドする  
 docker-compose up -d --build
 
-・Laravel 環境構築
+_Laravel 環境構築_
 
 1.PHP コンテナ内にログイン  
 docker-compose exec php bash
@@ -123,8 +123,7 @@ composer install
 3.「.env.example」ファイルをコピーして「.env」ファイルを作成  
 cp .env.example .env
 
-4.「.env」ファイルの環境変数を変更
-
+4.「.env」ファイルの環境変数を変更  
 DB_HOST=mysql  
 DB_DATABASE=laravel_db  
 DB_USERNAME=laravel_user  
@@ -155,47 +154,47 @@ php artisan storage:link
 9.storage>app>public フォルダに post_img フォルダを作成
 
 10.「reservation」配下にある以下ファイルを「9.」で作成した post_img フォルダに格納  
-sushi.jpg  
-yakiniku.jpg  
-ramen.jpg  
-italian.jpg  
-izakaya.jpg
+　 sushi.jpg  
+　 yakiniku.jpg  
+　 ramen.jpg  
+　 italian.jpg  
+　 izakaya.jpg
 
 ## その他記述
 
 ・ログインユーザ
 
 管理者  
-　 Email：admin@email.com  
-　 Password：12345678
+　　 Email：admin@email.com  
+　　 Password：12345678
 
 店舗代表者  
-　 Email：representative@email.com  
-　 Password：12345678
+　　 Email：representative@email.com  
+　　 Password：12345678
 
 一般  
-　 Email：user@email.com  
-　 Password：12345678
+　　 Email：user@email.com  
+　　 Password：12345678
 
 ・開発環境はローカル、本番環境は AWS を使用しています。
 
 ・AWS は SSL 認証の設定を行っていません。「http」にてアクセスしてください。
 
-・AWS へのデプロイは以下を使用しています。
-AWS 　 CodePipeline  
-　名前：reservation
+・AWS へのデプロイは以下を使用しています。  
+　 AWS 　 CodePipeline  
+　　名前：reservation
 
 AWS 　 CodeDeploy  
-　アプリケーション名：reservation  
-　デプロイグループ：reservation
+　　アプリケーション名：reservation  
+　　デプロイグループ：reservation
 
 ・メールの確認には mailtrap を使用しています。  
 　 mailtrap ログイン情報  
-　 Email: coachtechmytest@gmail.com  
-　 Password coachtechmytest1!
+　　 Email: coachtechmytest@gmail.com  
+　　 Password coachtechmytest1!
 
 ・決済には stripe を使用しています。  
 　 stripe ログイン情報  
-　 URL：https://dashboard.stripe.com/login  
-　 Email：motitama1106@gmail.com  
-　 Password：coachtechmytest1!
+　　 URL：https://dashboard.stripe.com/login  
+　　 Email：motitama1106@gmail.com  
+　　 Password：coachtechmytest1!
