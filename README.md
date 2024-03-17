@@ -181,13 +181,17 @@ CASHIER_CURRENCY=jpy
 
 9.storage>app>public フォルダに post_img フォルダを作成
 
-10.以下ファイルを「9.」で作成した post_img フォルダに格納
+10.「reservation」配下にある以下ファイルを「9.」で作成した post_img フォルダに格納
 
-![alt text](sushi.jpg)
-![alt text](yakiniku.jpg)
-![alt text](ramen.jpg)
-![alt text](itarian.jpg)
-![alt text](izakaya.jpg)
+sushi.jpg
+
+yakiniku.jpg
+
+ramen.jpg
+
+italian.jpg
+
+izakaya.jpg
 
 ## その他記述
 
