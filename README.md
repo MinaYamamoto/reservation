@@ -14,12 +14,9 @@ WEB アプリ URL：http://18.182.152.167/
 
 AWS 　（IAM ユーザとしてコンソールにサインインする場合は以下を使用してください）
 
-・コンソールサインイン：https://058264478200.signin.aws.amazon.com/console
-
-・ユーザー名：testuser
-
-・コンソールパスワード：testuser1&
-
+・コンソールサインイン：https://058264478200.signin.aws.amazon.com/console  
+・ユーザー名：testuser  
+・コンソールパスワード：testuser1&  
 ・パブリック IP アドレス：18.182.152.167
 
 AWS 　 CodePipeline
@@ -28,8 +25,7 @@ AWS 　 CodePipeline
 
 AWS 　 CodeDeploy
 
-・アプリケーション名：reservation
-
+・アプリケーション名：reservation  
 ・デプロイグループ：reservation
 
 ##　他のリポジトリ
@@ -120,77 +116,59 @@ GitHub（https）：https://github.com/MinaYamamoto/reservation.git
 
 1.任意のフォルダを作成
 
-2.コマンドより「1.」で作成した任意のフォルダに移動し、reservation.git をクローンする
-　 git clone git@github.com:MinaYamamoto/reservation.git
+2.コマンドより「1.」で作成した任意のフォルダに移動し、reservation.git をクローンする  
+git clone git@github.com:MinaYamamoto/reservation.git
 
-3.「reservation」フォルダに移動し、docker をビルドする
-　 docker-compose up -d --build
+3.「reservation」フォルダに移動し、docker をビルドする  
+docker-compose up -d --build
 
 ・Laravel 環境構築
 
-1.PHP コンテナ内にログイン
-　 docker-compose exec php bash
+1.PHP コンテナ内にログイン  
+docker-compose exec php bash
 
-2.ログイン後、必要なパッケージをインストール
-　 composer install
+2.ログイン後、必要なパッケージをインストール  
+composer install
 
-3.「.env.example」ファイルをコピーして「.env」ファイルを作成
-　 cp .env.example .env
+3.「.env.example」ファイルをコピーして「.env」ファイルを作成  
+cp .env.example .env
 
 4.「.env」ファイルの環境変数を変更
 
-DB_HOST=mysql
-
-DB_DATABASE=laravel_db
-
-DB_USERNAME=laravel_user
-
-DB_PASSWORD=laravel_pass
-
-MAIL_HOST=sandbox.smtp.mailtrap.io
-
-MAIL_PORT=2525
-
-MAIL_USERNAME=b3190c220e7b27
-
-MAIL_PASSWORD=68173c9d406bab
-
-MAIL_ENCRYPTION=tls
-
-MAIL_FROM_ADDRESS=mailtrap@example.com
-
-STRIPE_KEY=pk_test_51OpqbqGivG6QeAc8ivudeS0M2aaZinAWQPoP3hcBaiOrGpF1JIm4q1N38bnXP6l1TipAsRGXsowyNCMZ8hdzxXR600RZYYYbhY
-
-STRIPE_SECRET=sk_test_51OpqbqGivG6QeAc8cUx81ZujodFv8JFM3DXXkdVoDrJjSm7VgZQH9zBeStBRWdVUVWabLLeXgrHA6i3JIIg6zopb00076VqsLK
-
-STRIPE_BASIC_ID=price_1OqZTjGivG6QeAc8TxoCySbv
-
+DB_HOST=mysql  
+DB_DATABASE=laravel_db  
+DB_USERNAME=laravel_user  
+DB_PASSWORD=laravel_pass  
+MAIL_HOST=sandbox.smtp.mailtrap.io  
+MAIL_PORT=2525  
+MAIL_USERNAME=b3190c220e7b27  
+MAIL_PASSWORD=68173c9d406bab  
+MAIL_ENCRYPTION=tls  
+MAIL_FROM_ADDRESS=mailtrap@example.com  
+STRIPE_KEY=pk_test_51OpqbqGivG6QeAc8ivudeS0M2aaZinAWQPoP3hcBaiOrGpF1JIm4q1N38bnXP6l1TipAsRGXsowyNCMZ8hdzxXR600RZYYYbhY  
+STRIPE_SECRET=sk_test_51OpqbqGivG6QeAc8cUx81ZujodFv8JFM3DXXkdVoDrJjSm7VgZQH9zBeStBRWdVUVWabLLeXgrHA6i3JIIg6zopb00076VqsLK  
+STRIPE_BASIC_ID=price_1OqZTjGivG6QeAc8TxoCySbv  
 CASHIER_CURRENCY=jpy
 
-5.アプリケーション起動のためのキーを生成
-　 php artisan key:generate
+5.アプリケーション起動のためのキーを生成  
+php artisan key:generate
 
-6.マイグレーションを実行
-　 php artisan migrate
+6.マイグレーションを実行  
+php artisan migrate
 
-7.データベースへテスト用の初期データを投入
-　 php artisan db:seed
+7.データベースへテスト用の初期データを投入  
+php artisan db:seed
 
-8.シンボリックリンクを作成
-　 php artisan storage:link
+8.シンボリックリンクを作成  
+php artisan storage:link
 
 9.storage>app>public フォルダに post_img フォルダを作成
 
-10.「reservation」配下にある以下ファイルを「9.」で作成した post_img フォルダに格納
-
-sushi.jpg
-
-yakiniku.jpg
-
-ramen.jpg
-
-italian.jpg
-
+10.「reservation」配下にある以下ファイルを「9.」で作成した post_img フォルダに格納  
+sushi.jpg  
+yakiniku.jpg  
+ramen.jpg  
+italian.jpg  
 izakaya.jpg
 
 ## その他記述
