@@ -18,13 +18,6 @@ AWS 　（IAM ユーザとしてコンソールにサインインする場合は
 ・コンソールパスワード：testuser1&  
 ・パブリック IP アドレス：18.182.152.167
 
-AWS 　 CodePipeline  
-・名前：reservation
-
-AWS 　 CodeDeploy  
-・アプリケーション名：reservation  
-・デプロイグループ：reservation
-
 ##　他のリポジトリ
 
 GitHub（https）：https://github.com/MinaYamamoto/reservation.git
@@ -173,28 +166,36 @@ izakaya.jpg
 ・ログインユーザ
 
 管理者  
-Email：admin@email.com  
-Password：12345678
+　 Email：admin@email.com  
+　 Password：12345678
 
 店舗代表者  
-Email：representative@email.com  
-Password：12345678
+　 Email：representative@email.com  
+　 Password：12345678
 
 一般  
-Email：user@email.com  
-Password：12345678
+　 Email：user@email.com  
+　 Password：12345678
 
 ・開発環境はローカル、本番環境は AWS を使用しています。
 
 ・AWS は SSL 認証の設定を行っていません。「http」にてアクセスしてください。
 
+・AWS へのデプロイは以下を使用しています。
+AWS 　 CodePipeline  
+　名前：reservation
+
+AWS 　 CodeDeploy  
+　アプリケーション名：reservation  
+　デプロイグループ：reservation
+
 ・メールの確認には mailtrap を使用しています。  
-mailtrap ログイン情報  
-Email: coachtechmytest@gmail.com  
-Password coachtechmytest1!
+　 mailtrap ログイン情報  
+　 Email: coachtechmytest@gmail.com  
+　 Password coachtechmytest1!
 
 ・決済には stripe を使用しています。  
-stripe ログイン情報  
-URL：https://dashboard.stripe.com/login  
-Email：motitama1106@gmail.com  
-Password：coachtechmytest1!
+　 stripe ログイン情報  
+　 URL：https://dashboard.stripe.com/login  
+　 Email：motitama1106@gmail.com  
+　 Password：coachtechmytest1!
