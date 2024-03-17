@@ -1,6 +1,6 @@
 # reservation（予約サービス）
 
-概要説明：会社に属する各飲食店の予約サービス
+概要：会社に属する各飲食店の予約サービス
 
 ![alt text](image.png)
 
@@ -70,15 +70,11 @@ GitHub（https）：https://github.com/MinaYamamoto/reservation.git
 
 ・決済機能
 
----
-
-管理者機能
+**管理者機能**
 
 ・店舗代表者登録機能
 
----
-
-店舗代表者機能
+**店舗代表者機能**
 
 ・店舗情報作成機能
 
@@ -174,15 +170,15 @@ php artisan storage:link
 
 ・テスト用ログインユーザ
 
-*管理者*  
+_管理者_  
 　　 Email：admin@email.com  
 　　 Password：12345678
 
-*店舗代表者*  
+_店舗代表者_  
 　　 Email：representative@email.com  
 　　 Password：12345678
 
-*一般*  
+_一般_  
 　　 Email：user@email.com  
 　　 Password：12345678
 
@@ -191,20 +187,20 @@ php artisan storage:link
 ・AWS は SSL 認証の設定を行っていません。「http」にてアクセスしてください。
 
 ・AWS へのデプロイは以下を使用しています。  
-　 AWS 　 CodePipeline  
+_CodePipeline_  
 　　名前：reservation
 
-　AWS 　 CodeDeploy  
+_CodeDeploy_  
 　　アプリケーション名：reservation  
 　　デプロイグループ：reservation
 
 ・メールの確認には mailtrap を使用しています。  
-　 mailtrap ログイン情報  
+_mailtrap ログイン情報_  
 　　 Email: coachtechmytest@gmail.com  
 　　 Password coachtechmytest1!
 
 ・決済には stripe を使用しています。  
-　 stripe ログイン情報  
+_stripe ログイン情報_  
 　　 URL：https://dashboard.stripe.com/login  
 　　 Email：motitama1106@gmail.com  
 　　 Password：coachtechmytest1!
