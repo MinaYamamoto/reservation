@@ -102,7 +102,7 @@ GitHub（https）：https://github.com/MinaYamamoto/reservation.git
 
 ## 環境構築
 
-_Docker ビルド_
+**Docker ビルド**
 
 1.任意のフォルダを作成
 
@@ -112,7 +112,7 @@ git clone git@github.com:MinaYamamoto/reservation.git
 3.「reservation」フォルダに移動し、docker をビルドする  
 docker-compose up -d --build
 
-_Laravel 環境構築_
+**Laravel 環境構築**
 
 1.PHP コンテナ内にログイン  
 docker-compose exec php bash
