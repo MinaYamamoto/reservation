@@ -172,17 +172,17 @@ php artisan storage:link
 
 ## その他記述
 
-・ログインユーザ
+・テスト用ログインユーザ
 
-管理者  
+_管理者_  
 　　 Email：admin@email.com  
 　　 Password：12345678
 
-店舗代表者  
+_店舗代表者_  
 　　 Email：representative@email.com  
 　　 Password：12345678
 
-一般  
+_一般_  
 　　 Email：user@email.com  
 　　 Password：12345678
 
@@ -194,7 +194,7 @@ php artisan storage:link
 　 AWS 　 CodePipeline  
 　　名前：reservation
 
-AWS 　 CodeDeploy  
+　AWS 　 CodeDeploy  
 　　アプリケーション名：reservation  
 　　デプロイグループ：reservation
 
