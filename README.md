@@ -1,6 +1,4 @@
-# reservation
-
-予約サービス
+# reservation（予約サービス）
 
 概要説明：会社に属する各飲食店の予約サービス
 
@@ -14,12 +12,6 @@
 
 WEB アプリ URL：http://18.182.152.167/
 
-AWS 　 CodeDeploy
-
-・アプリケーション名：reservation
-
-・デプロイグループ：reservation
-
 AWS 　（IAM ユーザとしてコンソールにサインインする場合は以下を使用してください）
 
 ・コンソールサインイン：https://058264478200.signin.aws.amazon.com/console
@@ -30,7 +22,17 @@ AWS 　（IAM ユーザとしてコンソールにサインインする場合は
 
 ・パブリック IP アドレス：18.182.152.167
 
-##他のリポジトリ
+AWS 　 CodePipeline
+
+・名前：reservation
+
+AWS 　 CodeDeploy
+
+・アプリケーション名：reservation
+
+・デプロイグループ：reservation
+
+##　他のリポジトリ
 
 GitHub（https）：https://github.com/MinaYamamoto/reservation.git
 
@@ -116,9 +118,13 @@ GitHub（https）：https://github.com/MinaYamamoto/reservation.git
 
 ・Docker ビルド
 
-1.git clone git@github.com:MinaYamamoto/reservation.git
+1.任意のフォルダを作成
 
-2.docker-compose up -d --build
+2.コマンドより「1.」で作成した任意のフォルダに移動し、reservation.git をクローンする
+　 git clone git@github.com:MinaYamamoto/reservation.git
+
+3.「reservation」フォルダに移動し、docker をビルドする
+　 docker-compose up -d --build
 
 ・Laravel 環境構築
 
@@ -141,11 +147,17 @@ DB_USERNAME=laravel_user
 
 DB_PASSWORD=laravel_pass
 
-MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
 
-MAIL_HOST=mailcatcher
+MAIL_PORT=2525
 
-MAIL_FROM_ADDRESS=mailcatcher@example.com
+MAIL_USERNAME=b3190c220e7b27
+
+MAIL_PASSWORD=68173c9d406bab
+
+MAIL_ENCRYPTION=tls
+
+MAIL_FROM_ADDRESS=mailtrap@example.com
 
 STRIPE_KEY=pk_test_51OpqbqGivG6QeAc8ivudeS0M2aaZinAWQPoP3hcBaiOrGpF1JIm4q1N38bnXP6l1TipAsRGXsowyNCMZ8hdzxXR600RZYYYbhY
 
@@ -163,6 +175,19 @@ CASHIER_CURRENCY=jpy
 
 7.データベースへテスト用の初期データを投入
 　 php artisan db:seed
+
+8.シンボリックリンクを作成
+　 php artisan storage:link
+
+9.storage>app>public フォルダに post_img フォルダを作成
+
+10.以下ファイルを「9.」で作成した post_img フォルダに格納
+
+![alt text](sushi.jpg)
+![alt text](yakiniku.jpg)
+![alt text](ramen.jpg)
+![alt text](itarian.jpg)
+![alt text](izakaya.jpg)
 
 ## その他記述
 
