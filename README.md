@@ -174,15 +174,15 @@ php artisan storage:link
 
 ・テスト用ログインユーザ
 
-_管理者_  
+*管理者*  
 　　 Email：admin@email.com  
 　　 Password：12345678
 
-_店舗代表者_  
+*店舗代表者*  
 　　 Email：representative@email.com  
 　　 Password：12345678
 
-_一般_  
+*一般*  
 　　 Email：user@email.com  
 　　 Password：12345678
 
