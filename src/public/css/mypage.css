@@ -157,6 +157,11 @@
         cursor: pointer;
     }
 
+    .form__error {
+        font-size: 13px;
+        color: #fff;
+    }
+
     .cancel-change {
         padding: 15px 0 10px 15px;
         display: inline-block;
@@ -721,6 +726,11 @@
         height: 30px;
         width: 150px;
         cursor: pointer;
+    }
+
+    .form__error {
+        font-size: 13px;
+        color: #fff;
     }
 
     .cancel-change {
