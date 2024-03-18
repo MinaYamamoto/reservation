@@ -10,7 +10,8 @@ class Num extends Model
     use HasFactory;
     protected $fillable = ['num'];
 
-    public function reservation() {
+    public function reservation()
+    {
         return $this->hasMany(Reservation::class);
     }
 }

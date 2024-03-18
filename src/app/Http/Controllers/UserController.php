@@ -10,11 +10,13 @@ use Carbon\Carbon;
 
 class UserController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('/admin/representative');
     }
 
-    public function store(UserRequest $request) {
+    public function store(UserRequest $request)
+    {
         $user = $request->only(['name', 'email']);
         $user['role'] = 'representative';
         $user['password'] = Hash::make($request['password']);

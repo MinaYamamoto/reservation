@@ -1,5 +1,3 @@
-@can('representative-authority')
-
 @extends("layouts.app")
 
 @section('stylesheet')
@@ -39,4 +37,3 @@
     </div>
 </div>
 @endsection
-@endcan

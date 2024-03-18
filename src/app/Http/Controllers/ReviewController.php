@@ -14,12 +14,14 @@ class ReviewController extends Controller
         Review::create($review);
         return redirect('/mypage');
     }
+
     public function update(ReviewRequest $request)
     {
         $newReview = $request->only(['star', 'comment']);
         Review::find($request->id)->update($newReview);
         return redirect('/mypage');
     }
+
     public function destroy(Request $request)
     {
         $review = Review::where('id', $request->id)->first();

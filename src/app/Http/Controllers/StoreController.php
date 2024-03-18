@@ -48,22 +48,24 @@ class StoreController extends Controller
         return view('detail', compact('store', 'regions','genres', 'bookmark', 'times', 'nums'));
     }
 
-    public function adminIndex() {
+    public function adminIndex()
+    {
         $stores = Store::all();
         $regions = Region::all();
         $genres = Genre::all();
         return view('/admin/store_list', compact('stores', 'regions', 'genres'));
     }
 
-    public function updateIndex(Request $request) {
+    public function updateIndex(Request $request)
+    {
         $store = Store::find($request->store_id);
         $regions = Region::all();
         $genres = Genre::all();
         return view('/admin/store_update', compact('store', 'regions', 'genres'));
-
     }
 
-        public function update(UpdateStoreRequest $request) {
+        public function update(UpdateStoreRequest $request)
+        {
         $upStore = $request->only(['name', 'genre_id', 'region_id', 'user_id', 'overview']);
         if(request('thumbnail')) {
             $file = $request->file('thumbnail');
@@ -78,10 +80,10 @@ class StoreController extends Controller
         }
         Store::find($request->store_id)->update($upStore);
         return redirect('/admin/storelist');
-
     }
 
-    public function storeIndex() {
+    public function storeIndex()
+    {
         $regions = Region::all();
         $genres = Genre::all();
         return view('/admin/store', compact('regions', 'genres'));

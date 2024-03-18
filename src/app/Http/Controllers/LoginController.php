@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $role = Auth::user()->role;
         $checkRole = explode(',', $role);
         if(in_array('admin', $checkRole)) {

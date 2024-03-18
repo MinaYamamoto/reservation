@@ -34,4 +34,5 @@ class Reservation extends Model
     public function num()
     {
         return $this->belongsTo(Num::class);
-    }}
+    }
+}

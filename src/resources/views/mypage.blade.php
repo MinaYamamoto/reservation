@@ -267,7 +267,9 @@
                             <label class="star__form-label" for="review-correction-star1">★</label>
                         </div>
                         <h3 class="review__comment-ttl">コメント</h3>
-                        <textarea class="review__comment" name="comment" rows="5" cols="30">{{ $review->comment }}</textarea>
+                        <textarea class="review__comment" name="comment" rows="5" cols="30">
+                            {{ $review->comment }}
+                        </textarea>
                     </div>
                     <div class="review-correction__button">
                         <button type="button" class="review-correction__submit-button">修正する</button>
@@ -296,21 +298,21 @@
             <div class="checkout__button">
                 <button type="button" id="checkout-button" class="checkout__button-submit">支払い</button>
             </div>
-                <script>
-                    var stripe = Stripe("{{ env('STRIPE_KEY') }}");
-                    var checkoutButton = document.querySelector('#checkout-button');
-                    checkoutButton.addEventListener('click', function () {
-                    stripe.redirectToCheckout({
-                        lineItems: [{
-                        price: "{{ env('STRIPE_BASIC_ID') }}",
-                        quantity: 1
-                        }],
+            <script>
+                var stripe = Stripe("{{ env('STRIPE_KEY') }}");
+                var checkoutButton = document.querySelector('#checkout-button');
+                checkoutButton.addEventListener('click', function () {
+                stripe.redirectToCheckout({
+                    lineItems: [{
+                    price: "{{ env('STRIPE_BASIC_ID') }}",
+                    quantity: 1
+                    }],
                         mode: 'payment',
-                        successUrl: '{{ route("success") }}',
-                        cancelUrl: '{{ route("mypage") }}'
-                        });
+                    successUrl: '{{ route("success") }}',
+                    cancelUrl: '{{ route("mypage") }}'
                     });
-                </script>
+                });
+            </script>
         </div>
     </div>
     <div class="user__bookmark">

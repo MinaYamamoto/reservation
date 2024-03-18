@@ -1,5 +1,3 @@
-@can('representative-authority')
-
 @extends("layouts.app")
 
 @section('stylesheet')
@@ -10,7 +8,7 @@
 @section('content')
 <div class="reservation">
     <h2 class="reservation__ttl">予約一覧</h2>
-    <div class="reservation__date">
+    <div class="reservation__search">
         <form class="search__form" action="/admin/reservation/search" method="get">
             <div class="search__today">
                 <label class="reservation__today-label">今日の予約を表示</label>
@@ -55,4 +53,3 @@
     </div>
 </div>
 @endsection
-@endcan
