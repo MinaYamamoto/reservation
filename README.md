@@ -12,11 +12,6 @@
 
 WEB アプリ URL：http://18.182.152.167/
 
-AWS 　（IAM ユーザとしてコンソールにサインインする場合は以下を使用してください）  
-・コンソールサインイン：https://058264478200.signin.aws.amazon.com/console  
-・ユーザー名：testuser  
-・コンソールパスワード：testuser1&amp;
-
 ## 他のリポジトリ
 
 GitHub（https）：https://github.com/MinaYamamoto/reservation.git
@@ -136,15 +131,15 @@ DB_HOST=mysql
 DB_DATABASE=laravel_db  
 DB_USERNAME=laravel_user  
 DB_PASSWORD=laravel_pass  
-MAIL_HOST=sandbox.smtp.mailtrap.io  
-MAIL_PORT=2525  
-MAIL_USERNAME=b3190c220e7b27  
-MAIL_PASSWORD=68173c9d406bab  
-MAIL_ENCRYPTION=tls  
-MAIL_FROM_ADDRESS=mailtrap@example.com  
-STRIPE_KEY=pk_test_51OpqbqGivG6QeAc8ivudeS0M2aaZinAWQPoP3hcBaiOrGpF1JIm4q1N38bnXP6l1TipAsRGXsowyNCMZ8hdzxXR600RZYYYbhY  
-STRIPE_SECRET=sk_test_51OpqbqGivG6QeAc8cUx81ZujodFv8JFM3DXXkdVoDrJjSm7VgZQH9zBeStBRWdVUVWabLLeXgrHA6i3JIIg6zopb00076VqsLK  
-STRIPE_BASIC_ID=price_1OqZTjGivG6QeAc8TxoCySbv  
+MAIL_HOST=mailtrip の SMTP Settings タブより設定値をコピー  
+MAIL_PORT=mailtrip の SMTP Settings タブより設定値をコピー  
+MAIL_USERNAME=mailtrip の SMTP Settings タブより設定値をコピー  
+MAIL_PASSWORD=mailtrip の SMTP Settings タブより設定値をコピー  
+MAIL_ENCRYPTION=mailtrip の SMTP Settings タブより設定値をコピー  
+MAIL_FROM_ADDRESS=mailtrip の SMTP Settings タブより設定値をコピー  
+STRIPE_KEY=stripe の公開可能キー  
+STRIPE_SECRET=stripe のシークレットキー  
+STRIPE_BASIC_ID=stripe にて任意の商品カタログの APIID  
 CASHIER_CURRENCY=jpy
 
 5.アプリケーション起動のためのキーを生成  
@@ -197,12 +192,8 @@ _CodeDeploy_
 　　デプロイグループ：reservation
 
 ・メールの確認には mailtrap を使用しています。  
-_mailtrap ログイン情報_  
-　　 Email: coachtechmytest@gmail.com  
-　　 Password coachtechmytest1!
+　　 URL：https://mailtrap.io/email-sandbox/
 
 ・決済には stripe を使用しています。  
-_stripe ログイン情報_  
-　　 URL：https://dashboard.stripe.com/login  
-　　 Email：motitama1106@gmail.com  
-　　 Password：coachtechmytest1!
+　　 URL：https://dashboard.stripe.com/
+　　商品カタログより、任意の商品を１つ追加してください。
