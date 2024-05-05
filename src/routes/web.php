@@ -58,7 +58,8 @@ Route::group(['middleware' => ['auth', 'can:representative-authority']], functio
     Route::post('/admin/storelist/{store_id}', [StoreController::class, 'update']);
     Route::get('/admin/store/registration', [StoreController::class, 'storeIndex']);
     Route::post('/admin/store/registration', [StoreController::class, 'store']);
-    Route::get('/admin/mail', [MailController::class, 'index']);
+    Route::get('/admin/mail', [MailController::class, 'listIndex']);
+    Route::get('/admin/mail/{user_id}', [MailController::class, 'index']);
     Route::post('/admin/mail/confirm', [MailController::class, 'confirm']);
     Route::post('/admin/mail/execute', [MailController::class, 'execute']);
 });

@@ -14,7 +14,7 @@
         <div class="form-group">
             <label class="form-group__label" for="name">名前（必須）</label>
             <div class="form__group-content">
-                <input type="text" class="form-group__txt" id="name" name="name" placeholder="名前" value="{{old('name')}}">
+                <input type="text" class="form-group__txt" id="name" name="name" placeholder="名前" value="{{$user_name}}">
             </div>
         </div>
         <div class="form__error">
@@ -25,7 +25,7 @@
         <div class="form-group">
             <label class="form-group__label" for="email">宛先（必須）</label>
             <div class="form__group-content">
-                <input type="text" class="form-group__txt" id="email" name="email" placeholder="宛先" value="{{old('email')}}">
+                <input type="text" class="form-group__txt" id="email" name="email" placeholder="宛先" value="{{$user_email}}">
             </div>
         </div>
         <div class="form__error">

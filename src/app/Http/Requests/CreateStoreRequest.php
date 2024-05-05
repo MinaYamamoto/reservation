@@ -31,7 +31,7 @@ class CreateStoreRequest extends FormRequest
             'thumbnail' => 'required|mimes:jpg,jpeg,png|max:10240'
         ];
     }
-
+    
     public function messages()
     {
         return [

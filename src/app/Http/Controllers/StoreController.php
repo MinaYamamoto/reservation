@@ -11,9 +11,7 @@ use App\Models\Num;
 use App\Http\Requests\CreateStoreRequest;
 use App\Http\Requests\UpdateStoreRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\File;
 
 class StoreController extends Controller
 {
@@ -41,8 +39,8 @@ class StoreController extends Controller
     {
         $store = Store::find($request->store_id);
         $regions = Region::all();
-        $genres = Genre::all();
         $bookmark = Bookmark::where('store_id', $request->store_id)->where('user_id', auth()->id())->get();
+        $genres = Genre::all();
         $times = Time::all();
         $nums = Num::all();
         return view('detail', compact('store', 'regions','genres', 'bookmark', 'times', 'nums'));
