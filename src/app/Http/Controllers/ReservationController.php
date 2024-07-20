@@ -35,8 +35,7 @@ class ReservationController extends Controller
 
     public function search(Request $request)
     {
-        $user_id = auth()->id();
-        $store = Store::where('user_id', $user_id)->get();
+        $store = Store::all();
         $search_day = new carbon($request->search_day);
         if($request->today__reservation == "today__reservation") {
             $search_day = Carbon::today();
@@ -46,7 +45,7 @@ class ReservationController extends Controller
             $search_day = $search_day->addDay();
         }
         $reservations = Reservation::where('date', $search_day)->orderby('store_id', 'asc')->orderby('time_id', 'asc')->get();
-        return view('admin/reservation', compact('search_day', 'reservations','user_id'));
+        return view('admin/reservation', compact('search_day', 'reservations'));
     }
 
     public function detail(Request $request)

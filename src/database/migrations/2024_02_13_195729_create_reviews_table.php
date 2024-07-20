@@ -18,7 +18,8 @@ class CreateReviewsTable extends Migration
             $table->foreignId('user_id')->constrained()->unique();
             $table->foreignId('store_id')->constrained()->unique();
             $table->integer('star');
-            $table->string('comment', 255);
+            $table->string('comment', 400);
+            $table->string('image', 255)->nullable();
             $table->timestamps();
         });
     }

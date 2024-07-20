@@ -25,9 +25,11 @@ use App\Http\Controllers\StripeController;
 Route::post('/email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
 
 Route::get('redirects', [LoginController::class, 'index']);
-Route::get('/', [StoreController::class, 'index']);
+Route::get('/', [StoreController::class, 'index'])->name('stores.index');
 Route::get('/store/search', [StoreController::class, 'search']);
 Route::get('/detail/{store_id}', [StoreController::class, 'detail']);
+Route::get('/review',[ReviewController::class, 'reviewIndex'])->name('review.index');;
+Route::get('/review/search',[ReviewController::class, 'reviewSearch']);
 
 Route::middleware('verified')->group(function() {
     Route::get('/mypage',[MypageController::class, 'index'])->name('mypage');
@@ -36,9 +38,13 @@ Route::middleware('verified')->group(function() {
     Route::post('/reservation', [ReservationController::class, 'store']);
     Route::delete('/reservation/{reservation_id}', [ReservationController::class, 'destroy']);
     Route::patch('/reservation/{reservation_id}', [ReservationController::class, 'update']);
-    Route::post('/review', [ReviewController::class, 'store']);
-    Route::patch('/review/{review_id}', [ReviewController::class, 'update']);
-    Route::delete('/review/{review_id}', [ReviewController::class, 'destroy']);
+    Route::get('/review/post',[ReviewController::class, 'postIndex']);
+    Route::post('/review/post',[ReviewController::class,'postStore']);
+    Route::patch('/review/{review_id}',[ReviewController::class,'reviewUpdate']);
+    Route::delete('/review/{review_id}',[ReviewController::class,'reviewDestroy']);
+    Route::post('/mypage/review', [ReviewController::class, 'store']);
+    Route::patch('/mypage/review/{review_id}', [ReviewController::class, 'update']);
+    Route::delete('/mypage/review/{review_id}', [ReviewController::class, 'destroy']);
     Route::get('/success',function(){
         return view('success');
     })->name('success');
@@ -47,6 +53,10 @@ Route::middleware('verified')->group(function() {
 Route::group(['middleware' => ['auth', 'can:admin-authority']], function() {
     Route::get('/admin/representative', [UserController::class,'index']);
     Route::post('/admin/representative', [UserController::class,'store']);
+    Route::get('/admin/storeupload', function() {
+        return view('admin/store_upload');
+    });
+    Route::post('/admin/storeupload', [StoreController::class, 'importCsv']);
 });
 
 Route::group(['middleware' => ['auth', 'can:representative-authority']], function() {

@@ -1,9 +1,27 @@
 @media screen and (min-width: 769px) {
+    .header__sort {
+        height: 32px;
+        background-color: #e4e4ec;
+        margin-right: 0;
+        margin-left: auto;
+        display: flex;
+    }
+
+    .sort__form {
+        border: none;
+        outline: none;
+        height: 30px;
+        text-align: center;
+        border-right: 1px solid #d5d2d2fa;
+        border-radius: 5px;
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
     .header__search {
         height: 32px;
-        width: 85%;
-        padding-left: 50%;
         background-color: #e4e4ec;
+        margin-right: 0;
+        margin-left: 10px;
         display: flex;
     }
 
@@ -69,7 +87,6 @@
 
     .card {
         display: flex;
-        height: 270px;
         flex-direction: column;
         border-radius: 5px;
         width: 22%;
@@ -90,6 +107,7 @@
 
     .card__content {
         padding: 12px 10px 0 10px;
+        height: 30%;
     }
 
     .card__store {
@@ -154,12 +172,27 @@
 }
 
 @media screen and (max-width: 768px) {
+    .header__sort {
+        height: 32px;
+        background-color: #e4e4ec;
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .sort__form {
+        border: none;
+        outline: none;
+        height: 30px;
+        text-align: center;
+        border-right: 1px solid #d5d2d2fa;
+        border-radius: 5px;
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
     .header__search {
         height: 32px;
-        width: 85%;
-        padding-left: 10%;
+        width: 90%;
         background-color: #e4e4ec;
-        display: flex;
     }
 
     .search-form__inner {
@@ -228,7 +261,6 @@
 
     .card {
         display: flex;
-        height: 250px;
         flex-direction: column;
         border-radius: 5px;
         width: 270px;

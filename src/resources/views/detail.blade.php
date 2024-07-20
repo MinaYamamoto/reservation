@@ -28,6 +28,34 @@
         <div class="store__overview">
             <p class="store__overview-txt">{{ $store['overview'] }}</p>
         </div>
+        <div class="store__review">
+            @guest
+            <form action="/review" method="get">
+                @csrf
+                <button class="store__review-link">口コミを表示する</button>
+                <input type="hidden" name="store_id" value="{{$store->id}}">
+            </form>
+            @endguest
+            @can('user-authority')
+            <form action="/review/post" method="get">
+                @csrf
+                <button class="store__review-link">口コミを投稿する</button>
+                <input type="hidden" name="store_id" value="{{$store->id}}">
+            </form>
+            @elsecan('admin-authority')
+            <form action="/review" method="get">
+                @csrf
+                <button class="store__review-link">口コミを表示する</button>
+                <input type="hidden" name="store_id" value="{{$store->id}}">
+            </form>
+            @elsecan('representative-authority')
+            <form action="/review" method="get">
+                @csrf
+                <button class="store__review-link">口コミを表示する</button>
+                <input type="hidden" name="store_id" value="{{$store->id}}">
+            </form>
+            @endcan
+        </div>
     </div>
     <div class="store__reserve">
         <h2 class="reserve__ttl">予約</h2>

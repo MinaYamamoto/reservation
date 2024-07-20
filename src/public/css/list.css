@@ -5,47 +5,11 @@
 
     .store__detail {
         width: 50%;
-        padding: 20px 20px 20px 60px;
-    }
-
-    .store__detail-header {
-        display: flex;
-        padding-bottom: 10px;
-    }
-
-    .back__button {
-        padding-top: 5px;
-    }
-
-    .back__button-submit {
-        background-color: #fff;
-        border: none;
-        border-radius: 3px;
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-        text-decoration: none;
-        display: block;
-        width: 28px;
-        height: 28px;
-        cursor: pointer;
-    }
-
-    .fa-chevron-left {
-        padding: 6px 0 0 9px;
-        color: #000000;
-    }
-
-    .store__name {
-        padding-left: 10px;
-    }
-
-    .store__name-header {
-        font-weight: 500;
-        font-size: 20px;
-        margin: 5px 0 5px 0;
+        padding: 20px 70px 20px 60px;
     }
 
     .store__img {
-        height: 60%;
+        height: 170px;
         width: 80%;
     }
 
@@ -79,19 +43,139 @@
         margin: 5px 0 5px 0;
     }
 
-    .store__review {
-        margin-top: 15px;
-        display: flex;
-        justify-content: left;
+    .store__review-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        width: 80%;
+        height: 30px;
     }
 
-    .store__review-link {
+    .review__flex {
+        display: flex;
+        justify-content: right;
+    }
+
+    .edit-review-link {
         color: #000000;
-        font-size: 15px;
+        font-size: 13px;
         border: none;
         background-color: #e4e4ec;
         cursor: pointer;
         text-decoration: underline;
+    }
+
+    .review-correction__delete-button {
+        color: #000000;
+        font-size: 13px;
+        border: none;
+        background-color: #e4e4ec;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .review__comment {
+        width: 100%;
+    }
+
+    .review__comment-txt {
+        white-space: pre-line;
+    }
+
+    .review__comment-txt[contenteditable="true"] {
+        border: 1px solid #ccc;
+        padding: 5px;
+        height: 80px;
+        width: 550px;
+    }
+
+    .input__length {
+        display: flex;
+        font-size: 12px;
+        margin-top: -20px;
+        justify-content: end;
+    }
+
+    .review__star {
+        position: relative;
+        padding: 0 3px;
+        color: #ccc;
+        cursor: pointer;
+        font-size: 40px;
+    }
+
+    .star-rating {
+        color: #007bff;
+    }
+
+    .star-no-rating {
+        color: #ccc;
+    }
+
+    .editing-star:hover,
+    .editing-star:hover~.editing-star {
+        color: #007bff;
+    }
+
+    .editing {
+        border: 1px solid #007bff;
+        padding: 5px;
+        background-color: #ccc;
+    }
+
+    .review-save {
+        text-align: right;
+    }
+
+    .review-save__button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        width: 20%;
+        height: 30px;
+    }
+
+    .form__review-error {
+        height: 15px;
+        font-size: 15px;
+        color: #ff0000;
+        text-align: left;
+    }
+
+    .image__preview {
+        width: 100px;
+        height: 100px;
+    }
+
+    .review__img {
+        width: 100%;
+    }
+
+    .review__image {
+        width: 90%;
+        height: 80px;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    .review__img-update {
+        margin-top: 30px;
+    }
+
+    .review__file {
+        text-align: center;
+        display: none;
+    }
+
+    .review__file-input {
+        display: inline-block;
+        background-color: #fff;
+        border: none;
+        font-size: 15px;
+        padding: 8px;
+        margin-top: 15px;
+        cursor: pointer;
+        outline: none;
     }
 
     .store__reserve {
@@ -105,6 +189,7 @@
         color: #fff;
         position: relative;
     }
+
 
     .reserve__ttl {
         font-size: 20px;
@@ -177,49 +262,12 @@
 
 @media screen and (max-width: 768px) {
     .store__detail {
-        padding: 20px 20px 5px 60px;
-    }
-
-    .store__detail-header {
-        display: flex;
-        padding-bottom: 10px;
-    }
-
-    .back__button {
-        padding-top: 5px;
-    }
-
-    .back__button-submit {
-        background-color: #fff;
-        border: none;
-        border-radius: 3px;
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-        text-decoration: none;
-        display: block;
-        width: 28px;
-        height: 28px;
-        cursor: pointer;
-    }
-
-    .fa-chevron-left {
-        padding: 6px 0 0 9px;
-        color: #000000;
-    }
-
-
-    .store__name {
-        padding-left: 10px;
-    }
-
-    .store__name-header {
-        font-weight: 500;
-        font-size: 20px;
-        margin: 5px 0 5px 0;
+        padding: 20px 20px 5px 20px;
     }
 
     .store__img {
         height: 60%;
-        width: 80%;
+        width: 100%;
     }
 
     .store__thumbnail {
@@ -228,7 +276,7 @@
     }
 
     .store__tag {
-        width: 80%;
+        width: 100%;
     }
 
     .store__tag-region {
@@ -245,24 +293,155 @@
 
     .store__overview {
         font-size: 12px;
-        width: 80%;
+        width: 100%;
     }
 
     .store__overview-txt {
         margin: 5px 0 5px 0;
     }
 
-    .store__review {
-        margin-top: 10px;
+    .store__overview-txt {
+        margin: 5px 0 5px 0;
     }
 
-    .store__review-link {
+    .store__review-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        width: 100%;
+        height: 30px;
+    }
+
+    .review__flex {
+        display: flex;
+        justify-content: right;
+    }
+
+    .edit-review-link {
         color: #000000;
         font-size: 13px;
         border: none;
         background-color: #e4e4ec;
         cursor: pointer;
         text-decoration: underline;
+    }
+
+    .review-correction__delete-button {
+        color: #000000;
+        font-size: 13px;
+        border: none;
+        background-color: #e4e4ec;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .review__comment {
+        width: 100%;
+    }
+
+    .review__comment-txt {
+        white-space: pre-line;
+    }
+
+    .review__comment-txt[contenteditable="true"] {
+        border: 1px solid #ccc;
+        padding: 5px;
+        height: 80px;
+        width: 100%;
+        white-space: pre-line;
+    }
+
+    .input__length {
+        display: flex;
+        font-size: 12px;
+        margin-top: -20px;
+        justify-content: end;
+    }
+
+    .review__star {
+        position: relative;
+        padding: 0 3px;
+        color: #ccc;
+        cursor: pointer;
+        font-size: 40px;
+    }
+
+    .star-rating {
+        color: #007bff;
+    }
+
+    .star-no-rating {
+        color: #ccc;
+    }
+
+    .editing-star:hover,
+    .editing-star:hover~.editing-star {
+        color: #007bff;
+    }
+
+    .editing {
+        border: 1px solid #007bff;
+        padding: 5px;
+        background-color: #ccc;
+    }
+
+    .review-save {
+        text-align: right;
+    }
+
+    .review-save__button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        width: 20%;
+        height: 30px;
+    }
+
+    .form__review-error {
+        height: 15px;
+        font-size: 15px;
+        color: #ff0000;
+        text-align: left;
+    }
+
+    .image {
+        margin-left: 15%;
+    }
+
+    .image__preview {
+        width: 100px;
+        height: 100px;
+    }
+
+    .review__img {
+        width: 100%;
+    }
+
+    .review__image {
+        width: 90%;
+        height: 100px;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    .review__img-update {
+        margin-top: 30px;
+    }
+
+    .review__file {
+        text-align: center;
+        display: none;
+    }
+
+    .review__file-input {
+        display: inline-block;
+        background-color: #fff;
+        border: none;
+        font-size: 15px;
+        padding: 8px;
+        margin-top: 20px;
+        cursor: pointer;
+        outline: none;
     }
 
     .store__reserve {

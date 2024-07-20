@@ -91,7 +91,6 @@
         <div class="form-button">
             <button type="button" class="form-button__button" onclick="history.back()">戻る</button>
             <button class="form-button__submit" type="submit">登録</button>
-            <input type="hidden" name="user_id" value="{{optional(Auth::user())->id}}">
         </div>
     </form>
 </div>

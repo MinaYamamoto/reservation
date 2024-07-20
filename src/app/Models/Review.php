@@ -13,6 +13,7 @@ class Review extends Model
         'store_id',
         'star',
         'comment',
+        'image'
     ];
 
     public function store()

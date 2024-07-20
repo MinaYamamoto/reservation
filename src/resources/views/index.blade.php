@@ -6,25 +6,42 @@
 @endsection
 
 @section('header')
+<div class="header__sort">
+    <form action="{{ route('stores.index') }}" method="GET">
+        @csrf
+        <div class="sort__inner">
+            <select class="sort__form" name="sort_key" onchange="this.form.submit()">
+                <option value="">並び替え：評価高/低</option>
+                <option value="random" {{ request('sort_key') == 'random' ? 'selected' : '' }} >ランダム</option>
+                <option value="high" {{ request('sort_key') == 'high' ? 'selected' : '' }}>評価が高い順</option>
+                <option value="row" {{ request('sort_key') == 'row' ? 'selected' : '' }}>評価が低い順</option>
+            </select>
+            <input type="hidden" name="region_id" value="{{ request('region_id') }}">
+            <input type="hidden" name="genre_id" value="{{ request('genre_id') }}">
+            <input type="hidden" name="keyword" value="{{ request('keyword') }}">
+        </div>
+    </form>
+</div>
 <div class="header__search">
     <form class="search-form" action="/store/search" method="get">
         @csrf
         <div class="search-form__inner">
-            <select class="search-form__region" name='region_id'>
+            <select class="search-form__region" name='region_id' onchange="this.form.submit()">
                 <option value="">All area</option>
                 @foreach($regions as $region)
-                <option value="{{ $region['id'] }}" {{request()->region_id ==$region['id']? "selected" : "";}}>{{ $region['name'] }}</option>
+                <option value="{{ $region['id'] }}" {{request('region_id') == $region['id'] ? 'selected' : '' }}>{{ $region['name'] }}</option>
                 @endforeach
             </select>
-            <select class="search-form__genre" name="genre_id">
+            <select class="search-form__genre" name="genre_id" onchange="this.form.submit()">
                 <option value="">All genre</option>
                 @foreach($genres as $genre)
-                <option value="{{ $genre['id']}}" {{request()->genre_id ==$genre['id']? "selected" : "";}}>{{ $genre['name'] }}</option>
+                <option value="{{ $genre['id']}}" {{request('genre_id') == $genre['id'] ? 'selected' : '' }}>{{ $genre['name'] }}</option>
                 @endforeach
             </select>
             <div class="search-form__text">
                 <input class="search-form__input" type="text" name="keyword" value="{{ request()->keyword }}" placeholder="&#xF002; search...">
             </div>
+            <input type="hidden" name="sort_key" value="{{ request()->sort_key }}">
         </div>
     </form>
 </div>

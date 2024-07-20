@@ -17,13 +17,11 @@
         <table class="store-list__table-table">
             <tr>
                 <th class="store-list__table-th">店舗名</th>
-                <th class="store-list__table-th">店舗代表者</th>
                 <th class="store-list__table-th"></th>
             </tr>
             @foreach($stores as $store)
             <tr>
                 <td class="store-list__table-td">{{ $store->name }}</td>
-                <td class="store-list__table-td">{{ $store->user->name }}</td>
                 <form class="form" action="/admin/storelist/{{ $store['id']}}" method="GET">
                     @csrf
                     <td class="store-list__table-td">

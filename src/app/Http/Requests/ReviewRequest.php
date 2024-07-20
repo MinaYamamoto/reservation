@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ReviewRequest extends FormRequest
 {
@@ -24,16 +25,25 @@ class ReviewRequest extends FormRequest
     public function rules()
     {
         return [
+            'user_id' => [
+                Rule::unique('reviews')->ignore($this->input('id'))->where(function($query) {
+                    $query->where('store_id', $this->input('store_id'));
+                }),
+            ],
             'star' => 'required',
-            'comment' => 'required|max:255',
+            'comment' => 'required|max:400',
+            'image' => 'mimes:jpeg,png|max:10240'
         ];
     }
     public function messages()
     {
         return [
-            'star.required' => '評価５段階で選択してください',
+            'user_id.unique' => '同じ店舗に対して既にレビューを投稿しています。',
+            'star.required' => '評価を５段階で選択してください',
             'comment.required' => 'コメントを入力してください',
-            'comment.max' => 'コメントは255文字以内で入力してください'
+            'comment.max' => 'コメントは400文字以内で入力してください',
+            'image.mimes' => '画像ファイル(jpeg,png)を選択してください',
+            'image.max' => '10M以下の画像ファイルを選択してください',
         ];
     }
 }

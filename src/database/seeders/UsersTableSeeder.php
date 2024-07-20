@@ -38,5 +38,21 @@ class UsersTableSeeder extends Seeder
             'role' => 'user',
         ];
         DB::table('users')->insert($param);
+        $param = [
+            'name' => 'テスト　user1',
+            'email' => 'user1@email.com',
+            'email_verified_at' => '2024-02-13 21:22:52',
+            'password' => \Hash::make('12345678'),
+            'role' => 'user',
+        ];
+        DB::table('users')->insert($param);
+        $param = [
+            'name' => 'テスト　user2',
+            'email' => 'user2@email.com',
+            'email_verified_at' => '2024-02-13 21:22:52',
+            'password' => \Hash::make('12345678'),
+            'role' => 'user',
+        ];
+        DB::table('users')->insert($param);
     }
 }

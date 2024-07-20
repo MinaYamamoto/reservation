@@ -1,0 +1,455 @@
+@media screen and (min-width: 769px) {
+    .review {
+        display: flex;
+        margin-top: -50px;
+        max-width: fit-content;
+    }
+
+    .review__shop {
+        width: 50%;
+        margin: auto;
+        position: relative;
+        padding-right: 20px;
+    }
+
+    .review__shop::after {
+        content: "";
+        position: absolute;
+        top: 8%;
+        right: 25%;
+        width: 3px;
+        height: 75%;
+        background-color: #ccc;
+    }
+
+    .shop__message {
+        font-size: 25px;
+        width: 50%;
+        margin-left: 20%;
+        font-weight: bold;
+    }
+
+    .shop__card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        width: 45%;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        margin-left: 20%;
+        background-color: #fff;
+    }
+
+    .card__img {
+        height: 100%;
+    }
+
+    .store__img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .card__content {
+        padding: 12px 10px 0 10px;
+    }
+
+    .card__store {
+        font-size: 19px;
+        font-weight: 500;
+        margin: 0 auto;
+    }
+
+    .card__tag {
+        font-size: 12px;
+        text-align: left;
+        height: 40px;
+        padding: 0 10px;
+    }
+
+    .region__tag {
+        display: inline-block;
+        margin: 5px 0 0 0;
+    }
+
+    .genres__tag {
+        display: inline-block;
+        margin: 5px 0 0 0;
+    }
+
+    .card__button {
+        padding: 0 30px 5px 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card__button-submit {
+        color: #fff;
+        background-color: rgb(0, 105, 255);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 90px;
+        cursor: pointer;
+    }
+
+    .card__button-unbookmark {
+        color: #f13756fa;
+        background-color: #fff;
+        border: none;
+        font-size: 25px;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .card__button-bookmark {
+        color: #aeaeb3;
+        background-color: #fff;
+        border: none;
+        font-size: 25px;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .review__post {
+        width: 60%;
+        padding-left: 30px;
+        margin-top: 40px;
+        margin-left: -150px;
+    }
+
+    .post__ttl {
+        margin-top: 5px;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .star__form {
+        margin-top: -18px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    .star__form-input[type=radio] {
+        display: none;
+    }
+
+    .star__form-label {
+        position: relative;
+        padding: 0 3px;
+        color: #ccc;
+        cursor: pointer;
+        font-size: 40px;
+    }
+
+    .star__form-label:hover {
+        color: #007bff;
+    }
+
+    .star__form-label:hover~label {
+        color: #007bff;
+    }
+
+    .star__form-input[type=radio]:checked~label {
+        color: #007bff;
+    }
+
+    .form__error {
+        height: 15px;
+        font-size: 15px;
+        color: #ff0000;
+        text-align: left;
+    }
+
+    .review__comment {
+        background-color: #e4e4ec;
+        border: 2px solid #ccc;
+        height: 80px;
+        width: 90%;
+    }
+
+    .input__length {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 12px;
+        margin-top: -20px;
+        margin-right: 70px;
+    }
+
+    .image__preview {
+        width: 100px;
+        height: 100px;
+    }
+
+    .review__img {
+        width: 100%;
+    }
+
+    .review__image {
+        width: 90%;
+        height: 80px;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    .review__img-update {
+        margin-top: 30px;
+    }
+
+    .review__file {
+        text-align: center;
+        display: none;
+    }
+
+    .review__file-input {
+        display: inline-block;
+        background-color: #fff;
+        border: none;
+        font-size: 15px;
+        padding: 8px;
+        margin-top: 15px;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .review__post-submit {
+        width: 400px;
+        padding-left: 30px;
+        margin-top: 40px;
+        margin-left: -150px;
+    }
+
+    .review__post-button {
+        background-color: rgb(253, 253, 253);
+        color: #000000;
+        border: none;
+        height: 40px;
+        width: 100%;
+        border-radius: 20px 20px 20px 20px;
+        cursor: pointer;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .shop__message {
+        font-size: 25px;
+        width: 70%;
+        margin-left: 20%;
+        font-weight: bold;
+    }
+
+    .shop__card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        width: 55%;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        margin-left: 20%;
+        background-color: #fff;
+    }
+
+    .card__img {
+        height: 100%;
+    }
+
+    .store__img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .card__content {
+        padding: 12px 10px 0 10px;
+    }
+
+    .card__store {
+        font-size: 19px;
+        font-weight: 500;
+        margin: 0 auto;
+    }
+
+    .card__tag {
+        font-size: 12px;
+        text-align: left;
+        height: 40px;
+        padding: 0 10px;
+    }
+
+    .region__tag {
+        display: inline-block;
+        margin: 5px 0 0 0;
+    }
+
+    .genres__tag {
+        display: inline-block;
+        margin: 5px 0 0 0;
+    }
+
+    .card__button {
+        padding: 0 30px 5px 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card__button-submit {
+        color: #fff;
+        background-color: rgb(0, 105, 255);
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px;
+        width: 90px;
+        cursor: pointer;
+    }
+
+    .card__button-unbookmark {
+        color: #f13756fa;
+        background-color: #fff;
+        border: none;
+        font-size: 25px;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .card__button-bookmark {
+        color: #aeaeb3;
+        background-color: #fff;
+        border: none;
+        font-size: 25px;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .post__ttl {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .review__star {
+        margin-left: 15%;
+    }
+
+    .star__form {
+        margin-top: -18px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: start;
+    }
+
+    .star__form-input[type=radio] {
+        display: none;
+    }
+
+    .star__form-label {
+        position: relative;
+        padding: 0 3px;
+        color: #ccc;
+        cursor: pointer;
+        font-size: 40px;
+    }
+
+    .star__form-label:hover {
+        color: #007bff;
+    }
+
+    .star__form-label:hover~label {
+        color: #007bff;
+    }
+
+    .star__form-input[type=radio]:checked~label {
+        color: #007bff;
+    }
+
+    .form__error {
+        height: 15px;
+        font-size: 15px;
+        color: #ff0000;
+        text-align: left;
+    }
+
+    .comment {
+        margin-left: 15%;
+    }
+
+    .review__comment {
+        background-color: #e4e4ec;
+        border: 2px solid #ccc;
+        height: 80px;
+        width: 90%;
+    }
+
+    .input__length {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 12px;
+        margin-top: -20px;
+        margin-right: 70px;
+    }
+
+    .image {
+        margin-left: 15%;
+    }
+
+    .image__preview {
+        width: 100px;
+        height: 100px;
+    }
+
+    .review__img {
+        width: 100%;
+    }
+
+    .review__image {
+        width: 90%;
+        height: 100px;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    .review__img-update {
+        margin-top: 30px;
+    }
+
+    .review__file {
+        text-align: center;
+        display: none;
+        z-index: 10;
+    }
+
+    .review__file-input {
+        display: inline-block;
+        background-color: #fff;
+        border: none;
+        font-size: 15px;
+        padding: 8px;
+        margin-top: 20px;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .review__post-submit {
+        margin-top: 40px;
+        margin-left: 15%;
+    }
+
+    .review__post-button {
+        background-color: rgb(253, 253, 253);
+        color: #000000;
+        border: none;
+        height: 40px;
+        width: 90%;
+        border-radius: 20px 20px 20px 20px;
+        cursor: pointer;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+}

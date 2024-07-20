@@ -23,6 +23,8 @@ AWS 　 S3
 
 ・飲食店情報一覧表示機能
 
+・飲食店情報一覧ソート機能
+
 ・飲食店エリア検索機能
 
 ・飲食店ジャンル検索機能
@@ -51,11 +53,11 @@ AWS 　 S3
 
 ・飲食店お気に入り解除機能
 
-・飲食店レビュー投稿機能
+・飲食店口コミ投稿機能
 
-・飲食店レビュー変更機能
+・飲食店口コミ変更機能
 
-・飲食店レビュー削除機能
+・飲食店口コミ削除機能
 
 ・ユーザ情報取得機能
 
@@ -70,6 +72,10 @@ AWS 　 S3
 **管理者機能**
 
 ・店舗代表者登録機能
+
+・店舗情報作成機能（CSV インポート）
+
+・飲食店口コミ削除機能
 
 **店舗代表者機能**
 
@@ -95,11 +101,11 @@ AWS 　 S3
 
 ## テーブル設計
 
-![alt text](image-2.png)
+![alt text](テーブル定義.png)
 
 ## ER 図
 
-![alt text](image-1.png)
+![alt text](ER図.png)
 
 ## 環境構築
 
@@ -157,11 +163,11 @@ php artisan storage:link
 9.storage>app>public フォルダに post_img フォルダを作成
 
 10.「reservation」配下にある以下ファイルを「9.」で作成した post_img フォルダに格納  
-　 sushi.jpg  
-　 yakiniku.jpg  
-　 ramen.jpg  
-　 italian.jpg  
-　 izakaya.jpg
+　 sushi.jpeg  
+　 yakiniku.jpeg  
+　 ramen.jpeg  
+　 italian.jpeg  
+　 izakaya.jpeg
 
 ## その他記述
 
@@ -197,3 +203,38 @@ _CodeDeploy_
 ・決済には stripe を使用しています。  
 　　 URL：https://dashboard.stripe.com/
 　　商品カタログより、任意の商品を１つ追加してください。
+
+_CSV インポート機能（ファイル定義）_  
+・CSV インポート用のファイル定義は以下の通りです。
+　　店舗名（50 文字以内）,ジャンル(注 1),地域(注 2),店舗概要（400 文字以内）,画像 URL(注 3)
+
+注１：ジャンルの設定値
+|設定値|ジャンル名|
+| --- | --- |
+| 1 | 寿司 |
+| 2 | イタリアン |
+| 3 | ラーメン |
+| 4 | 居酒屋 |
+| 5 | 焼肉 |
+
+注２：地域の設定値
+|設定値|地域名|
+| --- | --- |
+| 1 | 東京都 |
+| 2 | 大阪府 |
+| 3 | 福岡県 |
+
+注３：画像 URL の設定値
+　　登録可能な画像ファイル拡張子は「jpeg」「png」となります。
+　　以下フォルダに格納された画像について設定可能です。
+　　 src\storage\app\public\post_img
+　　設定例）/storage/post_img/sushi.jpeg
+
+・CSV インポート用のファイル定義の設定例
+　　〇　店名：テスト店舗
+　　〇　ジャンル：イタリアン
+　　〇　地域：福岡県
+　　〇　店舗概要：テスト店舗用概要
+　　〇　画像 URL：src\storage\app\public\post_img\italian.jpeg
+　　上記内容で店舗登録を行う場合のファイル定義は以下の通りとなります。
+　　　　テスト店舗,2,3,テスト店舗用概要,/storage/post_img/italian.jpeg

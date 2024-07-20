@@ -1,6 +1,9 @@
 {
     "/js/detail.js": "/js/detail.js",
     "/js/hamburger.js": "/js/hamburger.js",
+    "/js/length.js": "/js/length.js",
+    "/js/upload.js": "/js/upload.js",
+    "/js/reviewlist.js": "/js/reviewlist.js",
     "/js/mypage.js": "/js/mypage.js",
     "/js/done.js": "/js/done.js",
     "/css/app.css": "/css/app.css"

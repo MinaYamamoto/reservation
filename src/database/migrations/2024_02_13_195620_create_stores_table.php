@@ -15,11 +15,10 @@ class CreateStoresTable extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 60);
+            $table->string('name', 50);
             $table->foreignId('genre_id')->constrained();
             $table->foreignId('region_id')->constrained();
-            $table->foreignId('user_id')->constrained();
-            $table->string('overview', 255);
+            $table->string('overview', 400);
             $table->string('thumbnail', 255);
             $table->timestamps();
         });

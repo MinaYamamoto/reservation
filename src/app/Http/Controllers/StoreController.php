@@ -12,22 +12,31 @@ use App\Http\Requests\CreateStoreRequest;
 use App\Http\Requests\UpdateStoreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\MessageBag;
+use Goodby\CSV\Import\Standard\LexerConfig;
+use Goodby\CSV\Import\Standard\Lexer;
+use Goodby\CSV\Import\Standard\Interpreter;
 
 class StoreController extends Controller
 {
-    public function index (Store $store)
+    public function index (Request $request)
     {
-        $stores = Store::all();
         $regions = Region::all();
         $genres = Genre::all();
-        $bookmark = Bookmark::where('store_id', $store->id)->where('user_id', auth()->id())->get();
-        return view('index', compact('stores', 'regions','genres', 'bookmark'));
+        $stores = Store::search($request->query())
+        ->sortByKey($request->sort_key)
+        ->get();
+
+        return view('index', compact('stores', 'regions','genres'));
     }
 
     public function search(Request $request)
     {
         $params = $request->query();
-        $stores = Store::search($params)->get();
+        $stores = Store::search($params)
+        ->sortByKey($params['sort_key'] ?? null)
+        ->get();
         $regions = Region::all();
         $genres = Genre::all();
         $bookmark = Bookmark::where('store_id', $request->store_id)->where('user_id', auth()->id())->get();
@@ -62,9 +71,9 @@ class StoreController extends Controller
         return view('/admin/store_update', compact('store', 'regions', 'genres'));
     }
 
-        public function update(UpdateStoreRequest $request)
-        {
-        $upStore = $request->only(['name', 'genre_id', 'region_id', 'user_id', 'overview']);
+    public function update(UpdateStoreRequest $request)
+    {
+        $upStore = $request->only(['name', 'genre_id', 'region_id', 'overview']);
         if(request('thumbnail')) {
             $file = $request->file('thumbnail');
             $file_name = $file->getClientOriginalName();
@@ -89,7 +98,7 @@ class StoreController extends Controller
 
     public function store(CreateStoreRequest $request)
     {
-        $newStore = $request->only(['name', 'genre_id', 'region_id', 'user_id', 'overview']);
+        $newStore = $request->only(['name', 'genre_id', 'region_id', 'overview']);
         $file = $request->file('thumbnail');
         $file_name = $file->getClientOriginalName();
         if (app()->isLocal()) {
@@ -102,5 +111,75 @@ class StoreController extends Controller
 
         Store::create($newStore);
         return redirect('/admin/storelist');
+    }
+
+    public function importCsv(Request $request)
+    {
+        $csvFile = $request->file('csv_file');
+
+        $config = new LexerConfig();
+        $interpreter = new Interpreter();
+        $lexer = new Lexer($config);
+
+        $config->setToCharset("UTF-8");
+        $config->setFromCharset("UTF-8");
+
+        $dataList = [];
+        $validationErrors = new MessageBag();
+
+        if (!$csvFile) {
+            $validationErrors->add('csv', 'CSVファイルが選択されていません。ファイルを選択してください。');
+            return redirect()->back()->withErrors($validationErrors)->withInput();
+        }
+
+        try {
+            $interpreter->addObserver(function (array $row) use (&$dataList) {
+                $dataList[] = $row;
+            });
+            $lexer->parse($csvFile, $interpreter);
+        } catch (\Exception $e) {
+            $validationErrors->add('csv', 'CSVファイルの形式が不正です。正しいフォーマットのファイルをアップロードしてください。');
+            return redirect()->back()->withErrors($validationErrors)->withInput();
+        }
+
+        foreach($dataList as $row) {
+            $data= [
+                'name' => $row[0],
+                'genre_id' => $row[1],
+                'region_id' => $row[2],
+                'overview' => $row[3],
+                'thumbnail' => $row[4]
+            ];
+            $validator = Validator::make($data,[
+                'name' => ['required','max:50'],
+                'genre_id' => ['required','integer','between:1,5'],
+                'region_id' => ['required','integer','between:1,3'],
+                'overview' => ['required','max:400'],
+                'thumbnail' => ['required', 'regex:/\.(jpeg|png)$/i']
+            ],[
+                'name.required' => '店舗名を入力してください',
+                'name.max' => '店舗名は50文字以内で入力してください',
+                'genre_id.required' => 'ジャンルを入力してください',
+                'genre_id.integer' => 'ジャンルは数値で入力してください',
+                'genre_id.between' => 'ジャンルは1から5の範囲で入力してください',
+                'region_id.required' => '地域を入力してください',
+                'region_id.integer' => '地域は数値で入力してください',
+                'region_id.between' => '地域は1から3の範囲で入力してください',
+                'overview.required' => '店舗概要を入力してください',
+                'overview.max' => '店舗概要は400文字以内で入力してください',
+                'thumbnail.required' => '画像ファイルを選択してください',
+                'thumbnail.regex' => '画像ファイル(jpg,png)を選択してください',
+            ]);
+            if($validator->fails()) {
+                $validationErrors->merge($validator->errors());
+                continue;
+            }
+            Store::create($data);
+        }
+        if ($validationErrors->isNotEmpty()) {
+            return redirect()->back()->withErrors($validationErrors)->withInput();
+        }
+
+        return redirect('/admin/storeupload')->with('message', '店舗情報を登録しました');
     }
 }

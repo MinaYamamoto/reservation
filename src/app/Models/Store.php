@@ -13,7 +13,6 @@ class Store extends Model
         'name',
         'genre_id',
         'region_id',
-        'user_id',
         'overview',
         'thumbnail',
     ];
@@ -73,5 +72,23 @@ class Store extends Model
         if(!empty($keyword)) {
             $query->where('name' , 'like', '%' . $keyword . '%');
         }
+    }
+
+    public function scopeSortByKey($query, $sortKey)
+    {
+        if ($sortKey === "random") {
+            return $query->inRandomOrder();
+        } elseif ($sortKey === "high") {
+            return $query->leftJoin('reviews', 'stores.id', '=', 'reviews.store_id')
+            ->selectRaw('stores.*, AVG(reviews.star) as avg_rating')
+            ->groupBy('stores.id')
+            ->orderByRaw('avg_rating IS NULL, avg_rating DESC');
+        } elseif ($sortKey === "row") {
+            return $query->leftJoin('reviews', 'stores.id', '=', 'reviews.store_id')
+            ->selectRaw('stores.*, AVG(reviews.star) as avg_rating')
+            ->groupBy('stores.id')
+            ->orderByRaw('avg_rating IS NULL, avg_rating ASC');
+        }
+        return $query;
     }
 }

@@ -175,7 +175,7 @@
                 <button class="review__submit" data-reservation-id="{{ $oldReservation->id }}">レビュー投稿フォーム</button>
             </div>
             <div class="review__hidden" id="review__hidden">
-                <form class="review__form" action="/review" method="post">
+                <form class="review__form" action="/mypage/review" method="post">
                     @csrf
                     <h3 class="review__star-ttl">評価</h3>
                     <div class="review__body">
@@ -249,7 +249,7 @@
                 <button id="review-detail__submit" class="review-detail__submit" data-reservation-id="{{ $review->id }}">レビュー修正フォーム</button>
             </div>
             <div class="review-correction__hidden" id="review-correction__hidden">
-                <form class="review-correction__form" action="review/{{ $review->id }}" method="post">
+                <form class="review-correction__form" action="/mypage/review/{{ $review->id }}" method="post">
                     @csrf
                     @method('PATCH')
                     <h3 class="review__star-ttl">評価</h3>
@@ -279,7 +279,7 @@
                         <button type="button" class="review-correction__cancel-button">キャンセル</button>
                     </div>
                 </form>
-                <form class="review-delete__form" action="review/{{ $review->id }}"     method="post">
+                <form class="review-delete__form" action="/mypage/review/{{ $review->id }}" method="post">
                     @csrf
                     @method('DELETE')
                     <div class="review-delete__button">
