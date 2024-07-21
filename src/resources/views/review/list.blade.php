@@ -30,7 +30,9 @@
         <div class="review__show" data-review-id="{{ $review->id }}">
             <div class="review__flex">
             @if ($review->user_id === optional(auth()->user())->id)
-                <button class="edit-review-link">口コミを編集</button>
+                <div class="review-edit__button">
+                    <button class="review-correction__edit-button">口コミを編集</button>
+                </div>
             @endif
             @if ($review->user_id === optional(auth()->user())->id || optional(auth()->user())->role === 'admin')
                 <form class="review-delete__form" action="/review/{{ $review->id }}" method="post">
