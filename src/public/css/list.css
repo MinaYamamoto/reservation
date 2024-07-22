@@ -80,6 +80,7 @@
 
     .review__comment-txt {
         white-space: pre-line;
+        font-size: 13px;
     }
 
     .review__comment-txt[contenteditable="true"] {
@@ -178,6 +179,11 @@
         outline: none;
     }
 
+    .review-display__image {
+        width: 20%;
+        height: 20%;
+    }
+
     .store__reserve {
         width: 35%;
         height: 100%;
@@ -189,7 +195,6 @@
         color: #fff;
         position: relative;
     }
-
 
     .reserve__ttl {
         font-size: 20px;
@@ -341,6 +346,7 @@
 
     .review__comment-txt {
         white-space: pre-line;
+        font-size: 13px;
     }
 
     .review__comment-txt[contenteditable="true"] {
@@ -442,6 +448,11 @@
         margin-top: 20px;
         cursor: pointer;
         outline: none;
+    }
+
+    .review-display__image {
+        width: 20%;
+        height: 20%;
     }
 
     .store__reserve {
