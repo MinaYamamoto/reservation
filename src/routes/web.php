@@ -10,7 +10,6 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MailController;
-use App\Http\Controllers\StripeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,9 +41,6 @@ Route::middleware('verified')->group(function() {
     Route::post('/review/post',[ReviewController::class,'postStore']);
     Route::patch('/review/{review_id}',[ReviewController::class,'reviewUpdate']);
     Route::delete('/review/{review_id}',[ReviewController::class,'reviewDestroy']);
-    Route::post('/mypage/review', [ReviewController::class, 'store']);
-    Route::patch('/mypage/review/{review_id}', [ReviewController::class, 'update']);
-    Route::delete('/mypage/review/{review_id}', [ReviewController::class, 'destroy']);
     Route::get('/success',function(){
         return view('success');
     })->name('success');

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const editLinks = document.querySelectorAll('.edit-review-link');
+    const editLinks = document.querySelectorAll('.review-correction__edit-button');
     editLinks.forEach(link => {
         link.addEventListener('click', function (event) {
             event.preventDefault();
@@ -9,9 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const displayContainer = document.querySelector(`.review-display[data-review-id="${reviewId}"]`);
             const commentElement = editForm.querySelector('textarea.review__comment');
             const starElements = editForm.querySelectorAll('.review__star label');
+            const length = editForm.querySelector('.length');
 
             displayContainer.style.display = 'none';
             editForm.style.display = 'block';
+            length.textContent = commentElement.value.length;
 
             if (commentElement) {
                 commentElement.focus();

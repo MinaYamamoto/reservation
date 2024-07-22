@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const editLinks = document.querySelectorAll('.edit-review-link');
+    const editLinks = document.querySelectorAll('.review-correction__edit-button');
     editLinks.forEach(link => {
         link.addEventListener('click', function (event) {
             event.preventDefault();

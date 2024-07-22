@@ -171,39 +171,6 @@
                     </td>
                 </tr>
             </table>
-            <div class="review__button">
-                <button class="review__submit" data-reservation-id="{{ $oldReservation->id }}">レビュー投稿フォーム</button>
-            </div>
-            <div class="review__hidden" id="review__hidden">
-                <form class="review__form" action="/mypage/review" method="post">
-                    @csrf
-                    <h3 class="review__star-ttl">評価</h3>
-                    <div class="review__body">
-                        <div class="star__form">
-                            <input class="star__form-input" id="star5" type="radio" name="star" value="5">
-                            <label class="star__form-label" for="star5">★</label>
-                            <input class="star__form-input" id="star4" type="radio" name="star" value="4">
-                            <label class="star__form-label" for="star4">★</label>
-                            <input class="star__form-input" id="star3" type="radio" name="star" value="3">
-                            <label class="star__form-label" for="star3">★</label>
-                            <input class="star__form-input" id="star2" type="radio" name="star" value="2">
-                            <label class="star__form-label" for="star2">★</label>
-                            <input class="star__form-input" id="star1" type="radio" name="star" value="1">
-                            <label class="star__form-label" for="star1">★</label>
-                        </div>
-                        <h3 class="review__comment-ttl">コメント</h3>
-                        <textarea class="review__comment" name="comment" rows="5" cols="30"></textarea>
-                    </div>
-                    <div class="review__button">
-                        <button type="button" class="review__submit-button">投稿する</button>
-                        <input type="hidden" name="store_id" value="{{ $oldReservation->store_id }}">
-                        <input type="hidden" name="user_id" value="{{ optional(auth()->user())->id }}">
-                    </div>
-                    <div class="review__button">
-                        <button type="button" class="review__cancel-button">キャンセル</button>
-                    </div>
-                </form>
-            </div>
         </div>
         @endforeach
         <div class="mypage__pagination">
@@ -245,49 +212,13 @@
             <div class="history__comment">
                 <p class="history__comment-txt">{{ $review->comment }}</p>
             </div>
-            <div class="review-detail__button">
-                <button id="review-detail__submit" class="review-detail__submit" data-reservation-id="{{ $review->id }}">レビュー修正フォーム</button>
-            </div>
-            <div class="review-correction__hidden" id="review-correction__hidden">
-                <form class="review-correction__form" action="/mypage/review/{{ $review->id }}" method="post">
-                    @csrf
-                    @method('PATCH')
-                    <h3 class="review__star-ttl">評価</h3>
-                    <div class="review__body">
-                        <div class="star__form">
-                            <input class="star__form-input" id="review-correction-star5" type="radio" name="star" value="5" @if($review->star == 5 ) checked @endif>
-                            <label class="star__form-label" for="review-correction-star5">★</label>
-                            <input class="star__form-input" id="review-correction-star4" type="radio" name="star" value="4" @if($review->star == 4 ) checked @endif>
-                            <label class="star__form-label" for="review-correction-star4">★</label>
-                            <input class="star__form-input" id="review-correction-star3" type="radio" name="star" value="3" @if($review->star == 3 ) checked @endif>
-                            <label class="star__form-label" for="review-correction-star3">★</label>
-                            <input class="star__form-input" id="review-correction-star2" type="radio" name="star" value="2" @if($review->star == 2 ) checked @endif>
-                            <label class="star__form-label" for="review-correction-star2">★</label>
-                            <input class="star__form-input" id="review-correction-star1" type="radio" name="star" value="1" @if($review->star == 1 ) checked @endif>
-                            <label class="star__form-label" for="review-correction-star1">★</label>
-                        </div>
-                        <h3 class="review__comment-ttl">コメント</h3>
-                        <textarea class="review__comment" name="comment" rows="5" cols="30">
-                            {{ $review->comment }}
-                        </textarea>
-                    </div>
-                    <div class="review-correction__button">
-                        <button type="button" class="review-correction__submit-button">修正する</button>
-                        <input type="hidden" name="id" value="{{ $review->id }}">
-                    </div>
-                    <div class="review-correction__button">
-                        <button type="button" class="review-correction__cancel-button">キャンセル</button>
-                    </div>
-                </form>
-                <form class="review-delete__form" action="/mypage/review/{{ $review->id }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <div class="review-delete__button">
-                        <button type="button" class="review-correction__delete-button">レビュー削除</button>
-                        <input type="hidden" name="id" value="{{ $review->id }}">
-                    </div>
-                </form>
-            </div>
+            <form action="/review" method="get">
+                @csrf
+                <div class="review-detail__button">
+                    <button class="review-detail__submit">レビュー修正</button>
+                    <input type="hidden" value="{{$review->store->id}}" name="store_id"/>
+                </div>
+            </form>
         </div>
         @endforeach
         <div class="mypage__pagination">
