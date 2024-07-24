@@ -1,13 +1,10 @@
 @media screen and (min-width: 769px) {
     .review {
         display: flex;
-        margin-top: -50px;
-        max-width: fit-content;
     }
 
     .review__shop {
         width: 50%;
-        margin: auto;
         position: relative;
         padding-right: 20px;
     }
@@ -15,27 +12,31 @@
     .review__shop::after {
         content: "";
         position: absolute;
-        top: 8%;
-        right: 25%;
+        top: 15%;
+        right: 5%;
         width: 3px;
-        height: 75%;
+        height: 60%;
         background-color: #ccc;
     }
 
     .shop__message {
-        font-size: 25px;
         width: 50%;
-        margin-left: 20%;
-        font-weight: bold;
+        margin-top: 15%;
+        margin-left: 30%;
+    }
+
+    .shop__message-txt {
+        font-size: 30px;
+        font-weight: 500;
     }
 
     .shop__card {
         display: flex;
         flex-direction: column;
         border-radius: 5px;
-        width: 45%;
+        width: 47%;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-        margin-left: 20%;
+        margin-left: 35%;
         background-color: #fff;
     }
 
@@ -117,7 +118,6 @@
         width: 60%;
         padding-left: 30px;
         margin-top: 40px;
-        margin-left: -150px;
     }
 
     .post__ttl {
@@ -131,6 +131,10 @@
         display: flex;
         flex-direction: row-reverse;
         justify-content: flex-end;
+    }
+
+    .review__star {
+        width: 90%;
     }
 
     .star__form-input[type=radio] {
@@ -164,10 +168,14 @@
         text-align: left;
     }
 
+    .comment {
+        width: 90%;
+    }
+
     .review__comment {
         background-color: #e4e4ec;
         border: 2px solid #ccc;
-        height: 80px;
+        height: 120px;
         width: 90%;
     }
 
@@ -177,6 +185,10 @@
         font-size: 12px;
         margin-top: -20px;
         margin-right: 70px;
+    }
+
+    .image {
+        width: 90%;
     }
 
     .image__preview {
@@ -190,7 +202,7 @@
 
     .review__image {
         width: 90%;
-        height: 80px;
+        height: 120px;
         text-align: center;
         background-color: #fff;
     }
@@ -210,16 +222,15 @@
         border: none;
         font-size: 15px;
         padding: 8px;
-        margin-top: 15px;
+        margin-top: 30px;
         cursor: pointer;
         outline: none;
     }
 
     .review__post-submit {
-        width: 400px;
-        padding-left: 30px;
+        width: 500px;
         margin-top: 40px;
-        margin-left: -150px;
+        margin-left: -40%;
     }
 
     .review__post-button {
@@ -238,10 +249,13 @@
 
 @media screen and (max-width: 768px) {
     .shop__message {
-        font-size: 25px;
         width: 70%;
         margin-left: 20%;
-        font-weight: bold;
+    }
+
+    .shop__message-txt {
+        font-size: 25px;
+        font-weight: 500;
     }
 
     .shop__card {

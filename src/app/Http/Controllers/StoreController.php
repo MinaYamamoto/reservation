@@ -122,7 +122,13 @@ class StoreController extends Controller
         $lexer = new Lexer($config);
 
         $config->setToCharset("UTF-8");
-        $config->setFromCharset("UTF-8");
+        $fileContent = file_get_contents($csvFile);
+        $detectedEncoding = mb_detect_encoding($fileContent, ['UTF-8', 'SJIS', 'EUC-JP', 'ISO-2022-JP']);
+        if ($detectedEncoding) {
+            $config->setFromCharset($detectedEncoding);
+        } else {
+            $config->setFromCharset("SJIS");
+        }
 
         $dataList = [];
         $validationErrors = new MessageBag();
@@ -145,8 +151,8 @@ class StoreController extends Controller
         foreach($dataList as $row) {
             $data= [
                 'name' => $row[0],
-                'genre_id' => $row[1],
-                'region_id' => $row[2],
+                'genre_id' => (int)$row[1],
+                'region_id' => (int)$row[2],
                 'overview' => $row[3],
                 'thumbnail' => $row[4]
             ];
@@ -168,7 +174,7 @@ class StoreController extends Controller
                 'overview.required' => '店舗概要を入力してください',
                 'overview.max' => '店舗概要は400文字以内で入力してください',
                 'thumbnail.required' => '画像ファイルを選択してください',
-                'thumbnail.regex' => '画像ファイル(jpg,png)を選択してください',
+                'thumbnail.regex' => '画像ファイル(jpeg,png)を選択してください',
             ]);
             if($validator->fails()) {
                 $validationErrors->merge($validator->errors());

@@ -8,8 +8,8 @@
 @section('content')
 <div class="review">
     <div class="review__shop">
-        <div>
-            <p class="shop__message">今回のご利用はいかがでしたか？</p>
+        <div class="shop__message">
+            <p class="shop__message-txt">今回のご利用はいかがでしたか？</p>
         </div>
         <div class="shop__card">
             <div class="card__img">
