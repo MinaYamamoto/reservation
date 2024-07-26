@@ -121,15 +121,6 @@ class StoreController extends Controller
         $interpreter = new Interpreter();
         $lexer = new Lexer($config);
 
-        $config->setToCharset("UTF-8");
-        $fileContent = file_get_contents($csvFile);
-        $detectedEncoding = mb_detect_encoding($fileContent, ['UTF-8', 'SJIS', 'EUC-JP', 'ISO-2022-JP']);
-        if ($detectedEncoding) {
-            $config->setFromCharset($detectedEncoding);
-        } else {
-            $config->setFromCharset("SJIS");
-        }
-
         $dataList = [];
         $validationErrors = new MessageBag();
 
@@ -138,9 +129,22 @@ class StoreController extends Controller
             return redirect()->back()->withErrors($validationErrors)->withInput();
         }
 
+        $config->setToCharset("UTF-8")
+        ->setDelimiter(",")
+        ->setEscape("\\");
+        $fileContent = file_get_contents($csvFile);
+        $detectedEncoding = mb_detect_encoding($fileContent, ['ASCII', 'ISO-2022-JP', 'UTF-8', 'UTF-16','EUC-JP', 'SJIS-win', 'SJIS']);
+        if ($detectedEncoding) {
+            $config->setFromCharset($detectedEncoding);
+        } else {
+            $config->setFromCharset("SJIS");
+        }
+
         try {
             $interpreter->addObserver(function (array $row) use (&$dataList) {
-                $dataList[] = $row;
+                $dataList[] = array_map(function($value) {
+                    return mb_convert_kana(trim($value), 'n', 'UTF-8');
+                }, $row);
             });
             $lexer->parse($csvFile, $interpreter);
         } catch (\Exception $e) {
@@ -161,7 +165,7 @@ class StoreController extends Controller
                 'genre_id' => ['required','integer','between:1,5'],
                 'region_id' => ['required','integer','between:1,3'],
                 'overview' => ['required','max:400'],
-                'thumbnail' => ['required', 'regex:/\.(jpeg|png)$/i']
+                'thumbnail' => ['required', 'regex:/\.?(jpeg|png)$/i']
             ],[
                 'name.required' => '店舗名を入力してください',
                 'name.max' => '店舗名は50文字以内で入力してください',
