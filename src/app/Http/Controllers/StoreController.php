@@ -131,7 +131,8 @@ class StoreController extends Controller
 
         $config->setToCharset("UTF-8")
         ->setDelimiter(",")
-        ->setEscape("\\");
+        ->setEscape("\\")
+        ->setIgnoreHeaderLine(true);
         $fileContent = file_get_contents($csvFile);
         $detectedEncoding = mb_detect_encoding($fileContent, ['ASCII', 'ISO-2022-JP', 'UTF-8', 'UTF-16','EUC-JP', 'SJIS-win', 'SJIS']);
         if ($detectedEncoding) {
